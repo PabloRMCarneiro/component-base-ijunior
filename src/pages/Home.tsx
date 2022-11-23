@@ -1,7 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import GlobalStyle from "../styles/GlobalStyle";
 
 import Button from "../Components/Button";
+import Spacer from "../Components/Spacer";
+
 function Home() {
   const navigate = useNavigate();
 
@@ -16,9 +19,9 @@ function Home() {
         width: "100vw",
       }}
     >
-      <div>
+      <GlobalStyle />
         <Button
-          message="Exemplos de Botões"
+          message="Exemplos de Buttons"
           size={{ width: "5xl", height: "xl" }}
           font={{ size: "sm", color: "white", fontWeight: 500 }}
           radius="md"
@@ -26,7 +29,16 @@ function Home() {
           hover={{ color: "primaryLightContrast", fontColor: "white" }}
           onClick={() => navigate("/buttons")}
         />
-      </div>
+        <Spacer vertical = "18"/>
+        <Button
+          message="Exemplos de Spacers"
+          size={{ width: "5xl", height: "xl" }}
+          font={{ size: "sm", color: "white", fontWeight: 500 }}
+          radius="md"
+          color="primarySolidContrast"
+          hover={{ color: "primaryLightContrast", fontColor: "white" }}
+          onClick={() => navigate("/spacer")}
+        />
     </div>
   );
 }
