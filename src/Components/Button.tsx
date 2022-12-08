@@ -3,26 +3,14 @@ import styled, { css, ThemeProvider } from "styled-components";
 import { theme } from "../styles/theme";
 
 interface ButtonProps {
-  size: sizeProps;
-  message?: string;
+  size: string;
   onClick?: () => void;
   color?: string;
-  font?: fontProps;
   radius?: string;
   hover?: hoverProps;
   bordered?: boolean;
   shadow?: string;
-}
-
-interface sizeProps {
-  width: string;
-  height: string;
-}
-
-interface fontProps {
-  size?: string;
-  color?: string;
-  fontWeight?: number;
+  children?: React.ReactNode;
 }
 
 interface hoverProps {
@@ -31,16 +19,14 @@ interface hoverProps {
 }
 
 export const ButtonComponent = styled.button<ButtonProps>`
-  width: ${(props) => props.theme.theme.sizes[props.size.width]};
-  height: ${(props) => props.theme.theme.sizes[props.size.height]};
+  width: ${(props) => props.theme.theme.buttonSizes[props.size][0]};
+  height: ${(props) => props.theme.theme.buttonSizes[props.size][1]};
   background-color: ${(props) => props.theme.theme.colors[props.color || "primary"]};
-  color: ${(props) => props.theme.theme.colors[props.font?.color || "white"]};
-  font-size: ${(props) => props.theme.theme.sizes[props.font?.size || "md"]};
   font-weight: ${(props) => props.theme.theme.font?.fontWeight};
   border: none;
   cursor: pointer;
   border-radius: ${(props) => props.theme.theme.sizes[props.radius || "md"]};  
-  transition: 0.4s ease-in-out;
+  transition: 0.3s ease-in-out;
   box-shadow: ${(props) => props.theme.theme.shadows[props.shadow || "none"]};
   &:hover {
     background-color: ${(props) => props.theme.theme.colors[props.hover?.color || "primarySolidHover"]};
@@ -74,14 +60,13 @@ function Button(props: ButtonProps) {
       <ButtonComponent
         size={props.size}
         color={props.color}
-        font={props.font}
         radius={props.radius}
         hover={props.hover}
-        onClick={props.onClick}
         bordered={props.bordered}
         shadow={props.shadow}
+        onClick={props.onClick}
       >
-        {props.message}
+        {props.children}
       </ButtonComponent>
     </ThemeProvider>
   );

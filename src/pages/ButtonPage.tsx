@@ -4,15 +4,9 @@ import styled from "styled-components";
 
 import Button from "../Components/Button";
 import Spacer from "../Components/Spacer";
+import Text from "../Components/Text";
 
-const MainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-`;
+import { MainContainer } from "../utils/Containers"
 
 const Container = styled.div`
   width: 50%;
@@ -31,46 +25,51 @@ function ButtonPage() {
     <MainContainer>
       <Container>
         <GlobalStyle />
+
         <Spacer vertical="18" />
         <Button
-          message="Hello World"
-          size={{ width: "4xl", height: "xl" }}
-          font={{ size: "sm", color: "primaryLightContrast", fontWeight: 500 }}
+          size="sm"
           radius="md"
           color="primarySolidContrast"
           hover={{ color: "primaryLightContrast", fontColor: "white" }}
           onClick={() => console.log("Hello World")}
           bordered
-        />
+        >
+          <Text variant="h4">Hello World</Text>
+        </Button>
+
         <Spacer vertical="18" />
         <Button
-          message="Hello World"
-          size={{ width: "6xl", height: "2xl" }}
-          font={{ size: "sm", color: "primaryLightContrast", fontWeight: 500 }}
+          size="xs"
           radius="lg"
           color="primarySolidContrast"
           hover={{ color: "primaryLightContrast", fontColor: "white" }}
-        />
+        >
+          <Text variant="h4">Hello World</Text>
+        </Button>
+
         <Spacer vertical="18" />
         <Button
-          message="World"
-          size={{ width: "3xl", height: "2xl" }}
-          font={{ size: "md", color: "primaryBorderHover", fontWeight: 900 }}
+          size="2xs"
           radius="2xl"
           color="primaryLightActive"
           hover={{ color: "primaryLightContrast", fontColor: "white" }}
           shadow="xl"
-        />
+        >
+          <Text variant="body1">Hello World</Text>
+        </Button>
+
         <Spacer vertical="18" />
         <Button
-          message="World"
-          size={{ width: "5xl", height: "lg" }}
-          font={{ size: "sm", color: "primaryBorderHover", fontWeight: 400 }}
+          size="2xs"
           radius="xs"
           color="primaryLightActive"
           hover={{ color: "primaryLightContrast", fontColor: "white" }}
           bordered
-        />
+        >
+          <Text variant="body2">Hello World</Text>
+        </Button>
+
         <Spacer vertical="18" />
       </Container>
     </MainContainer>

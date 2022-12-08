@@ -13,6 +13,13 @@ export const theme ={
 
     white: '#ffffff',
     black: '#000000',
+    red: '#ff0000',
+    greyLight: '#F2F2F2',
+    grey: '#a5a5a5',
+  },
+  borderRadius: {
+    r: '0.625rem',
+    xr: '1.563rem'
   },
   sizes: {
     xs: "0.5rem" ,
@@ -35,6 +42,8 @@ export const theme ={
     none: "none",
   },
   spacing: {
+    '-9': '-2.25rem',
+    '-1': '-0.125rem',
     0: '0rem',
     xs: '0.5rem',
     sm: '0.75rem',
@@ -96,6 +105,62 @@ export const theme ={
     md: ['228px', '62px'],
     lg: ['372px', '59px'],
     xmd: ['277px', '48px'],
+  },
+  text: {
+    fontFamily: 'Roboto, sans-serif',
+    h1: {
+      fontSize: '2.5rem',
+      lineHeight: '3rem',
+    },
+    h2: {
+      fontSize: '2.25rem',
+      lineHeight: '2.625rem',
+    },
+    h3: {
+      fontSize: '2rem',
+      lineHeight: '2.375rem',
+    },
+    h4: {
+      fontSize: '1.5rem',
+      lineHeight: '1.75rem',
+    },
+    body1: {
+      fontSize: '1.25rem',
+      lineHeight: '1.438rem',
+    },
+    body2: {
+      fontSize: '1rem',
+      lineHeight: '1.188rem',
+    },
+    legenda: {
+      fontSize: '0.875rem',
+      lineHeight: '1rem',
+    },
+  },
+  box: {
+    sizes: {
+      ssm: ['150px', '150px'],
+      rsm: ['150px', '110px'],
+      sxs: ['200px', '200px'],
+      rxs: ['200px', '140px'],
+      smd: ['250px', '250px'],
+      rmd: ['250px', '170px'],
+      slg: ['300px', '300px'],
+      rlg: ['300px', '200px'],
+      modalSizeType1: ['450px', '316px'],
+      modalSizeType2: ['450px', '360px'],
+      modalSizeType3: ['450px', '400px'],
+      modalSizeType4: ['450px', '440px'],
+      modalSizeType5: ['500px', '850px'],
+    }
+  },
+  input: {
+    sizes: {
+      sm: ['186px', '60px'],
+      xs: ['372px', '80px'],
+      '2xs': ['372px', '120px'],
+      md: ['228px', '150px'],
+    }
   }
 }
 

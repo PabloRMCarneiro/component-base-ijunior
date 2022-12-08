@@ -4,42 +4,66 @@ import GlobalStyle from "../styles/GlobalStyle";
 
 import Button from "../Components/Button";
 import Spacer from "../Components/Spacer";
+import Text from "../Components/Text";
+
+import { MainContainer } from "../utils/Containers";
 
 function Home() {
   const navigate = useNavigate();
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-        width: "100vw",
-      }}
-    >
+    <MainContainer>
       <GlobalStyle />
-        <Button
-          message="Exemplos de Buttons"
-          size={{ width: "5xl", height: "xl" }}
-          font={{ size: "sm", color: "white", fontWeight: 500 }}
-          radius="md"
-          color="primarySolidContrast"
-          hover={{ color: "primaryLightContrast", fontColor: "white" }}
-          onClick={() => navigate("/buttons")}
-        />
-        <Spacer vertical = "18"/>
-        <Button
-          message="Exemplos de Spacers"
-          size={{ width: "5xl", height: "xl" }}
-          font={{ size: "sm", color: "white", fontWeight: 500 }}
-          radius="md"
-          color="primarySolidContrast"
-          hover={{ color: "primaryLightContrast", fontColor: "white" }}
-          onClick={() => navigate("/spacer")}
-        />
-    </div>
+      <Button
+        size="md"
+        radius="md"
+        color="primarySolidContrast"
+        hover={{ color: "primaryLightContrast", fontColor: "white" }}
+        onClick={() => navigate("/buttons")}
+      >
+        <Text variant="h3" color="white">
+          Button
+        </Text>
+      </Button>
+      <Spacer vertical="18" />
+      <Button
+        size="md"
+        radius="md"
+        color="primarySolidContrast"
+        hover={{ color: "primaryLightContrast", fontColor: "white" }}
+        onClick={() => navigate("/spacer")}
+      >
+        <Text variant="h3" color="white">
+          Spacer
+        </Text>
+      </Button>
+
+      <Spacer vertical="18" />
+      <Button
+        size="md"
+        radius="md"
+        color="primarySolidContrast"
+        hover={{ color: "primaryLightContrast", fontColor: "white" }}
+        onClick={() => navigate("/box")}
+      >
+        <Text variant="h3" color="white">
+          Box
+        </Text>
+      </Button>
+
+      <Spacer vertical="18" />
+      <Button
+        size="md"
+        radius="md"
+        color="primarySolidContrast"
+        hover={{ color: "primaryLightContrast", fontColor: "white" }}
+        onClick={() => navigate("/modal")}
+      >
+        <Text variant="h3" color="white">
+          Modal
+        </Text>
+      </Button>
+    </MainContainer>
   );
 }
 
