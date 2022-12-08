@@ -21,18 +21,6 @@ export const theme ={
     r: '0.625rem',
     xr: '1.563rem'
   },
-  sizes: {
-    xs: "0.5rem" ,
-    sm: "1rem" ,
-    md: "1.5rem" ,
-    lg: "2rem" ,
-    xl: "2.5rem" ,
-    "2xl": "5rem" ,
-    "3xl": "7.5rem" ,
-    "4xl": "10rem" ,
-    "5xl": "15rem" ,
-    "6xl": "20rem" ,
-  },
   shadows: {
     xs: '0 2px 8px 1px rgb(0 0 0 / 0.07), 0 1px 1px -1px rgb(0 0 0 / 0.04)',
     sm: '0 2px 8px 2px rgb(0 0 0 / 0.07), 0 2px 4px -1px rgb(0 0 0 / 0.04)',

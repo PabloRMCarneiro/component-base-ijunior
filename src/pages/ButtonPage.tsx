@@ -29,32 +29,19 @@ function ButtonPage() {
         <Spacer vertical="18" />
         <Button
           size="sm"
-          radius="md"
-          color="primarySolidContrast"
-          hover={{ color: "primaryLightContrast", fontColor: "white" }}
+          color="primary"
           onClick={() => console.log("Hello World")}
           bordered
+          hover
         >
-          <Text variant="h4">Hello World</Text>
+          <Text variant="body1" >Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
         <Button
           size="xs"
-          radius="lg"
-          color="primarySolidContrast"
-          hover={{ color: "primaryLightContrast", fontColor: "white" }}
-        >
-          <Text variant="h4">Hello World</Text>
-        </Button>
-
-        <Spacer vertical="18" />
-        <Button
-          size="2xs"
-          radius="2xl"
-          color="primaryLightActive"
-          hover={{ color: "primaryLightContrast", fontColor: "white" }}
-          shadow="xl"
+          color="primary"
+          hover
         >
           <Text variant="body1">Hello World</Text>
         </Button>
@@ -62,10 +49,19 @@ function ButtonPage() {
         <Spacer vertical="18" />
         <Button
           size="2xs"
-          radius="xs"
-          color="primaryLightActive"
-          hover={{ color: "primaryLightContrast", fontColor: "white" }}
+          color="primary"
+          shadow="xl"
+          hover
+        >
+          <Text variant="body1">Hello World</Text>
+        </Button>
+
+        <Spacer vertical="18" />
+        <Button
+          size="2xs"
+          color="primary"
           bordered
+          hover
         >
           <Text variant="body2">Hello World</Text>
         </Button>

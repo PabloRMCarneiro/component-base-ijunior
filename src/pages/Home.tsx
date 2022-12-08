@@ -16,9 +16,8 @@ function Home() {
       <GlobalStyle />
       <Button
         size="md"
-        radius="md"
-        color="primarySolidContrast"
-        hover={{ color: "primaryLightContrast", fontColor: "white" }}
+        color="primary"
+        hover
         onClick={() => navigate("/buttons")}
       >
         <Text variant="h3" color="white">
@@ -28,9 +27,8 @@ function Home() {
       <Spacer vertical="18" />
       <Button
         size="md"
-        radius="md"
-        color="primarySolidContrast"
-        hover={{ color: "primaryLightContrast", fontColor: "white" }}
+        color="primary"
+        hover
         onClick={() => navigate("/spacer")}
       >
         <Text variant="h3" color="white">
@@ -41,9 +39,8 @@ function Home() {
       <Spacer vertical="18" />
       <Button
         size="md"
-        radius="md"
-        color="primarySolidContrast"
-        hover={{ color: "primaryLightContrast", fontColor: "white" }}
+        color="primary"
+        hover
         onClick={() => navigate("/box")}
       >
         <Text variant="h3" color="white">
@@ -54,9 +51,8 @@ function Home() {
       <Spacer vertical="18" />
       <Button
         size="md"
-        radius="md"
-        color="primarySolidContrast"
-        hover={{ color: "primaryLightContrast", fontColor: "white" }}
+        color="primary"
+        hover
         onClick={() => navigate("/modal")}
       >
         <Text variant="h3" color="white">

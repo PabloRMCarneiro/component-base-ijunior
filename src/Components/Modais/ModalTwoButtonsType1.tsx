@@ -33,7 +33,7 @@ function ModalTwoButtonsType1({
           <Box size="modalSizeType1" rounded backgroundColor="white">
             <CenterHorizontalContainer>
               <TopContainerInModal>
-                <Text variant="h4" bold color="red">
+                <Text variant="body1" bold color="primary">
                   {" "}
                   Item não salvo !{" "}
                 </Text>
@@ -51,7 +51,7 @@ function ModalTwoButtonsType1({
               <Spacer vertical="6" />
               <LineHorizontal />
               <MainContainerInModal>
-                <Text variant="h4" textAlign>
+                <Text variant="h4">
                   O item modificado não foi salvo, o que deseja fazer?
                 </Text>
               </MainContainerInModal>
@@ -59,21 +59,21 @@ function ModalTwoButtonsType1({
               <BottomContainerInModal>
                 <Button
                   size="sm"
-                  color="red"
+                  color="primary"
                   bordered
-                  hover={{ color: "red", fontColor: "white" }}
+                  hover
                   onClick={() => setShowModal(false)}
                 >
-                  <Text variant="h4"> Sair </Text>
+                  <Text variant="body1"> Sair </Text>
                 </Button>
                 <Spacer horizontal="6" />
                 <Button
                   size="sm"
-                  color="red"
-                  hover={{ color: "red", fontColor: "white" }}
+                  color="primary"
+                  hover
                   onClick={() => setShowModal(false)}
                 >
-                  <Text variant="h4"> Continuar </Text>
+                  <Text variant="body1"> Continuar </Text>
                 </Button>
               </BottomContainerInModal>
             </CenterHorizontalContainer>

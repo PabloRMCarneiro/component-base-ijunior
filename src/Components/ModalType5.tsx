@@ -33,7 +33,7 @@ function ModalType5({
           <Box size="modalSizeType5" rounded backgroundColor="white">
             <CenterHorizontalContainer>
               <TopContainerInModal>
-                <Text variant="h4" bold color="red">
+                <Text variant="body1" bold color="primary">
                   {" "}
                   Modal Informativo 2!{" "}
                 </Text>
@@ -51,7 +51,7 @@ function ModalType5({
               <Spacer vertical="6" />
               <LineHorizontal />
               <MainContainerInModal>
-                <Text variant="h4" textAlign>
+                <Text variant="body1" textAlign >
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita excepturi sint praesentium, sit optio ullam sed iusto voluptate possimus, quasi nulla modi qui culpa nobis consectetur voluptatum minima facere magnam? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis atque vero porro aperiam aliquid quisquam quas neque, quis perferendis ea velit nulla.
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam molestiae ipsam non fuga similique. Recusandae optio maxime delectus minus repudiandae, exercitationem, non ipsa sapiente provident, unde tempore voluptatem ipsam tenetur?
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi cupiditate nam quas libero, voluptatem natus ullam, laborum numquam sint quisquam alias reiciendis maxime asperiores! Voluptates ipsum exercitationem dolor et nostrum.

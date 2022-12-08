@@ -38,7 +38,7 @@ function ModalOneButtonType2({
           <Box size="modalSizeType2" rounded backgroundColor="white">
             <CenterHorizontalContainer>
               <TopContainerInModal>
-                <Text variant="h4" bold color="red">
+                <Text variant="body1" bold color="primary">
                   {" "}
                   Adicionar Resposta{" "}
                 </Text>
@@ -68,15 +68,15 @@ function ModalOneButtonType2({
               <BottomContainerInModal>
                 <Button
                   size="2xs"
-                  color="red"
+                  color="primary"
                   bordered
-                  hover={{ color: "red", fontColor: "white" }}
+                  hover
                   onClick={() => {
                     setShowModal(false);
                     console.log(inputValue);
                   }}
                 >
-                  <Text variant="h4"> Sair </Text>
+                  <Text variant="h4"> Confirmar </Text>
                 </Button>
               </BottomContainerInModal>
             </CenterHorizontalContainer>

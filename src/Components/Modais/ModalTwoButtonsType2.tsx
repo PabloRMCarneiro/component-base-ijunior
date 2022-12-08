@@ -38,7 +38,7 @@ function ModalTwoButtonsType2({
           <Box size="modalSizeType2" rounded backgroundColor="white">
             <CenterHorizontalContainer>
               <TopContainerInModal>
-                <Text variant="h4" bold color="red">
+                <Text variant="body1" bold color="primary">
                   {" "}
                   Adicionar fonte{" "}
                 </Text>
@@ -68,27 +68,27 @@ function ModalTwoButtonsType2({
               <BottomContainerInModal>
                 <Button
                   size="sm"
-                  color="red"
+                  color="primary"
                   bordered
-                  hover={{ color: "red", fontColor: "white" }}
+                  hover
                   onClick={() => {
                     setShowModal(false);
                     console.log(inputValue);
                   }}
                 >
-                  <Text variant="h4"> Sair </Text>
+                  <Text variant="body1"> Sair </Text>
                 </Button>
                 <Spacer horizontal="6" />
                 <Button
                   size="sm"
-                  color="red"
-                  hover={{ color: "red", fontColor: "white" }}
+                  color="primary"
+                  hover
                   onClick={() => {
                     setShowModal(false);
                     console.log(inputValue);
                   }}
                 >
-                  <Text variant="h4"> Confirmar </Text>
+                  <Text variant="body1"> Confirmar </Text>
                 </Button>
               </BottomContainerInModal>
             </CenterHorizontalContainer>

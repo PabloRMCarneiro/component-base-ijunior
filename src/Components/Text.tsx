@@ -8,17 +8,23 @@ interface TextProps {
   bold?: boolean;
   color?: string;
   onClick?: () => void;
+  textAlign?: boolean;
 }
 
 export const TextComponent = styled.p<TextProps>`
   font-size: ${(props) => props.theme.theme.text[props.variant || "h3"].fontSize};
   line-height: ${(props) => props.theme.theme.text[props.variant || "h3"].lineHeight};
   font-family: ${(props) => props.theme.theme.text.fontFamily};
-  color: ${(props) => props.theme.theme.colors[props.color || "black"]};
+  color: ${(props) => props.theme.theme.colors[props.color || "none"]};
   ${(props) => {
     if(props.bold){
       return css`
         font-weight: bold;
+      `;
+    }
+    if(props.textAlign){
+      return css`
+        text-align: justify;
       `;
     }
   }}
@@ -32,7 +38,7 @@ function Text(props: TextProps) {
         bold={props.bold}
         color={props.color}
         onClick={props.onClick}
-        
+        textAlign={props.textAlign}
       >
         {props.children}
       </TextComponent>

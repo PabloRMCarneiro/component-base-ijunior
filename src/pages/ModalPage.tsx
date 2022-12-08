@@ -92,82 +92,78 @@ function ModalPage() {
 
         <Button
           size="2xs"
-          color="red"
-          bordered
-          hover={{ color: "red", fontColor: "white" }}
+          color="primary"
+          hover
           onClick={OpenModal1}
         >
-          <Text variant="h4"> Type 1 - One Button </Text>
+          <Text variant="body1"> Type 1 - One Button </Text>
         </Button>
         <Spacer vertical="15" />
         <Button
           size="2xs"
-          color="red"
+          color="primary"
           bordered
-          hover={{ color: "red", fontColor: "white" }}
+          hover
           onClick={OpenModal2}
         >
-          <Text variant="h4"> Type 1 - Two Buttons </Text>
+          <Text variant="body1"> Type 1 - Two Buttons </Text>
         </Button>
         <Spacer vertical="15" />
         <Button
           size="2xs"
-          color="red"
-          bordered
-          hover={{ color: "red", fontColor: "white" }}
+          color="primary"
+          hover
           onClick={OpenModal3}
         >
-          <Text variant="h4"> Type 2 - One Button </Text>
+          <Text variant="body1"> Type 2 - One Button </Text>
         </Button>
         <Spacer vertical="15" />
         <Button
           size="2xs"
-          color="red"
+          color="primary"
           bordered
-          hover={{ color: "red", fontColor: "white" }}
+          hover
           onClick={OpenModal4}
         >
-          <Text variant="h4"> Type 2 - Two Buttons </Text>
+          <Text variant="body1"> Type 2 - Two Buttons </Text>
         </Button>
         <Spacer vertical="15" />
         <Button
           size="2xs"
-          color="red"
-          bordered
-          hover={{ color: "red", fontColor: "white" }}
+          color="primary"
+          hover
           onClick={OpenModal5}
         >
-          <Text variant="h4"> Type 3 - One Button </Text>
+          <Text variant="body1"> Type 3 - One Button </Text>
         </Button>
         <Spacer vertical="15" />
         <Button
           size="2xs"
-          color="red"
+          color="primary"
           bordered
-          hover={{ color: "red", fontColor: "white" }}
+          hover
           onClick={OpenModal6}
         >
-          <Text variant="h4"> Type 3 - Two Buttons </Text>
+          <Text variant="body1"> Type 3 - Two Buttons </Text>
         </Button>
         <Spacer vertical="15" />
         <Button
           size="2xs"
-          color="red"
-          bordered
-          hover={{ color: "red", fontColor: "white" }}
+          color="primary"
+          hover
           onClick={OpenModal7}
         >
-          <Text variant="h4"> Type 4 </Text>
+          <Text variant="body1"> Type 4 </Text>
         </Button>
         <Spacer vertical="15" />
         <Button
           size="2xs"
-          color="red"
+          color="primary"
+          hover
           bordered
-          hover={{ color: "red", fontColor: "white" }}
           onClick={OpenModal8}
         >
-          <Text variant="h4"> Type 5</Text>
+          <Text variant="body1"> Type 5</Text>
         </Button>
         <Spacer vertical="15" />
       </MainContainer>

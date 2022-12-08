@@ -32,7 +32,7 @@ function ModalOneButtonType1({
           <Box size="modalSizeType1" rounded backgroundColor="white">
             <CenterHorizontalContainer>
               <TopContainerInModal>
-                <Text variant="h4" bold color="red">
+                <Text variant="body1" bold color="primary">
                   {" "}
                   Email já cadastrado!{" "}
                 </Text>
@@ -50,7 +50,7 @@ function ModalOneButtonType1({
               <Spacer vertical="6" />
               <LineHorizontal />
               <MainContainerInModal>
-                <Text variant="h4" textAlign>
+                <Text variant="h4">
                   Já temos um cadastro com esse email. Por favor, use outro
                   email ou faça login caso já tenha um cadastro.
                 </Text>
@@ -59,12 +59,11 @@ function ModalOneButtonType1({
               <BottomContainerInModal>
                 <Button
                   size="2xs"
-                  color="red"
-                  bordered
-                  hover={{ color: "red", fontColor: "white" }}
+                  color="primary"
+                  hover
                   onClick={() => setShowModal(false)}
                 >
-                  <Text variant="h4"> Confirmar </Text>
+                  <Text variant="h4" color="white"> Confirmar </Text>
                 </Button>
               </BottomContainerInModal>
             </CenterHorizontalContainer>

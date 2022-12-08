@@ -33,7 +33,7 @@ function ModalType4({
           <Box size="modalSizeType4" rounded backgroundColor="white">
             <CenterHorizontalContainer>
               <TopContainerInModal>
-                <Text variant="h4" bold color="red">
+                <Text variant="body1" bold color="primary">
                   {" "}
                   Modal Informativo 1!{" "}
                 </Text>
@@ -51,8 +51,8 @@ function ModalType4({
               <Spacer vertical="6" />
               <LineHorizontal />
               <MainContainerInModal>
-                <Text variant="h4" textAlign>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita excepturi sint praesentium, sit optio ullam sed iusto voluptate possimus, quasi nulla modi qui culpa nobis consectetur voluptatum minima facere magnam? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis atque vero porro aperiam aliquid quisquam quas neque, quis perferendis ea velit nulla.
+                <Text variant="body1" textAlign>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita excepturi sint praesentium, sit optio ullam sed iusto voluptate possimus, quasi nulla modi qui culpa nobis consectetur voluptatum minima facere magnam? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis atque vero porro aperiam aliquid quisquam quas neque, quis perferendis ea velit nulla. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime at eaque commodi ut.
                 </Text>
               </MainContainerInModal>
             </CenterHorizontalContainer>
