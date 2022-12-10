@@ -8,7 +8,8 @@ interface TextProps {
   bold?: boolean;
   color?: string;
   onClick?: () => void;
-  textAlign?: boolean;
+  center?: boolean;
+  justify?: boolean;
   hover?: boolean;
 }
 
@@ -36,9 +37,14 @@ export const TextComponent = styled.p<TextProps>`
         font-weight: bold;
       `;
     }
-    if (props.textAlign) {
+    if (props.justify) {
       return css`
         text-align: justify;
+      `;
+    }
+    if (props.center) {
+      return css`
+        text-align: center;
       `;
     }
   }}
@@ -52,7 +58,8 @@ function Text(props: TextProps) {
         bold={props.bold}
         color={props.color}
         onClick={props.onClick}
-        textAlign={props.textAlign}
+        center={props.center}
+        justify={props.justify}
         hover={props.hover}
       >
         {props.children}

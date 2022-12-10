@@ -46,7 +46,7 @@ function ModalType5({ showModal, setShowModal }: ModalType5Props) {
               <Spacer vertical="6" />
               <LineHorizontal />
               <MainContainerInModal>
-                <Text variant="body1" color="greySolid" textAlign>
+                <Text variant="body1" color="greySolid" justify>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Expedita excepturi sint praesentium, sit optio ullam sed iusto
                   voluptate possimus, quasi nulla modi qui culpa nobis

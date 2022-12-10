@@ -1,5 +1,5 @@
 import React from "react";
-import GlobalStyle from "../../../styles/GlobalStyle";
+import GlobalStyle from "../../styles/GlobalStyle";
 
 interface ModalValidationProps {
   showModal: boolean;
@@ -8,11 +8,11 @@ interface ModalValidationProps {
   description: string;
 }
 
-import Button from "../../Button";
-import Box from "../../Box";
-import Text from "../../Text";
-import Spacer from "../../Spacer";
-import ClosedIcon from "../../../img/ClosedIcon.png";
+import Button from "../Button";
+import Box from "../Box";
+import Text from "../Text";
+import Spacer from "../Spacer";
+import ClosedIcon from "../../img/ClosedIcon.png";
 import {
   MainContainerModal,
   TopContainerInModal,
@@ -20,7 +20,7 @@ import {
   CenterHorizontalContainer,
   MainContainerInModal,
   BottomContainerInModal,
-} from "../../../utils/Containers";
+} from "../../utils/Containers";
 
 function ModalValidation({
   showModal,
@@ -66,7 +66,10 @@ function ModalValidation({
                   hover
                   onClick={() => setShowModal(false)}
                 >
-                  <Text variant="body1" color="white"> Confirmar </Text>
+                  <Text variant="body1" color="white">
+                    {" "}
+                    Confirmar{" "}
+                  </Text>
                 </Button>
               </BottomContainerInModal>
             </CenterHorizontalContainer>

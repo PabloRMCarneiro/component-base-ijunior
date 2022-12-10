@@ -18,6 +18,7 @@ export const MainContainerModal = styled.div`
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
+  z-index: 50;
 `;
 
 export const TopContainerInModal = styled.div`
@@ -62,7 +63,7 @@ export const CenterHorizontalContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  `;
+`;
 
 export const CenterVerticalContainer = styled.div`
   width: 100%;
@@ -82,7 +83,8 @@ export const LineVertical = styled.div`
   width: 0.8px;
   height: 90%;
   background-color: #c4c4c4;
-`
+`;
+
 export const MainAceessContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -94,9 +96,11 @@ export const MainAceessContainer = styled.div`
 export const RightAccessContainer = styled.div`
   width: calc(50% - 0.8px);
   height: 100%;
+  padding: 0px 3rem;
 `;
 
 export const LeftAccessContainer = styled.div`
   width: calc(50% - 0.8px);
   height: 100%;
+  padding: 0px 3rem;
 `;

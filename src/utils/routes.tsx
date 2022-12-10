@@ -10,6 +10,8 @@ import BoxPage from "../pages/BoxPage";
 import ModalPage from "../pages/ModalPage"
 import LoginPage from "../pages/LoginPage";
 
+import ForgotYourPasswordPage from "../pages/ForgotYourPasswordPage";
+
 function routes() {
   return (
     <Router>
@@ -20,6 +22,7 @@ function routes() {
         <Route path="/box" element={<BoxPage />} />
         <Route path="/modal" element={<ModalPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/esqueceu-sua-senha" element={<ForgotYourPasswordPage />} />
       </Routes>
     </Router>
   );

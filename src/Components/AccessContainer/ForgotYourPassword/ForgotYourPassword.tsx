@@ -24,21 +24,15 @@ import {
   CenterContainer,
 } from "../../../utils/Containers";
 
-function Login() {
+function ForgotYourPassword() {
   const navigate = useNavigate();
 
   const emailTest: string = "teste@gmail.com";
-  const passwordTest: string = "123456";
 
   const [email, setEmail] = useState(" ");
   const HandleEmail = (e: React.ChangeEvent<HTMLInputElement>) =>
     setEmail(e.target.value);
   const [modalEmail, setModalEmail] = useState(false);
-
-  const [password, setPassword] = useState(" ");
-  const HandlePassowrd = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setPassword(e.target.value);
-  const [modalPassword, setModalPassword] = useState(false);
 
   const validateEmail = (email: string): boolean => {
     if (email === "" || email !== emailTest) {
@@ -48,36 +42,20 @@ function Login() {
     return true;
   };
 
-  const validatePassword = (password: string): boolean => {
-    if (password === "" || password !== passwordTest) {
-      setModalPassword(true);
-      return false;
-    }
-    return true;
-  };
-
   const HandleSubmit = () => {
-    if (validateEmail(email) && validatePassword(password)) navigate("/");
+    if (validateEmail(email)) navigate("/");
   };
 
   return (
     <>
-      {(modalEmail && (
+      {modalEmail && (
         <ModalValidation
           showModal={modalEmail}
           setShowModal={setModalEmail}
           title="Email inválido !"
           description="O email informado é inválido, tente novamente."
         />
-      )) ||
-        (modalPassword && (
-          <ModalValidation
-            showModal={modalPassword}
-            setShowModal={setModalPassword}
-            title="Senha inválida !"
-            description="A senha informada é inválida, tente novamente."
-          />
-        ))}
+      )}
       <MainContainer style={{ flexDirection: "row" }}>
         <GlobalStyle />
         <Box
@@ -95,8 +73,13 @@ function Login() {
             <LineVertical />
             <LeftAccessContainer>
               <CenterHorizontalContainer>
-                <Spacer vertical="15" />
-                <Text variant="h3">Login</Text>
+                <Spacer vertical="20" />
+                <Text variant="h3">Esqueceu sua senha?</Text>
+                <Spacer vertical="8" />
+                <Text variant="legenda" center>
+                  Basta inserir seu endereço de e-mail profissional abaixo e
+                  enviaremos um código para redefinir sua senha!
+                </Text>
                 <Spacer vertical="14" />
                 <Input
                   size="2sm"
@@ -104,14 +87,6 @@ function Login() {
                   type="email"
                   center
                   onChange={(e) => HandleEmail(e)}
-                />
-                <Spacer vertical="9" />
-                <Input
-                  size="2sm"
-                  placeholder="Senha"
-                  type="password"
-                  center
-                  onChange={(e) => HandlePassowrd(e)}
                 />
                 <Spacer vertical="12" />
                 <Button
@@ -121,15 +96,15 @@ function Login() {
                   onClick={() => HandleSubmit()}
                 >
                   <Text variant="body1" bold>
-                    Entrar
+                    Redenifir senha
                   </Text>
                 </Button>
                 <Spacer vertical="11" />
                 <LineHorizontal />
                 <Spacer vertical="7" />
-                <Link path="/esqueceu-sua-senha">
+                <Link path="/login">
                   <Text variant="body2" color="primary" hover>
-                    Esqueceu a senha?
+                  Já tem uma conta? Faça login
                   </Text>
                 </Link>
                 <Spacer vertical="4" />
@@ -147,4 +122,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default ForgotYourPassword;
