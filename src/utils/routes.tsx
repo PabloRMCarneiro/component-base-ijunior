@@ -11,6 +11,9 @@ import ModalPage from "../pages/ModalPage"
 import LoginPage from "../pages/LoginPage";
 
 import ForgotYourPasswordPage from "../pages/ForgotYourPasswordPage";
+import CheckYourEmailPage from "../pages/CheckYourEmailPage";
+
+import NewPasswordPage from "../pages/NewPasswordPage";
 
 function routes() {
   return (
@@ -23,6 +26,8 @@ function routes() {
         <Route path="/modal" element={<ModalPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/esqueceu-sua-senha" element={<ForgotYourPasswordPage />} />
+        <Route path="/verifique-seu-email" element={<CheckYourEmailPage />} />
+        <Route path="/redefinir-senha" element={<NewPasswordPage />} />
       </Routes>
     </Router>
   );
