@@ -1,6 +1,6 @@
-import React from 'react'
-import styled, {css, ThemeProvider} from 'styled-components';
-import {theme} from '../styles/theme';
+import React from "react";
+import styled, { css, ThemeProvider } from "styled-components";
+import { theme } from "../styles/theme";
 
 interface TextProps {
   variant: string;
@@ -9,20 +9,34 @@ interface TextProps {
   color?: string;
   onClick?: () => void;
   textAlign?: boolean;
+  hover?: boolean;
 }
 
 export const TextComponent = styled.p<TextProps>`
-  font-size: ${(props) => props.theme.theme.text[props.variant || "h3"].fontSize};
-  line-height: ${(props) => props.theme.theme.text[props.variant || "h3"].lineHeight};
+  font-size: ${(props) =>
+    props.theme.theme.text[props.variant || "h3"].fontSize};
+  line-height: ${(props) =>
+    props.theme.theme.text[props.variant || "h3"].lineHeight};
   font-family: ${(props) => props.theme.theme.text.fontFamily};
   color: ${(props) => props.theme.theme.colors[props.color || "none"]};
+  transition: 0.4s ease-in-out;
+  &:hover {
+    ${(props) => {
+      if (props.hover) {
+        return css`
+          cursor: pointer;
+          color: ${props.theme.theme.colors[props.color + "LightHover"]};
+        `;
+      }
+    }}
+  }
   ${(props) => {
-    if(props.bold){
+    if (props.bold) {
       return css`
         font-weight: bold;
       `;
     }
-    if(props.textAlign){
+    if (props.textAlign) {
       return css`
         text-align: justify;
       `;
@@ -39,11 +53,12 @@ function Text(props: TextProps) {
         color={props.color}
         onClick={props.onClick}
         textAlign={props.textAlign}
+        hover={props.hover}
       >
         {props.children}
       </TextComponent>
     </ThemeProvider>
-    )
+  );
 }
 
-export default Text
+export default Text;

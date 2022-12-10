@@ -8,12 +8,14 @@ interface BoxProps {
   children?: React.ReactNode;
   rounded?: boolean;
   extraRounded?: boolean;
+  shadow?: string;
 }
 
 const BoxComponent = styled.div<BoxProps>`
   width: ${(props) => props.theme.theme.box.sizes[props.size][0]};
   height: ${(props) => props.theme.theme.box.sizes[props.size][1]};
   background-color: ${(props) => props.theme.theme.colors[props.backgroundColor || "primary"]};
+  box-shadow: ${(props) => props.theme.theme.shadows[props.shadow || "none"]};
   ${(props) => {
     if (props.rounded) {
       return css`
@@ -36,6 +38,7 @@ function Box(props: BoxProps) {
         backgroundColor={props.backgroundColor}
         rounded={props.rounded}
         extraRounded={props.extraRounded}
+        shadow={props.shadow}
       >
         {props.children}
       </BoxComponent>

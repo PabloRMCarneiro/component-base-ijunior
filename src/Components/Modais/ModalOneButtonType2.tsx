@@ -21,6 +21,8 @@ import {
   BottomContainerInModal,
 } from "../../utils/Containers";
 
+export var ModalOneButtonType2Input: string = "";
+
 function ModalOneButtonType2({
   showModal,
   setShowModal,
@@ -73,7 +75,7 @@ function ModalOneButtonType2({
                   hover
                   onClick={() => {
                     setShowModal(false);
-                    console.log(inputValue);
+                    ModalOneButtonType2Input = inputValue;
                   }}
                 >
                   <Text variant="h4"> Confirmar </Text>

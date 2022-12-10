@@ -15,48 +15,60 @@ function Home() {
     <MainContainer>
       <GlobalStyle />
       <Button
-        size="md"
+        size="2xs"
         color="primary"
         hover
         onClick={() => navigate("/buttons")}
       >
-        <Text variant="h3" color="white">
+        <Text variant="h4">
           Button
         </Text>
       </Button>
       <Spacer vertical="18" />
       <Button
-        size="md"
+        size="2xs"
         color="primary"
         hover
         onClick={() => navigate("/spacer")}
       >
-        <Text variant="h3" color="white">
+        <Text variant="h4">
           Spacer
         </Text>
       </Button>
 
       <Spacer vertical="18" />
       <Button
-        size="md"
+        size="2xs"
         color="primary"
         hover
         onClick={() => navigate("/box")}
       >
-        <Text variant="h3" color="white">
+        <Text variant="h4">
           Box
         </Text>
       </Button>
 
       <Spacer vertical="18" />
       <Button
-        size="md"
+        size="2xs"
         color="primary"
         hover
         onClick={() => navigate("/modal")}
       >
-        <Text variant="h3" color="white">
+        <Text variant="h4">
           Modal
+        </Text>
+      </Button>
+
+      <Spacer vertical="18" />
+      <Button
+        size="2xs"
+        color="primary"
+        hover
+        onClick={() => navigate("/login")}
+      >
+        <Text variant="h4">
+          Login
         </Text>
       </Button>
     </MainContainer>

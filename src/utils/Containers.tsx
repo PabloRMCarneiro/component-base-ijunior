@@ -1,10 +1,10 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   align-items: center;
   justify-content: center;
 `;
@@ -34,7 +34,7 @@ export const MainContainerInModal = styled.div`
   display: flex;
   flex-direction: column;
   width: calc(100% - 40px);
-  height: 50%;
+  height: 60%;
   align-items: center;
   padding: 20px 20px;
 `;
@@ -62,7 +62,7 @@ export const CenterHorizontalContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
+  `;
 
 export const CenterVerticalContainer = styled.div`
   width: 100%;
@@ -73,7 +73,30 @@ export const CenterVerticalContainer = styled.div`
 `;
 
 export const LineHorizontal = styled.div`
-  width: calc(100% - 50px);
+  width: 85%;
   height: 0.8px;
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
+`;
+
+export const LineVertical = styled.div`
+  width: 0.8px;
+  height: 90%;
+  background-color: #c4c4c4;
+`
+export const MainAceessContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const RightAccessContainer = styled.div`
+  width: calc(50% - 0.8px);
+  height: 100%;
+`;
+
+export const LeftAccessContainer = styled.div`
+  width: calc(50% - 0.8px);
+  height: 100%;
 `;

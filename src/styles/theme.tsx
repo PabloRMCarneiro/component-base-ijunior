@@ -1,33 +1,45 @@
 export const theme ={
   colors: {
-    primaryLight: '#e6f4ff',
-    primaryLightHover: '#bae0ff', 
-    primaryLightActive: '#91caff', 
-    primaryLightContrast: '#69b1ff', 
+    primaryLightActive: '#EDF5FF', 
+    primaryLightHover: '#91caff', 
     primary: '#4096ff',
     primaryBorder: '#1677ff',
-    primaryBorderHover: '#0958d9',
     primarySolidHover: '#003eb3',
-    primarySolidContrast: '#002c8c', 
-    primaryShadow: '#001d66',
 
+    sucessLightActive: '#F1FDF7',
+    sucessLightHover: '#ADF5CC',
+    sucess: '#17C964',
+    sucessBorder: '#13A452',
+    sucessSolidHover: '#108944',
+
+    warningLightActive: '#FFF9F1',
+    warningLightHover: '#ffe1b6',
+    warning: '#FFB800',
+    warningBorder: '#FFA500',
+    warningSolidHover: '#FF8C00',
+    
+    dangerLightActive: '#fff5f5',
+    dangerLightHover: '#ffdcdc',
+    danger: '#ff1f1f',
+    dangerBorder: '#c91414',
+    dangerSolidHover: '#9c0000',
+    
+    
+    bgLogin: '#F9F9F9',
     white: '#ffffff',
     black: '#000000',
     red: '#ff0000',
     greyLight: '#F2F2F2',
     grey: '#a5a5a5',
+    greySolid: '#656565',
   },
   borderRadius: {
     r: '0.625rem',
     xr: '1.563rem'
   },
   shadows: {
-    xs: '0 2px 8px 1px rgb(0 0 0 / 0.07), 0 1px 1px -1px rgb(0 0 0 / 0.04)',
-    sm: '0 2px 8px 2px rgb(0 0 0 / 0.07), 0 2px 4px -1px rgb(0 0 0 / 0.04)',
-    md: '0 12px 20px 6px rgb(0 0 0 / 0.08)',
-    lg: '0 12px 34px 6px rgb(0 0 0 / 0.18)',
-    xl: '2px 2px 15px rgba(0, 0, 0, 0.6);',
-    none: "none",
+    button: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+    accessContainer: '0px 0px 84px rgba(0, 0, 0, 0.15)',
   },
   spacing: {
     '-9': '-2.25rem',
@@ -87,12 +99,12 @@ export const theme ={
     96: '24rem'
   },
   buttonSizes: {
-    sm: ['186px', '45px'],
-    xs: ['228px', '45px'],
-    '2xs': ['372px', '45px'],
-    md: ['228px', '62px'],
-    lg: ['372px', '59px'],
-    xmd: ['277px', '48px'],
+    sm: ['186px', '43px'],
+    xs: ['140px', '43px'],
+    '2xs': ['344px', '43px'],
+    md: ['548px', '43px'],
+    lg: ['752px', '43px'],
+    xlg: ['955px', '43px'],
   },
   text: {
     fontFamily: 'Roboto, sans-serif',
@@ -140,14 +152,23 @@ export const theme ={
       modalSizeType3: ['450px', '400px'],
       modalSizeType4: ['450px', '440px'],
       modalSizeType5: ['500px', '850px'],
+      accessContainer: ['894px', '524px'],
     }
   },
   input: {
     sizes: {
       sm: ['186px', '60px'],
+      '2sm': ['348px', '50px'],
       xs: ['372px', '80px'],
       '2xs': ['372px', '120px'],
       md: ['228px', '150px'],
+    },
+    placeholderSizes: {
+      sm: '1rem',
+      '2sm': '1.1rem',
+      xs: '1.2rem',
+      '2xs': '1.3rem',
+      md: '1.4rem',
     }
   }
 }

@@ -1,16 +1,15 @@
 import React from "react";
-import GlobalStyle from "../styles/GlobalStyle";
+import GlobalStyle from "../../styles/GlobalStyle";
 
 interface ModalType4Props {
   showModal: boolean;
   setShowModal: (showModal: boolean) => void;
 }
 
-import Button from "./Button";
-import Box from "./Box";
-import Text from "./Text";
-import Spacer from "./Spacer";
-import ClosedIcon from "../img/ClosedIcon.png";
+import Box from "../Box";
+import Text from "../Text";
+import Spacer from "../Spacer";
+import ClosedIcon from "../../img/ClosedIcon.png";
 import {
   MainContainerModal,
   TopContainerInModal,
@@ -18,13 +17,9 @@ import {
   CenterHorizontalContainer,
   MainContainerInModal,
   BottomContainerInModal,
-} from "../utils/Containers";
+} from "../../utils/Containers";
 
-function ModalType4({
-  showModal,
-  setShowModal,
-}: ModalType4Props) {
-  
+function ModalType4({ showModal, setShowModal }: ModalType4Props) {
   return (
     <>
       {showModal ? (
@@ -51,8 +46,15 @@ function ModalType4({
               <Spacer vertical="6" />
               <LineHorizontal />
               <MainContainerInModal>
-                <Text variant="body1" textAlign>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita excepturi sint praesentium, sit optio ullam sed iusto voluptate possimus, quasi nulla modi qui culpa nobis consectetur voluptatum minima facere magnam? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis atque vero porro aperiam aliquid quisquam quas neque, quis perferendis ea velit nulla. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime at eaque commodi ut.
+                <Text variant="body1" color="greySolid" textAlign>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Expedita excepturi sint praesentium, sit optio ullam sed iusto
+                  voluptate possimus, quasi nulla modi qui culpa nobis
+                  consectetur voluptatum minima facere magnam? Lorem ipsum dolor
+                  sit amet consectetur, adipisicing elit. Debitis atque vero
+                  porro aperiam aliquid quisquam quas neque, quis perferendis ea
+                  velit nulla. Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Maxime at eaque commodi ut.
                 </Text>
               </MainContainerInModal>
             </CenterHorizontalContainer>

@@ -6,6 +6,7 @@ interface InputProps {
   size: string;
   type: string;
   placeholder: string;
+  center?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -23,10 +24,21 @@ const InputComponent = styled.input.attrs((props)=>
     outline: none;
   };
   &::placeholder {
-    white-space:pre-line;  
     position:relative;
-    top:-35%;
     color: ${(props) => props.theme.theme.colors["grey"]};
+    font-size: ${(props) => props.theme.theme.input.placeholderSizes[props.size]};
+    ${(props) => {
+      if (props.center) {
+        return css`
+          top: 0;
+        `;
+      }
+      else{
+        return css`
+          top: -35%;
+        `;
+      }
+    }}
   };
 `;
 
@@ -38,6 +50,7 @@ function Input(props: InputProps) {
         type={props.type}
         placeholder={props.placeholder}
         onChange={props.onChange}
+        center={props.center}
       />
     </ThemeProvider>
     )

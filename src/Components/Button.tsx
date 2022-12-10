@@ -8,7 +8,6 @@ interface ButtonProps {
   color?: string;
   hover?: boolean;
   bordered?: boolean;
-  shadow?: string;
   children?: React.ReactNode;
   extraRounded?: boolean;
 }
@@ -20,23 +19,29 @@ export const ButtonComponent = styled.button<ButtonProps>`
   font-weight: ${(props) => props.theme.theme.font?.fontWeight};
   border: none;
   cursor: pointer;
+  box-shadow: ${(props) => props.theme.theme.shadows.button};
   transition: 0.4s ease-in-out;
-  box-shadow: ${(props) => props.theme.theme.shadows[props.shadow || "none"]};
   border-radius: ${(props) => props.theme.theme.borderRadius.r};
+  color:${(props) => props.theme.theme.colors[props.color+'LightActive']};
   &:hover {
     ${(props) => {
       if (props.hover) {
         return css`
-          background-color: ${props.theme.theme.colors[props.color+'LightHover']};
-          color: ${props.theme.theme.colors[props.color+'SolidHover']};
+          background-color: ${props.theme.theme.colors[props.color+'Border']};
+          color: ${props.theme.theme.colors[props.color+'LightHover']};
         `;
         }
       }
     }
   }
   &:active {
-    background-color: ${(props) => props.theme.theme.colors[props.color || "primary"]};
-    transform: scale(0.95);
+    ${(props) =>{
+      return css`
+        background-color: ${props.theme.theme.colors[props.color+'SolidHover']};
+        transform: scale(0.95);
+        border: none;
+      `;
+    }}
   }
   &:focus {
     outline: none;
@@ -54,6 +59,7 @@ export const ButtonComponent = styled.button<ButtonProps>`
         border-radius: ${props.theme.theme.borderRadius.xr};
       `;
     }
+    
   }}
 `;
 
@@ -66,7 +72,6 @@ function Button(props: ButtonProps) {
         extraRounded={props.extraRounded}
         hover={props.hover}
         bordered={props.bordered}
-        shadow={props.shadow}
         onClick={props.onClick}
       >
         {props.children}

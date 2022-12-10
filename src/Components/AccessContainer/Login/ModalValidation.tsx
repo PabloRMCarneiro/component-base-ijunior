@@ -1,16 +1,18 @@
 import React from "react";
-import GlobalStyle from "../../styles/GlobalStyle";
+import GlobalStyle from "../../../styles/GlobalStyle";
 
-interface ModalTwoButtonsType1Props {
+interface ModalValidationProps {
   showModal: boolean;
   setShowModal: (showModal: boolean) => void;
+  title: string;
+  description: string;
 }
 
-import Button from "../Button";
-import Box from "../Box";
-import Text from "../Text";
-import Spacer from "../Spacer";
-import ClosedIcon from "../../img/ClosedIcon.png";
+import Button from "../../Button";
+import Box from "../../Box";
+import Text from "../../Text";
+import Spacer from "../../Spacer";
+import ClosedIcon from "../../../img/ClosedIcon.png";
 import {
   MainContainerModal,
   TopContainerInModal,
@@ -18,13 +20,14 @@ import {
   CenterHorizontalContainer,
   MainContainerInModal,
   BottomContainerInModal,
-} from "../../utils/Containers";
+} from "../../../utils/Containers";
 
-function ModalTwoButtonsType1({
+function ModalValidation({
   showModal,
   setShowModal,
-}: ModalTwoButtonsType1Props) {
-  
+  title,
+  description,
+}: ModalValidationProps) {
   return (
     <>
       {showModal ? (
@@ -33,9 +36,9 @@ function ModalTwoButtonsType1({
           <Box size="modalSizeType1" rounded backgroundColor="white">
             <CenterHorizontalContainer>
               <TopContainerInModal>
-                <Text variant="body1" bold color="primary">
+                <Text variant="body1" bold color="danger">
                   {" "}
-                  Item não salvo !{" "}
+                  {title}{" "}
                 </Text>
                 <img
                   src={ClosedIcon}
@@ -52,28 +55,18 @@ function ModalTwoButtonsType1({
               <LineHorizontal />
               <MainContainerInModal>
                 <Text variant="h4" color="greySolid">
-                  O item modificado não foi salvo, o que deseja fazer?
+                  {description}
                 </Text>
               </MainContainerInModal>
               <LineHorizontal />
               <BottomContainerInModal>
                 <Button
-                  size="sm"
-                  color="primary"
-                  bordered
+                  size="2xs"
+                  color="danger"
                   hover
                   onClick={() => setShowModal(false)}
                 >
-                  <Text variant="body1"> Sair </Text>
-                </Button>
-                <Spacer horizontal="6" />
-                <Button
-                  size="sm"
-                  color="primary"
-                  hover
-                  onClick={() => setShowModal(false)}
-                >
-                  <Text variant="body1"> Continuar </Text>
+                  <Text variant="body1" color="white"> Confirmar </Text>
                 </Button>
               </BottomContainerInModal>
             </CenterHorizontalContainer>
@@ -84,4 +77,4 @@ function ModalTwoButtonsType1({
   );
 }
 
-export default ModalTwoButtonsType1;
+export default ModalValidation;
