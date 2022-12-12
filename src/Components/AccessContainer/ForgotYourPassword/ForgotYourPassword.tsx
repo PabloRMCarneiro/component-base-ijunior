@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import GlobalStyle from "../../../styles/GlobalStyle";
 import { useNavigate } from "react-router-dom";
+import { BiArrowBack } from "react-icons/bi";
+import { theme } from "../../../styles/theme";
 
 import Button from "../../Button";
 import Box from "../../Box";
@@ -65,10 +67,21 @@ function ForgotYourPassword() {
           shadow="accessContainer"
         >
           <MainAceessContainer>
-            <RightAccessContainer>
-              <CenterContainer>
-                <img src={Logo} alt="" />
-              </CenterContainer>
+          <RightAccessContainer style={{ flexDirection: "column" }}>
+              <Spacer vertical="12" />
+              <BiArrowBack
+                style={{ width: "3rem", height: "3rem", cursor: "pointer" }}
+                color={theme.colors.grey}
+                onClick={() => navigate("/login")}
+              />
+              <CenterHorizontalContainer>
+                <Spacer vertical="16" />
+                <img
+                  src={Logo}
+                  alt=""
+                  style={{ width: "222px", height: "229px" }}
+                />
+              </CenterHorizontalContainer>
             </RightAccessContainer>
             <LineVertical />
             <LeftAccessContainer>

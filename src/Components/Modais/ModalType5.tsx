@@ -1,6 +1,7 @@
 import React from "react";
 import GlobalStyle from "../../styles/GlobalStyle";
-
+import { AiOutlineClose } from "react-icons/ai";
+import { theme } from "../../styles/theme";
 interface ModalType5Props {
   showModal: boolean;
   setShowModal: (showModal: boolean) => void;
@@ -8,15 +9,13 @@ interface ModalType5Props {
 
 import Box from "../Box";
 import Text from "../Text";
-import Spacer from "../Spacer";
-import ClosedIcon from "../../img/ClosedIcon.png";
+
 import {
   MainContainerModal,
   TopContainerInModal,
   LineHorizontal,
   CenterHorizontalContainer,
   MainContainerInModal,
-  BottomContainerInModal,
 } from "../../utils/Containers";
 
 function ModalType5({ showModal, setShowModal }: ModalType5Props) {
@@ -32,14 +31,13 @@ function ModalType5({ showModal, setShowModal }: ModalType5Props) {
                   {" "}
                   Modal Informativo 2!{" "}
                 </Text>
-                <img
-                  src={ClosedIcon}
-                  alt="ClosedIcon"
+                <AiOutlineClose
                   style={{
                     width: "18px",
                     height: "18px",
                     cursor: "pointer",
                   }}
+                  color={theme.colors.grey}
                   onClick={() => setShowModal(false)}
                 />
               </TopContainerInModal>
@@ -68,8 +66,7 @@ function ModalType5({ showModal, setShowModal }: ModalType5Props) {
                   elit. Ducimus explicabo officiis distinctio quos voluptates
                   ipsum unde omnis exercitationem excepturi blanditiis animi
                   perferendis. Voluptas doloremque hic omnis ab ipsum accusamus?
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ipsum veritatis corrupti tenetur excepturi iste rerum vero velit aspernatur modi voluptatibus nisi sit, repellendus dolorem blanditiis fugit labore suscipit libero!
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum fugiat, eos quia dicta, est totam soluta temporibus officia volupta
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci saepe nesciunt vitae quod, ducimus consequuntur eveniet assumenda, molestiae, quo doloremque ad consectetur ab dolorum in tempore sit dolore sed architecto.
                 </Text>
               </MainContainerInModal>
             </CenterHorizontalContainer>

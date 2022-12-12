@@ -32,7 +32,7 @@ function ButtonPage() {
           bordered
           hover
         >
-          <Text variant="body1" >Hello World</Text>
+          <Text variant="body2" bold >Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -41,7 +41,7 @@ function ButtonPage() {
           color="primary"
           hover
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -51,7 +51,7 @@ function ButtonPage() {
           hover
           bordered
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -60,7 +60,7 @@ function ButtonPage() {
           color="primary"
           hover
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -70,7 +70,7 @@ function ButtonPage() {
           bordered
           hover
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -79,7 +79,7 @@ function ButtonPage() {
           color="primary"
           hover
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -90,7 +90,7 @@ function ButtonPage() {
           bordered
           hover
         >
-          <Text variant="body1" >Hello World</Text>
+          <Text variant="body2" bold >Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -99,7 +99,7 @@ function ButtonPage() {
           color="sucess"
           hover
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -109,7 +109,7 @@ function ButtonPage() {
           hover
           bordered
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -118,7 +118,7 @@ function ButtonPage() {
           color="sucess"
           hover
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -128,7 +128,7 @@ function ButtonPage() {
           bordered
           hover
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -137,7 +137,7 @@ function ButtonPage() {
           color="sucess"
           hover
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -148,7 +148,7 @@ function ButtonPage() {
           bordered
           hover
         >
-          <Text variant="body1" >Hello World</Text>
+          <Text variant="body2" bold >Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -157,7 +157,7 @@ function ButtonPage() {
           color="warning"
           hover
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -167,7 +167,7 @@ function ButtonPage() {
           hover
           bordered
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -176,7 +176,7 @@ function ButtonPage() {
           color="warning"
           hover
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -186,7 +186,7 @@ function ButtonPage() {
           bordered
           hover
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -195,7 +195,7 @@ function ButtonPage() {
           color="warning"
           hover
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -206,7 +206,7 @@ function ButtonPage() {
           bordered
           hover
         >
-          <Text variant="body1" >Hello World</Text>
+          <Text variant="body2" bold >Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -215,7 +215,7 @@ function ButtonPage() {
           color="danger"
           hover
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -225,7 +225,7 @@ function ButtonPage() {
           hover
           bordered
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -234,7 +234,7 @@ function ButtonPage() {
           color="danger"
           hover
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -244,7 +244,7 @@ function ButtonPage() {
           bordered
           hover
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />
@@ -253,7 +253,7 @@ function ButtonPage() {
           color="danger"
           hover
         >
-          <Text variant="body1">Hello World</Text>
+          <Text variant="body2" bold>Hello World</Text>
         </Button>
 
         <Spacer vertical="18" />

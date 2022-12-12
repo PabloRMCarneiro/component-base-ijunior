@@ -1,6 +1,7 @@
 import React from "react";
 import GlobalStyle from "../../styles/GlobalStyle";
-
+import { AiOutlineClose } from "react-icons/ai";
+import { theme } from "../../styles/theme";
 interface ModalOneButtonType1Props {
   showModal: boolean;
   setShowModal: (showModal: boolean) => void;
@@ -9,8 +10,7 @@ interface ModalOneButtonType1Props {
 import Button from "../Button";
 import Box from "../Box";
 import Text from "../Text";
-import Spacer from "../Spacer";
-import ClosedIcon from "../../img/ClosedIcon.png";
+
 import {
   MainContainerModal,
   TopContainerInModal,
@@ -36,14 +36,13 @@ function ModalOneButtonType1({
                   {" "}
                   Email já cadastrado!{" "}
                 </Text>
-                <img
-                  src={ClosedIcon}
-                  alt="ClosedIcon"
+                <AiOutlineClose
                   style={{
                     width: "18px",
                     height: "18px",
                     cursor: "pointer",
                   }}
+                  color={theme.colors.grey}
                   onClick={() => setShowModal(false)}
                 />
               </TopContainerInModal>
@@ -62,7 +61,10 @@ function ModalOneButtonType1({
                   hover
                   onClick={() => setShowModal(false)}
                 >
-                  <Text variant="body2" bold color="white"> Confirmar </Text>
+                  <Text variant="body2" bold color="white">
+                    {" "}
+                    Confirmar{" "}
+                  </Text>
                 </Button>
               </BottomContainerInModal>
             </CenterHorizontalContainer>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import GlobalStyle from "../../styles/GlobalStyle";
-
+import { AiOutlineClose } from "react-icons/ai";
+import { theme } from "../../styles/theme";
 interface ModalTwoButtonsType2Props {
   showModal: boolean;
   setShowModal: (showModal: boolean) => void;
@@ -11,7 +12,7 @@ import Box from "../Box";
 import Text from "../Text";
 import Spacer from "../Spacer";
 import Input from "../Input";
-import ClosedIcon from "../../img/ClosedIcon.png";
+
 import {
   MainContainerModal,
   TopContainerInModal,
@@ -25,7 +26,6 @@ function ModalTwoButtonsType2({
   showModal,
   setShowModal,
 }: ModalTwoButtonsType2Props) {
-  
   const [inputValue, setInputValue] = useState("");
   const HandleInputValue = (e: React.ChangeEvent<HTMLInputElement>) =>
     setInputValue(e.target.value);
@@ -42,14 +42,13 @@ function ModalTwoButtonsType2({
                   {" "}
                   Adicionar fonte{" "}
                 </Text>
-                <img
-                  src={ClosedIcon}
-                  alt="ClosedIcon"
+                <AiOutlineClose
                   style={{
                     width: "18px",
                     height: "18px",
                     cursor: "pointer",
                   }}
+                  color={theme.colors.grey}
                   onClick={() => setShowModal(false)}
                 />
               </TopContainerInModal>
@@ -60,7 +59,7 @@ function ModalTwoButtonsType2({
                   size="sm"
                   type="text"
                   placeholder="Insira a para adicionar uma fonte à resposta da pergunta referente ao item do checkbox."
-                  onChange={(e:any) => HandleInputValue(e)}
+                  onChange={(e: any) => HandleInputValue(e)}
                 />
               </MainContainerInModal>
               <Spacer vertical="6" />
@@ -76,7 +75,10 @@ function ModalTwoButtonsType2({
                     console.log(inputValue);
                   }}
                 >
-                  <Text variant="body2" bold> Sair </Text>
+                  <Text variant="body2" bold>
+                    {" "}
+                    Sair{" "}
+                  </Text>
                 </Button>
                 <Spacer horizontal="12" />
                 <Button
@@ -88,7 +90,10 @@ function ModalTwoButtonsType2({
                     console.log(inputValue);
                   }}
                 >
-                  <Text variant="body2" bold> Confirmar </Text>
+                  <Text variant="body2" bold>
+                    {" "}
+                    Confirmar{" "}
+                  </Text>
                 </Button>
               </BottomContainerInModal>
             </CenterHorizontalContainer>

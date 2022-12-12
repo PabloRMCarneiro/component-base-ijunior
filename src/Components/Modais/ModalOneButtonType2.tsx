@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import GlobalStyle from "../../styles/GlobalStyle";
-
+import { AiOutlineClose } from "react-icons/ai";
+import { theme } from "../../styles/theme";
 interface ModalOneButtonType2Props {
   showModal: boolean;
   setShowModal: (showModal: boolean) => void;
@@ -9,9 +10,8 @@ interface ModalOneButtonType2Props {
 import Button from "../Button";
 import Box from "../Box";
 import Text from "../Text";
-import Spacer from "../Spacer";
 import Input from "../Input";
-import ClosedIcon from "../../img/ClosedIcon.png";
+
 import {
   MainContainerModal,
   TopContainerInModal,
@@ -27,7 +27,6 @@ function ModalOneButtonType2({
   showModal,
   setShowModal,
 }: ModalOneButtonType2Props) {
-  
   const [inputValue, setInputValue] = useState("");
   const HandleInputValue = (e: React.ChangeEvent<HTMLInputElement>) =>
     setInputValue(e.target.value);
@@ -44,14 +43,13 @@ function ModalOneButtonType2({
                   {" "}
                   Adicionar Resposta{" "}
                 </Text>
-                <img
-                  src={ClosedIcon}
-                  alt="ClosedIcon"
+                <AiOutlineClose
                   style={{
                     width: "18px",
                     height: "18px",
                     cursor: "pointer",
                   }}
+                  color={theme.colors.grey}
                   onClick={() => setShowModal(false)}
                 />
               </TopContainerInModal>
@@ -76,7 +74,10 @@ function ModalOneButtonType2({
                     ModalOneButtonType2Input = inputValue;
                   }}
                 >
-                  <Text variant="body2" bold> Confirmar </Text>
+                  <Text variant="body2" bold>
+                    {" "}
+                    Confirmar{" "}
+                  </Text>
                 </Button>
               </BottomContainerInModal>
             </CenterHorizontalContainer>

@@ -92,13 +92,14 @@ export const MainAceessContainer = styled.div`
 `;
 
 export const RightAccessContainer = styled.div`
+  display: flex;
   width: calc(50% - 0.8px);
   height: 100%;
-  padding: 0px 3rem;
+  padding: 0px 2rem;
 `;
 
 export const LeftAccessContainer = styled.div`
   width: calc(50% - 0.8px);
   height: 100%;
-  padding: 0px 3rem;
+  padding: 0px 2rem;
 `;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import GlobalStyle from "../../styles/GlobalStyle";
-
+import { AiOutlineClose } from "react-icons/ai";
+import { theme } from "../../styles/theme";
 interface ModalOneButtonType3Props {
   showModal: boolean;
   setShowModal: (showModal: boolean) => void;
@@ -11,7 +12,7 @@ import Box from "../Box";
 import Text from "../Text";
 import Spacer from "../Spacer";
 import Input from "../Input";
-import ClosedIcon from "../../img/ClosedIcon.png";
+
 import {
   MainContainerModal,
   TopContainerInModal,
@@ -25,7 +26,6 @@ function ModalOneButtonType3({
   showModal,
   setShowModal,
 }: ModalOneButtonType3Props) {
-  
   const [input1Value, setInput1Value] = useState(""); // First input
   const [input2Value, setInput2Value] = useState(""); // Second input
 
@@ -46,18 +46,17 @@ function ModalOneButtonType3({
                   {" "}
                   Adicionar coluna{" "}
                 </Text>
-                <img
-                  src={ClosedIcon}
-                  alt="ClosedIcon"
+                <AiOutlineClose
                   style={{
                     width: "18px",
                     height: "18px",
                     cursor: "pointer",
                   }}
+                  color={theme.colors.grey}
                   onClick={() => setShowModal(false)}
                 />
               </TopContainerInModal>
-                <Spacer vertical="6" />
+              <Spacer vertical="6" />
               <LineHorizontal />
               <MainContainerInModal>
                 <Input
@@ -87,7 +86,10 @@ function ModalOneButtonType3({
                     console.log(input1Value, input2Value);
                   }}
                 >
-                  <Text variant="body2" bold> Confirmar </Text>
+                  <Text variant="body2" bold>
+                    {" "}
+                    Confirmar{" "}
+                  </Text>
                 </Button>
               </BottomContainerInModal>
             </CenterHorizontalContainer>

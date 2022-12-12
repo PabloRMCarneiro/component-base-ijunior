@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import GlobalStyle from "../../../styles/GlobalStyle";
 import { useNavigate } from "react-router-dom";
+import { BiArrowBack } from "react-icons/bi";
+import { theme } from "../../../styles/theme";
 
 import Button from "../../Button";
 import Box from "../../Box";
@@ -21,7 +23,6 @@ import {
   LeftAccessContainer,
   CenterHorizontalContainer,
   LineHorizontal,
-  CenterContainer,
 } from "../../../utils/Containers";
 
 function Login() {
@@ -87,16 +88,29 @@ function Login() {
           shadow="accessContainer"
         >
           <MainAceessContainer>
-            <RightAccessContainer>
-              <CenterContainer>
-                <img src={Logo} alt="" />
-              </CenterContainer>
+            <RightAccessContainer style={{ flexDirection: "column" }}>
+              <Spacer vertical="12" />
+              <BiArrowBack
+                style={{ width: "3rem", height: "3rem", cursor: "pointer" }}
+                color={theme.colors.grey}
+                onClick={() => navigate("/")}
+              />
+              <CenterHorizontalContainer>
+                <Spacer vertical="16" />
+                <img
+                  src={Logo}
+                  alt=""
+                  style={{ width: "222px", height: "229px" }}
+                />
+              </CenterHorizontalContainer>
             </RightAccessContainer>
             <LineVertical />
             <LeftAccessContainer>
               <CenterHorizontalContainer>
                 <Spacer vertical="15" />
-                <Text variant="h3">Login</Text>
+                <Text variant="h3" >
+                  Login
+                </Text>
                 <Spacer vertical="14" />
                 <Input
                   size="2sm"
@@ -120,7 +134,7 @@ function Login() {
                   hover
                   onClick={() => HandleSubmit()}
                 >
-                  <Text variant="body1" bold>
+                  <Text variant="body2" bold>
                     Entrar
                   </Text>
                 </Button>
