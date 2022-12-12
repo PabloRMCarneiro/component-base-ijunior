@@ -24,7 +24,6 @@ function ModalTwoButtonsType1({
   showModal,
   setShowModal,
 }: ModalTwoButtonsType1Props) {
-  
   return (
     <>
       {showModal ? (
@@ -48,32 +47,31 @@ function ModalTwoButtonsType1({
                   onClick={() => setShowModal(false)}
                 />
               </TopContainerInModal>
-              <Spacer vertical="6" />
               <LineHorizontal />
               <MainContainerInModal>
-                <Text variant="h4" color="greySolid">
+                <Text variant="body2" color="greySolid">
                   O item modificado não foi salvo, o que deseja fazer?
                 </Text>
               </MainContainerInModal>
               <LineHorizontal />
               <BottomContainerInModal>
                 <Button
-                  size="sm"
+                  size="xs"
                   color="primary"
                   bordered
                   hover
                   onClick={() => setShowModal(false)}
                 >
-                  <Text variant="body1"> Sair </Text>
+                  <Text variant="body2" bold> Sair </Text>
                 </Button>
-                <Spacer horizontal="6" />
+                <Spacer horizontal="12" />
                 <Button
-                  size="sm"
+                  size="xs"
                   color="primary"
                   hover
                   onClick={() => setShowModal(false)}
                 >
-                  <Text variant="body1"> Continuar </Text>
+                  <Text variant="body2" bold> Continuar </Text>
                 </Button>
               </BottomContainerInModal>
             </CenterHorizontalContainer>

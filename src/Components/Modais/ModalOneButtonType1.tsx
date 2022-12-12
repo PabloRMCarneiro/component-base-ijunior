@@ -47,10 +47,9 @@ function ModalOneButtonType1({
                   onClick={() => setShowModal(false)}
                 />
               </TopContainerInModal>
-              <Spacer vertical="6" />
               <LineHorizontal />
               <MainContainerInModal>
-                <Text variant="h4" color="greySolid">
+                <Text variant="body2" color="greySolid">
                   Já temos um cadastro com esse email. Por favor, use outro
                   email ou faça login caso já tenha um cadastro.
                 </Text>
@@ -63,7 +62,7 @@ function ModalOneButtonType1({
                   hover
                   onClick={() => setShowModal(false)}
                 >
-                  <Text variant="body1" color="white"> Confirmar </Text>
+                  <Text variant="body2" bold color="white"> Confirmar </Text>
                 </Button>
               </BottomContainerInModal>
             </CenterHorizontalContainer>

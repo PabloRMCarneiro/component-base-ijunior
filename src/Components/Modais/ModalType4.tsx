@@ -43,10 +43,9 @@ function ModalType4({ showModal, setShowModal }: ModalType4Props) {
                   onClick={() => setShowModal(false)}
                 />
               </TopContainerInModal>
-              <Spacer vertical="6" />
               <LineHorizontal />
               <MainContainerInModal>
-                <Text variant="body1" color="greySolid" justify>
+                <Text variant="body2" color="greySolid" justify>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Expedita excepturi sint praesentium, sit optio ullam sed iusto
                   voluptate possimus, quasi nulla modi qui culpa nobis
@@ -55,6 +54,8 @@ function ModalType4({ showModal, setShowModal }: ModalType4Props) {
                   porro aperiam aliquid quisquam quas neque, quis perferendis ea
                   velit nulla. Lorem ipsum dolor sit amet consectetur
                   adipisicing elit. Maxime at eaque commodi ut.
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, sint quaerat soluta placeat ad, laboriosam architecto atque autem iusto quos a aut adipisci quae voluptate ullam quasi pariatur. Quae, ducimus!
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, reiciendis? Natus vel consequatur provident enim! Dolor nam amet pariatur, officiis ullam quod reprehenderit et iusto, iste maxime ea vitae eligendi!
                 </Text>
               </MainContainerInModal>
             </CenterHorizontalContainer>

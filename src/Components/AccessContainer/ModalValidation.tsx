@@ -54,7 +54,7 @@ function ModalValidation({
               <Spacer vertical="6" />
               <LineHorizontal />
               <MainContainerInModal>
-                <Text variant="h4" color="greySolid">
+                <Text variant="body1" color="greySolid">
                   {description}
                 </Text>
               </MainContainerInModal>

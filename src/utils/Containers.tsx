@@ -23,27 +23,25 @@ export const MainContainerModal = styled.div`
 
 export const TopContainerInModal = styled.div`
   display: flex;
-  width: calc(100% - 40px);
-  height: 3rem;
+  width: 100%;
+  height: 4rem;
   align-items: center;
   padding: 20px 20px;
-  margin: 20px 20px 0px;
   justify-content: space-between;
 `;
 
 export const MainContainerInModal = styled.div`
   display: flex;
   flex-direction: column;
-  width: calc(100% - 40px);
-  height: 60%;
+  width: 100%;
+  height: 63%;
   align-items: center;
   padding: 20px 20px;
 `;
 
 export const BottomContainerInModal = styled.div`
   display: flex;
-  width: calc(100% - 40px);
-  height: 30%;
+  width: 100%;
   padding: 20px 20px;
   justify-content: center;
 `;
@@ -74,14 +72,14 @@ export const CenterVerticalContainer = styled.div`
 `;
 
 export const LineHorizontal = styled.div`
-  width: 85%;
+  width: 100%;
   height: 0.8px;
   background-color: #c4c4c4;
 `;
 
 export const LineVertical = styled.div`
   width: 0.8px;
-  height: 90%;
+  height: 100%;
   background-color: #c4c4c4;
 `;
 

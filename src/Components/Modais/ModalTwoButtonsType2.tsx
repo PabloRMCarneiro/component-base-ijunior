@@ -57,7 +57,7 @@ function ModalTwoButtonsType2({
               <LineHorizontal />
               <MainContainerInModal>
                 <Input
-                  size="2xs"
+                  size="sm"
                   type="text"
                   placeholder="Insira a para adicionar uma fonte à resposta da pergunta referente ao item do checkbox."
                   onChange={(e:any) => HandleInputValue(e)}
@@ -67,7 +67,7 @@ function ModalTwoButtonsType2({
               <LineHorizontal />
               <BottomContainerInModal>
                 <Button
-                  size="sm"
+                  size="xs"
                   color="primary"
                   bordered
                   hover
@@ -76,11 +76,11 @@ function ModalTwoButtonsType2({
                     console.log(inputValue);
                   }}
                 >
-                  <Text variant="body1"> Sair </Text>
+                  <Text variant="body2" bold> Sair </Text>
                 </Button>
-                <Spacer horizontal="6" />
+                <Spacer horizontal="12" />
                 <Button
-                  size="sm"
+                  size="xs"
                   color="primary"
                   hover
                   onClick={() => {
@@ -88,7 +88,7 @@ function ModalTwoButtonsType2({
                     console.log(inputValue);
                   }}
                 >
-                  <Text variant="body1"> Confirmar </Text>
+                  <Text variant="body2" bold> Confirmar </Text>
                 </Button>
               </BottomContainerInModal>
             </CenterHorizontalContainer>

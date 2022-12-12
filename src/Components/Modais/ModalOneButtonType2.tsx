@@ -55,17 +55,15 @@ function ModalOneButtonType2({
                   onClick={() => setShowModal(false)}
                 />
               </TopContainerInModal>
-              <Spacer vertical="6" />
               <LineHorizontal />
               <MainContainerInModal>
                 <Input
-                  size="2xs"
+                  size="sm"
                   type="text"
                   placeholder="Insira a para adicionar uma resposta à pergunta referente ao item do checkbox."
                   onChange={(e) => HandleInputValue(e)}
                 />
               </MainContainerInModal>
-              <Spacer vertical="6" />
               <LineHorizontal />
               <BottomContainerInModal>
                 <Button
@@ -78,7 +76,7 @@ function ModalOneButtonType2({
                     ModalOneButtonType2Input = inputValue;
                   }}
                 >
-                  <Text variant="h4"> Confirmar </Text>
+                  <Text variant="body2" bold> Confirmar </Text>
                 </Button>
               </BottomContainerInModal>
             </CenterHorizontalContainer>

@@ -60,14 +60,14 @@ function ModalTwoButtonsType3({
               <LineHorizontal />
               <MainContainerInModal>
                 <Input
-                  size="2xs"
+                  size="sm"
                   type="text"
                   placeholder="Insira o nome da coluna a ser adicionada."
                   onChange={(e) => HandleInput1Value(e)}
                 />
                 <Spacer vertical="10" />
                 <Input
-                  size="xs"
+                  size="sm"
                   type="text"
                   placeholder="Insira o valor da coluna."
                   onChange={(e) => HandleInput2Value(e)}
@@ -77,7 +77,7 @@ function ModalTwoButtonsType3({
               <LineHorizontal />
               <BottomContainerInModal>
                 <Button
-                  size="sm"
+                  size="xs"
                   color="primary"
                   bordered
                   hover
@@ -86,11 +86,11 @@ function ModalTwoButtonsType3({
                     console.log(input1Value, input2Value);
                   }}
                 >
-                  <Text variant="body1"> Sair </Text>
+                  <Text variant="body2" bold> Sair </Text>
                 </Button>
-                <Spacer horizontal="6" />
+                <Spacer horizontal="12" />
                 <Button
-                  size="sm"
+                  size="xs"
                   color="primary"
                   hover
                   onClick={() => {
@@ -98,7 +98,7 @@ function ModalTwoButtonsType3({
                     console.log(input1Value, input2Value);
                   }}
                 >
-                  <Text variant="body1"> Confirmar </Text>
+                  <Text variant="body2" bold> Confirmar </Text>
                 </Button>
               </BottomContainerInModal>
             </CenterHorizontalContainer>

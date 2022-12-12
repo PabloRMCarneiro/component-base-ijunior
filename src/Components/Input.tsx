@@ -17,8 +17,8 @@ const InputComponent = styled.input.attrs((props)=>
   border: none;
   border-radius: 10px;
   background-color: ${(props) => props.theme.theme.colors["greyLight"]};
-  padding: 15px;
-  font-size: 1.4rem;
+  padding: 20px;
+  font-size: ${(props) => props.theme.theme.input.placeholderSizes[props.size]};
   color: ${(props) => props.theme.theme.colors["grey"]};
   &:focus {
     outline: none;
@@ -27,6 +27,7 @@ const InputComponent = styled.input.attrs((props)=>
     position:relative;
     color: ${(props) => props.theme.theme.colors["grey"]};
     font-size: ${(props) => props.theme.theme.input.placeholderSizes[props.size]};
+    white-space: pre-line;
     ${(props) => {
       if (props.center) {
         return css`

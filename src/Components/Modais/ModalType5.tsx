@@ -43,10 +43,9 @@ function ModalType5({ showModal, setShowModal }: ModalType5Props) {
                   onClick={() => setShowModal(false)}
                 />
               </TopContainerInModal>
-              <Spacer vertical="6" />
               <LineHorizontal />
               <MainContainerInModal>
-                <Text variant="body1" color="greySolid" justify>
+                <Text variant="body2" color="greySolid" justify>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Expedita excepturi sint praesentium, sit optio ullam sed iusto
                   voluptate possimus, quasi nulla modi qui culpa nobis
@@ -69,6 +68,8 @@ function ModalType5({ showModal, setShowModal }: ModalType5Props) {
                   elit. Ducimus explicabo officiis distinctio quos voluptates
                   ipsum unde omnis exercitationem excepturi blanditiis animi
                   perferendis. Voluptas doloremque hic omnis ab ipsum accusamus?
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ipsum veritatis corrupti tenetur excepturi iste rerum vero velit aspernatur modi voluptatibus nisi sit, repellendus dolorem blanditiis fugit labore suscipit libero!
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum fugiat, eos quia dicta, est totam soluta temporibus officia volupta
                 </Text>
               </MainContainerInModal>
             </CenterHorizontalContainer>

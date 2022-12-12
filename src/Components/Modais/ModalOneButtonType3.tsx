@@ -57,18 +57,18 @@ function ModalOneButtonType3({
                   onClick={() => setShowModal(false)}
                 />
               </TopContainerInModal>
-              <Spacer vertical="6" />
+                <Spacer vertical="6" />
               <LineHorizontal />
               <MainContainerInModal>
                 <Input
-                  size="2xs"
+                  size="sm"
                   type="text"
                   placeholder="Insira o nome da coluna a ser adicionada."
                   onChange={(e) => HandleInput1Value(e)}
                 />
-                <Spacer vertical="10" />
+                <Spacer vertical="6" />
                 <Input
-                  size="xs"
+                  size="sm"
                   type="text"
                   placeholder="Insira o valor da coluna."
                   onChange={(e) => HandleInput2Value(e)}
@@ -87,7 +87,7 @@ function ModalOneButtonType3({
                     console.log(input1Value, input2Value);
                   }}
                 >
-                  <Text variant="body1"> Confirmar </Text>
+                  <Text variant="body2" bold> Confirmar </Text>
                 </Button>
               </BottomContainerInModal>
             </CenterHorizontalContainer>

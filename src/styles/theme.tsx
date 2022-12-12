@@ -6,6 +6,12 @@ export const theme ={
     primaryBorder: '#1677ff',
     primarySolidHover: '#003eb3',
 
+    secondaryLightActive: '#fae8ff',
+    secondaryLightHover: '#e6b3ff',
+    secondary: '#cc66ff',
+    secondaryBorder: '#b300ff',
+    secondarySolidHover: '#8000cc',
+    
     sucessLightActive: '#F1FDF7',
     sucessLightHover: '#ADF5CC',
     sucess: '#17C964',
@@ -99,8 +105,8 @@ export const theme ={
     96: '24rem'
   },
   buttonSizes: {
-    sm: ['186px', '43px'],
-    xs: ['140px', '43px'],
+    sm: ['140px', '43px'],
+    xs: ['184px', '43px'],
     '2xs': ['344px', '43px'],
     md: ['548px', '43px'],
     lg: ['752px', '43px'],
@@ -147,17 +153,17 @@ export const theme ={
       rmd: ['250px', '170px'],
       slg: ['300px', '300px'],
       rlg: ['300px', '200px'],
-      modalSizeType1: ['450px', '316px'],
-      modalSizeType2: ['450px', '360px'],
-      modalSizeType3: ['450px', '400px'],
-      modalSizeType4: ['450px', '440px'],
-      modalSizeType5: ['500px', '850px'],
-      accessContainer: ['894px', '524px'],
+      modalSizeType1: ['440px', '262px'],
+      modalSizeType2: ['440px', '315px'],
+      modalSizeType3: ['440px', '426px'],
+      modalSizeType4: ['440px', '450px'],
+      modalSizeType5: ['440px', '850px'],
+      accessContainer: ['848px', '524px'],
     }
   },
   input: {
     sizes: {
-      sm: ['186px', '60px'],
+      sm: ['396px', '122px'],
       '2sm': ['348px', '50px'],
       xs: ['372px', '80px'],
       '2xs': ['372px', '120px'],
