@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import GlobalStyle from "../../styles/GlobalStyle";
 import { AiOutlineClose } from "react-icons/ai";
 import { theme } from "../../styles/theme";
@@ -19,10 +19,15 @@ import {
 } from "../../utils/Containers";
 
 function ModalType5({ showModal, setShowModal }: ModalType5Props) {
+
+  const ModalRef = useRef<HTMLHeadingElement>(null);
+
+  const CloseModalOnOutsideClick = (e: any) =>  ModalRef.current === e.target ? setShowModal(false) : null;
+
   return (
     <>
       {showModal ? (
-        <MainContainerModal>
+        <MainContainerModal ref={ModalRef} onClick={(e) => CloseModalOnOutsideClick(e)}>
           <GlobalStyle />
           <Box size="modalSizeType5" rounded backgroundColor="white">
             <CenterHorizontalContainer>
@@ -66,7 +71,7 @@ function ModalType5({ showModal, setShowModal }: ModalType5Props) {
                   elit. Ducimus explicabo officiis distinctio quos voluptates
                   ipsum unde omnis exercitationem excepturi blanditiis animi
                   perferendis. Voluptas doloremque hic omnis ab ipsum accusamus?
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci saepe nesciunt vitae quod, ducimus consequuntur eveniet assumenda, molestiae, quo doloremque ad consectetur ab dolorum in tempore sit dolore sed architecto.
+                  Lorem ipsum dolor
                 </Text>
               </MainContainerInModal>
             </CenterHorizontalContainer>

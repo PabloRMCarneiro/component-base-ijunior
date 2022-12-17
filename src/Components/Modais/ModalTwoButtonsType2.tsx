@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import GlobalStyle from "../../styles/GlobalStyle";
 import { AiOutlineClose } from "react-icons/ai";
 import { theme } from "../../styles/theme";
@@ -22,6 +22,8 @@ import {
   BottomContainerInModal,
 } from "../../utils/Containers";
 
+export var ModalTwoButtonsType2InputValue: string = "";
+
 function ModalTwoButtonsType2({
   showModal,
   setShowModal,
@@ -30,10 +32,14 @@ function ModalTwoButtonsType2({
   const HandleInputValue = (e: React.ChangeEvent<HTMLInputElement>) =>
     setInputValue(e.target.value);
 
+  const ModalRef = useRef<HTMLHeadingElement>(null);
+
+  const CloseModalOnOutsideClick = (e: any) =>  ModalRef.current === e.target ? setShowModal(false) : null;
+
   return (
     <>
       {showModal ? (
-        <MainContainerModal>
+        <MainContainerModal ref={ModalRef} onClick={(e)=> CloseModalOnOutsideClick(e)}>
           <GlobalStyle />
           <Box size="modalSizeType2" rounded backgroundColor="white">
             <CenterHorizontalContainer>
@@ -70,10 +76,7 @@ function ModalTwoButtonsType2({
                   color="primary"
                   bordered
                   hover
-                  onClick={() => {
-                    setShowModal(false);
-                    console.log(inputValue);
-                  }}
+                  onClick={() => setShowModal(false)}
                 >
                   <Text variant="body2" bold>
                     {" "}
@@ -87,7 +90,7 @@ function ModalTwoButtonsType2({
                   hover
                   onClick={() => {
                     setShowModal(false);
-                    console.log(inputValue);
+                    ModalTwoButtonsType2InputValue = inputValue;
                   }}
                 >
                   <Text variant="body2" bold>

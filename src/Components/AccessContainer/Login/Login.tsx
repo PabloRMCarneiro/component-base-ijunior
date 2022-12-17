@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import GlobalStyle from "../../../styles/GlobalStyle";
 import { useNavigate } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
@@ -79,6 +79,7 @@ function Login() {
             description="A senha informada é inválida, tente novamente."
           />
         ))}
+
       <MainContainer style={{ flexDirection: "row" }}>
         <GlobalStyle />
         <Box
@@ -106,11 +107,8 @@ function Login() {
             </RightAccessContainer>
             <LineVertical />
             <LeftAccessContainer>
-              <CenterHorizontalContainer>
-                <Spacer vertical="15" />
-                <Text variant="h3" >
-                  Login
-                </Text>
+              <CenterHorizontalContainer style={{justifyContent: 'center'}}>
+                <Text variant="h3">Login</Text>
                 <Spacer vertical="14" />
                 <Input
                   size="2sm"

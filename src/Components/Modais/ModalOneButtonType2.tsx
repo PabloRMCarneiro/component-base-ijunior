@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import GlobalStyle from "../../styles/GlobalStyle";
 import { AiOutlineClose } from "react-icons/ai";
 import { theme } from "../../styles/theme";
@@ -21,7 +21,7 @@ import {
   BottomContainerInModal,
 } from "../../utils/Containers";
 
-export var ModalOneButtonType2Input: string = "";
+export var ModalOneButtonType2InputValue: string = "";
 
 function ModalOneButtonType2({
   showModal,
@@ -31,10 +31,15 @@ function ModalOneButtonType2({
   const HandleInputValue = (e: React.ChangeEvent<HTMLInputElement>) =>
     setInputValue(e.target.value);
 
+  const ModalRef = useRef<HTMLHeadingElement>(null);
+
+  const CloseModalOnOutsideClick = (e: any) =>
+    ModalRef.current === e.target ? setShowModal(false) : null;
+
   return (
     <>
       {showModal ? (
-        <MainContainerModal>
+        <MainContainerModal ref={ModalRef} onClick={(e)=> CloseModalOnOutsideClick(e)}>
           <GlobalStyle />
           <Box size="modalSizeType2" rounded backgroundColor="white">
             <CenterHorizontalContainer>
@@ -60,6 +65,7 @@ function ModalOneButtonType2({
                   type="text"
                   placeholder="Insira a para adicionar uma resposta à pergunta referente ao item do checkbox."
                   onChange={(e) => HandleInputValue(e)}
+                  mask="000.000.000-00"
                 />
               </MainContainerInModal>
               <LineHorizontal />
@@ -71,7 +77,7 @@ function ModalOneButtonType2({
                   hover
                   onClick={() => {
                     setShowModal(false);
-                    ModalOneButtonType2Input = inputValue;
+                    ModalOneButtonType2InputValue = inputValue;
                   }}
                 >
                   <Text variant="body2" bold>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import GlobalStyle from "../../styles/GlobalStyle";
 import { AiOutlineClose } from "react-icons/ai";
 import { theme } from "../../styles/theme";
@@ -12,7 +12,6 @@ interface ModalValidationProps {
 import Button from "../Button";
 import Box from "../Box";
 import Text from "../Text";
-import Spacer from "../Spacer";
 
 import {
   MainContainerModal,
@@ -29,17 +28,21 @@ function ModalValidation({
   title,
   description,
 }: ModalValidationProps) {
+
+  const ModalRef = useRef<HTMLHeadingElement>(null);
+
+  const CloseModalOnOutsideClick = (e: any) =>  ModalRef.current === e.target ? setShowModal(false) : null;
+
   return (
     <>
       {showModal ? (
-        <MainContainerModal>
+        <MainContainerModal ref={ModalRef} onClick={(e) => CloseModalOnOutsideClick(e)}>
           <GlobalStyle />
           <Box size="modalSizeType1" rounded backgroundColor="white">
             <CenterHorizontalContainer>
               <TopContainerInModal>
                 <Text variant="body1" bold color="danger">
-                  {" "}
-                  {title}{" "}
+                  {title}
                 </Text>
                 <AiOutlineClose
                   style={{
@@ -51,9 +54,8 @@ function ModalValidation({
                   onClick={() => setShowModal(false)}
                 />
               </TopContainerInModal>
-              <Spacer vertical="6" />
               <LineHorizontal />
-              <MainContainerInModal>
+              <MainContainerInModal type="validation">
                 <Text variant="body1" color="greySolid">
                   {description}
                 </Text>
@@ -67,8 +69,7 @@ function ModalValidation({
                   onClick={() => setShowModal(false)}
                 >
                   <Text variant="body1" color="white">
-                    {" "}
-                    Confirmar{" "}
+                    Confirmar
                   </Text>
                 </Button>
               </BottomContainerInModal>

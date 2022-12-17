@@ -1,4 +1,11 @@
 import styled, { css } from "styled-components";
+import { theme } from '../styles/theme';
+
+interface MainContainerModalProps {
+  type?: string;
+  onClick?: () => void;
+  ref?: React.RefObject<HTMLHeadingElement>;
+}
 
 export const MainContainer = styled.div`
   display: flex;
@@ -21,6 +28,16 @@ export const MainContainerModal = styled.div`
   z-index: 50;
 `;
 
+export const MainContainerLoader = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+`;
+
 export const TopContainerInModal = styled.div`
   display: flex;
   width: 100%;
@@ -28,22 +45,62 @@ export const TopContainerInModal = styled.div`
   align-items: center;
   padding: 20px 20px;
   justify-content: space-between;
+  @media(max-width: ${theme.breakpoints.t}){
+    height: calc(4rem * 0.75);
+  };
+  @media(max-width: ${theme.breakpoints.ml}){
+    height: calc(4rem * 0.5);
+  };
 `;
 
-export const MainContainerInModal = styled.div`
+export const MainContainerInModal = styled.div<MainContainerModalProps>`
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 63%;
   align-items: center;
   padding: 20px 20px;
-`;
+  @media(max-width: ${theme.breakpoints.t}){
+    ${(props) =>{
+      if(props.type === "3"){
+        return css `
+        height: 63%;
+        `;
+      }else{
+        return css `
+        height: calc(63%*0.8);
+        `;
+      }
+    }}
+  };
+  @media(max-width: ${theme.breakpoints.ml}){
+    ${(props) =>{
+      if(props.type === "3"){
+        return css `
+          height: calc(63%*0.96);
+        `;
+      }
+      else if(props.type === "validation"){
+        return css `
+          height: calc(63%*0.5);
+        `;
+      }
+      else{
+        return css `
+          height: calc(63%*0.8);
+        `;
+      }
+    }};
+    padding: 10px 15px;
+  }
+  `;
 
 export const BottomContainerInModal = styled.div`
   display: flex;
   width: 100%;
   padding: 20px 20px;
   justify-content: center;
+  
 `;
 
 export const CenterContainer = styled.div`

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import GlobalStyle from "../../styles/GlobalStyle";
 import { AiOutlineClose } from "react-icons/ai";
 import { theme } from '../../styles/theme';
@@ -22,6 +22,9 @@ import {
   BottomContainerInModal,
 } from "../../utils/Containers";
 
+export var ModalTwoButtonsType3Input1Value: string = "";
+export var ModalTwoButtonsType3Input2Value: string = "";
+
 function ModalTwoButtonsType3({
   showModal,
   setShowModal,
@@ -34,17 +37,20 @@ function ModalTwoButtonsType3({
   const HandleInput2Value = (e: React.ChangeEvent<HTMLInputElement>) =>
     setInput2Value(e.target.value); // Second input
 
+  const ModalRef = useRef<HTMLHeadingElement>(null);
+
+  const CloseModalOnOutsideClick = (e: any) =>  ModalRef.current === e.target ? setShowModal(false) : null;
+
   return (
     <>
       {showModal ? (
-        <MainContainerModal>
+        <MainContainerModal ref={ModalRef} onClick={(e) => CloseModalOnOutsideClick(e)}>
           <GlobalStyle />
           <Box size="modalSizeType3" rounded backgroundColor="white">
             <CenterHorizontalContainer>
               <TopContainerInModal>
                 <Text variant="body1" bold color="primary">
-                  {" "}
-                  Adicionar coluna{" "}
+                  Adicionar coluna
                 </Text>
                 <AiOutlineClose
                   style={{
@@ -56,9 +62,8 @@ function ModalTwoButtonsType3({
                   onClick={() => setShowModal(false)}
                 />
               </TopContainerInModal>
-              <Spacer vertical="6" />
               <LineHorizontal />
-              <MainContainerInModal>
+              <MainContainerInModal type="3">
                 <Input
                   size="sm"
                   type="text"
@@ -73,7 +78,6 @@ function ModalTwoButtonsType3({
                   onChange={(e) => HandleInput2Value(e)}
                 />
               </MainContainerInModal>
-              <Spacer vertical="6" />
               <LineHorizontal />
               <BottomContainerInModal>
                 <Button
@@ -81,10 +85,7 @@ function ModalTwoButtonsType3({
                   color="primary"
                   bordered
                   hover
-                  onClick={() => {
-                    setShowModal(false);
-                    console.log(input1Value, input2Value);
-                  }}
+                  onClick={() => setShowModal(false)}
                 >
                   <Text variant="body2" bold> Sair </Text>
                 </Button>
@@ -95,7 +96,8 @@ function ModalTwoButtonsType3({
                   hover
                   onClick={() => {
                     setShowModal(false);
-                    console.log(input1Value, input2Value);
+                    ModalTwoButtonsType3Input1Value = input1Value;
+                    ModalTwoButtonsType3Input2Value = input2Value;
                   }}
                 >
                   <Text variant="body2" bold> Confirmar </Text>

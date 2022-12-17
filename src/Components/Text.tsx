@@ -47,7 +47,15 @@ export const TextComponent = styled.p<TextProps>`
         text-align: center;
       `;
     }
-  }}
+  }};
+  @media (max-width: ${(props) => props.theme.theme.breakpoints.t}) {
+    font-size: calc(${(props) =>
+    props.theme.theme.text[props.variant || "h3"].fontSize}*0.8);
+  };
+  @media (max-width: ${(props) => props.theme.theme.breakpoints.ml}) {
+    font-size: calc(${(props) =>
+    props.theme.theme.text[props.variant || "h3"].fontSize}*0.6);
+  }
 `;
 
 function Text(props: TextProps) {

@@ -85,8 +85,7 @@ function ForgotYourPassword() {
             </RightAccessContainer>
             <LineVertical />
             <LeftAccessContainer>
-              <CenterHorizontalContainer>
-                <Spacer vertical="20" />
+              <CenterHorizontalContainer style={{justifyContent: 'center'}}>
                 <Text variant="h3">Esqueceu sua senha?</Text>
                 <Spacer vertical="8" />
                 <Text variant="legenda" center>

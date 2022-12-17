@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import GlobalStyle from "../../styles/GlobalStyle";
 import { AiOutlineClose } from "react-icons/ai";
 import { theme } from "../../styles/theme";
@@ -19,10 +19,15 @@ import {
 } from "../../utils/Containers";
 
 function ModalType4({ showModal, setShowModal }: ModalType4Props) {
+
+  const ModalRef = useRef<HTMLHeadingElement>(null);
+
+  const CloseModalOnOutsideClick = (e: any) =>  ModalRef.current === e.target ? setShowModal(false) : null;
+
   return (
     <>
       {showModal ? (
-        <MainContainerModal>
+        <MainContainerModal ref={ModalRef} onClick={(e) => CloseModalOnOutsideClick(e)}>
           <GlobalStyle />
           <Box size="modalSizeType4" rounded backgroundColor="white">
             <CenterHorizontalContainer>
@@ -57,8 +62,6 @@ function ModalType4({ showModal, setShowModal }: ModalType4Props) {
                   iusto quos a aut adipisci quae voluptate ullam quasi pariatur.
                   Quae, ducimus! Lorem ipsum dolor sit amet consectetur,
                   adipisicing elit. Ad, reiciendis? Natus vel consequatur
-                  provident enim! Dolor nam amet pariatur, officiis ullam quod
-                  reprehenderit et iusto, iste maxime ea vitae eligendi!
                 </Text>
               </MainContainerInModal>
             </CenterHorizontalContainer>

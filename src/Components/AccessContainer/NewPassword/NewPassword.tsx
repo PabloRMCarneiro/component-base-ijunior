@@ -89,8 +89,7 @@ function NewPassword() {
             </RightAccessContainer>
             <LineVertical />
             <LeftAccessContainer>
-              <CenterHorizontalContainer>
-                <Spacer vertical="20" />
+              <CenterHorizontalContainer style={{justifyContent: 'center'}}>
                 <Text variant="h3">Nova Senha</Text>
                 <Spacer vertical="8" />
                 <Text variant="legenda" center>

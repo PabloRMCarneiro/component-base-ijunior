@@ -12,6 +12,7 @@ interface BoxProps {
 }
 
 const BoxComponent = styled.div<BoxProps>`
+  
   width: ${(props) => props.theme.theme.box.sizes[props.size][0]};
   height: ${(props) => props.theme.theme.box.sizes[props.size][1]};
   background-color: ${(props) => props.theme.theme.colors[props.backgroundColor || "primary"]};
@@ -20,14 +21,24 @@ const BoxComponent = styled.div<BoxProps>`
     if (props.rounded) {
       return css`
         border-radius: ${(props) => props.theme.theme.borderRadius.r};
-      `;
+        `;
     }
     if (props.extraRounded) {
       return css`
         border-radius: ${(props) => props.theme.theme.borderRadius.xr};
-      `;
+        `;
     }
   }};
+  
+  @media (max-width: ${(props) => props.theme.theme.breakpoints.t}) {
+    width: calc(${(props) => props.theme.theme.box.sizes[props.size][0]}*0.8);
+    height: calc(${(props) => props.theme.theme.box.sizes[props.size][1]}*0.8);
+  };
+  
+  @media (max-width: ${(props) => props.theme.theme.breakpoints.ml}) {
+    width: calc(${(props) => props.theme.theme.box.sizes[props.size][0]}*0.6);
+    height: calc(${(props) => props.theme.theme.box.sizes[props.size][1]}*0.65);
+  }
 `;
 
 function Box(props: BoxProps) {
