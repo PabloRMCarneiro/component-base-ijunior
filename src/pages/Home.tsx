@@ -71,6 +71,18 @@ function Home() {
           Loader
         </Text>
       </Button>
+
+      <Spacer vertical="18" />
+      <Button
+        size="2xs"
+        color="primary"
+        hover
+        onClick={() => navigate("/navbar")}
+      >
+        <Text variant="h4">
+          Navbar
+        </Text>
+      </Button>
     </MainContainer>
   );
 }

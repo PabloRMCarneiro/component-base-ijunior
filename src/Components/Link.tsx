@@ -8,16 +8,19 @@ interface LinkProps {
   children: React.ReactNode;
 }
 
+const LinkComponent = styled.div`
+  cursor: pointer;
+`;
 function Link(props: LinkProps) {
   const navigate = useNavigate();
 
   return (
     <ThemeProvider theme={theme}>
-      <div
+      <LinkComponent
         onClick={() => navigate(props.path)}
       >
         {props.children}
-      </div>
+      </LinkComponent>
     </ThemeProvider>
   );
 }

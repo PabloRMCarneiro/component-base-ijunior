@@ -13,7 +13,7 @@ export const theme = {
     secondarySolidHover: "#8000cc",
 
     sucessLightActive: "#e8fdf1",
-    sucessLightHover: "#d4fde6",
+    sucessLightHover: "#e0fded",
     sucess: "#54C242",
     sucessBorder: "#45a736",
     sucessSolidHover: "#398d2c",
@@ -37,6 +37,12 @@ export const theme = {
     greyLight: "#F2F2F2",
     grey: "#a5a5a5",
     greySolid: "#656565",
+
+    greyDark: "#3A3A3A",
+    greyDarkLightHover: "#747474",
+
+
+    offWhite: "#ececec",
   },
   borderRadius: {
     r: "0.625rem",
@@ -154,12 +160,16 @@ export const theme = {
       rmd: ["250px", "170px"],
       slg: ["300px", "300px"],
       rlg: ["300px", "200px"],
+      
       modalSizeType1: ["440px", "262px"],
       modalSizeType2: ["440px", "315px"],
       modalSizeType3: ["440px", "426px"],
       modalSizeType4: ["440px", "450px"],
       modalSizeType5: ["440px", "730px"],
       accessContainer: ["848px", "524px"],
+
+      navbarFull: ['12.125rem', '100vh'],
+      navbarShort: ['7.75rem', '100vh'],
     },
   },
   input: {

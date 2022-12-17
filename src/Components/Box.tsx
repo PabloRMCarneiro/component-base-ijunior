@@ -9,6 +9,7 @@ interface BoxProps {
   rounded?: boolean;
   extraRounded?: boolean;
   shadow?: string;
+  absolute?: boolean;
 }
 
 const BoxComponent = styled.div<BoxProps>`
@@ -28,17 +29,37 @@ const BoxComponent = styled.div<BoxProps>`
         border-radius: ${(props) => props.theme.theme.borderRadius.xr};
         `;
     }
+    if (props.absolute) {
+      return css`
+        position: absolute;
+        `;
+    }
   }};
   
   @media (max-width: ${(props) => props.theme.theme.breakpoints.t}) {
-    width: calc(${(props) => props.theme.theme.box.sizes[props.size][0]}*0.8);
-    height: calc(${(props) => props.theme.theme.box.sizes[props.size][1]}*0.8);
+    ${(props) => {
+      if(props.size != "navbarFull" && props.size != "navbarMobile"){
+        return css`
+          width: calc(${(props) => props.theme.theme.box.sizes[props.size][0]}*0.8);
+          height: calc(${(props) => props.theme.theme.box.sizes[props.size][1]}*0.8);
+        `;
+
+      }
+    }}
   };
   
   @media (max-width: ${(props) => props.theme.theme.breakpoints.ml}) {
-    width: calc(${(props) => props.theme.theme.box.sizes[props.size][0]}*0.6);
-    height: calc(${(props) => props.theme.theme.box.sizes[props.size][1]}*0.65);
-  }
+    ${(props) => {
+      if(props.size != "navbarFull" && props.size != "navbarMobile"){
+        return css`
+          width: calc(${(props) => props.theme.theme.box.sizes[props.size][0]}*0.);
+          height: calc(${(props) => props.theme.theme.box.sizes[props.size][1]}*0.65);
+        `;
+
+      }
+    }}
+  };
+  
 `;
 
 function Box(props: BoxProps) {
@@ -50,6 +71,7 @@ function Box(props: BoxProps) {
         rounded={props.rounded}
         extraRounded={props.extraRounded}
         shadow={props.shadow}
+        absolute={props.absolute}
       >
         {props.children}
       </BoxComponent>

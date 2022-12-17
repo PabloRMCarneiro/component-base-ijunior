@@ -7,6 +7,22 @@ interface MainContainerModalProps {
   ref?: React.RefObject<HTMLHeadingElement>;
 }
 
+export const InternalContainerNavbar = styled.div`
+  width: calc(100% - 1rem);
+  height: calc(100% - 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const LinkContainerNavbar = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+`;
+
+
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;

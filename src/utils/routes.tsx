@@ -16,20 +16,34 @@ import NewPasswordPage from "../pages/NewPasswordPage";
 import LoaderPage from "../pages/LoaderPage";
 import SwitchPage from "../pages/SwitchPage";
 
+import NavbarPage from "../pages/NavbarPage";
+import NavbarFull from "../Components/Navbar/NavbarFull";
+
+import NavbarShort from "../Components/Navbar/NavbarShort";
 function routes() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/buttons" element={<ButtonPage />} />
+        
         <Route path="/box" element={<BoxPage />} />
         <Route path="/modal" element={<ModalPage />} />
+        
         <Route path="/login" element={<LoginPage />} />
         <Route path="/esqueceu-sua-senha" element={<ForgotYourPasswordPage />} />
+        
         <Route path="/verifique-seu-email" element={<CheckYourEmailPage />} />
         <Route path="/redefinir-senha" element={<NewPasswordPage />} />
+        
         <Route path="/loader" element={<LoaderPage />} />
         <Route path="/switch" element={<SwitchPage />} />
+        
+        <Route path="/navbar" element={<NavbarPage />} />
+        <Route path="/navbar/full" element={<NavbarFull />} />
+        
+        <Route path="/navbar/short" element={<NavbarShort />} />
+
       </Routes>
     </Router>
   );
