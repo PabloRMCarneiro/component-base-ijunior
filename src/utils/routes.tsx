@@ -20,6 +20,7 @@ import NavbarPage from "../pages/NavbarPage";
 import NavbarFull from "../Components/Navbar/NavbarFull";
 
 import NavbarShort from "../Components/Navbar/NavbarShort";
+import NavbarExample from "../Components/Navbar/NavbarExample";
 function routes() {
   return (
     <Router>
@@ -43,6 +44,7 @@ function routes() {
         <Route path="/navbar/full" element={<NavbarFull />} />
         
         <Route path="/navbar/short" element={<NavbarShort />} />
+        <Route path="/navbar/example" element={<NavbarExample />} />
 
       </Routes>
     </Router>

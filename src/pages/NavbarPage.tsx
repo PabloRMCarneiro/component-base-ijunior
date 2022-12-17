@@ -25,6 +25,7 @@ function NavbarPage() {
             Navbar Short
           </Text>
         </Button>
+
         <Spacer vertical="18" />
         <Button
           size="2xs"
@@ -35,6 +36,19 @@ function NavbarPage() {
         >
           <Text variant="body2" bold>
             Navbar Full
+          </Text>
+        </Button>
+        
+        <Spacer vertical="18" />
+        <Button
+          size="2xs"
+          color="primary"
+          hover
+          bordered
+          onClick={() => navigate("/navbar/example")}
+        >
+          <Text variant="body2" bold>
+            Example
           </Text>
         </Button>
       </MainContainer>
