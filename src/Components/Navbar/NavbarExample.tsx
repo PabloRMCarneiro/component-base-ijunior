@@ -14,6 +14,9 @@ import homeIcon from "./img/homeIcon.png";
 import dataBaseIcon from "./img/dataBaseIcon.png";
 import calendarIcon from "./img/calendarIcon.png";
 
+import { FaUserCircle } from "react-icons/fa";
+import { MdLogout } from "react-icons/md";
+
 import NavbarShort from "./NavbarShort";
 
 import {
@@ -21,7 +24,9 @@ import {
   CenterContainer,
   LineHorizontal,
   LinkContainerNavbar,
-  MainContainer
+  FooterContainerNavbar,
+  InternalFooterContainerNavbar,
+  MainContainer,
 } from "../../utils/Containers";
 
 function NavbarExample() {
@@ -59,7 +64,6 @@ function NavbarExample() {
               <Spacer vertical="8" />
               <LineHorizontal />
               <Spacer vertical="10" />
-
               <LinkContainerNavbar>
                 <Spacer horizontal="4" />
                 <img
@@ -108,6 +112,34 @@ function NavbarExample() {
                   </Text>
                 </Link>
               </LinkContainerNavbar>
+              <Spacer vertical="40" />
+              <Spacer vertical="40" />
+              <Spacer vertical="40" />
+              <Spacer vertical="40" />
+              <FooterContainerNavbar>
+                <FaUserCircle
+                  size="1.66rem"
+                  color={theme.colors.greyDarkLightHover}
+                />
+                <Spacer horizontal="4" />
+                <InternalFooterContainerNavbar>
+                  <Text variant="legenda" color="greyDark" bold>
+                    Nome do Usuário
+                  </Text>
+                  <Link path="/">
+                    <Text variant="legenda2" color="greyDark" hover>
+                      Ver perfil
+                    </Text>
+                  </Link>
+                </InternalFooterContainerNavbar>
+                <Spacer horizontal="5" />
+                <MdLogout
+                  size="1rem"
+                  color={theme.colors.grey}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => navigate("/")}
+                />
+              </FooterContainerNavbar>
             </InternalContainerNavbar>
           </CenterContainer>
         </Box>
@@ -115,7 +147,7 @@ function NavbarExample() {
       <MainContainer
         style={{
           backgroundColor: `${theme.colors.primary}`,
-          width: `calc(100% - ${!isMobile ? "12.125" : "0"}rem)`,
+          width: `calc(100% - ${!isMobile ? "14.125" : "0"}rem)`,
         }}
       >
         <Button size="xs" color="sucess" hover>
@@ -123,13 +155,13 @@ function NavbarExample() {
             Hello World
           </Text>
         </Button>
-        <Spacer vertical="8"/>
+        <Spacer vertical="8" />
         <Button size="xs" color="danger" hover>
           <Text variant="body2" bold>
             Hello World
           </Text>
         </Button>
-        <Spacer vertical="8"/>
+        <Spacer vertical="8" />
         <Button size="xs" color="warning" hover bordered>
           <Text variant="body2" bold>
             Hello World

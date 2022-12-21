@@ -149,6 +149,10 @@ export const theme = {
       fontSize: "0.875rem",
       lineHeight: "1rem",
     },
+    legenda2: {
+      fontSize: "0.75rem",
+      lineHeight: "1rem",
+    },
   },
   box: {
     sizes: {
@@ -168,7 +172,7 @@ export const theme = {
       modalSizeType5: ["440px", "730px"],
       accessContainer: ["848px", "524px"],
 
-      navbarFull: ['12.125rem', '100vh'],
+      navbarFull: ['14.125rem', '100vh'],
       navbarShort: ['7.75rem', '100vh'],
     },
   },

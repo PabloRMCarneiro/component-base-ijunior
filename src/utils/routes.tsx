@@ -21,6 +21,7 @@ import NavbarFull from "../Components/Navbar/NavbarFull";
 
 import NavbarShort from "../Components/Navbar/NavbarShort";
 import NavbarExample from "../Components/Navbar/NavbarExample";
+
 function routes() {
   return (
     <Router>

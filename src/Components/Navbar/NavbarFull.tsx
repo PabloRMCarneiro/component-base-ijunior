@@ -13,6 +13,9 @@ import homeIcon from "./img/homeIcon.png";
 import dataBaseIcon from "./img/dataBaseIcon.png";
 import calendarIcon from "./img/calendarIcon.png";
 
+import { FaUserCircle } from "react-icons/fa";
+import { MdLogout } from "react-icons/md";
+
 import NavbarShort from "./NavbarShort";
 
 import {
@@ -20,6 +23,8 @@ import {
   CenterContainer,
   LineHorizontal,
   LinkContainerNavbar,
+  FooterContainerNavbar,
+  InternalFooterContainerNavbar,
 } from "../../utils/Containers";
 
 function NavbarFull() {
@@ -99,6 +104,26 @@ function NavbarFull() {
                   </Text>
                 </Link>
               </LinkContainerNavbar>
+              <Spacer vertical="40"/>
+              <Spacer vertical="40"/>
+              <Spacer vertical="40"/>
+              <Spacer vertical="40"/>
+              <FooterContainerNavbar>
+                <FaUserCircle size="1.66rem" color={theme.colors.greyDarkLightHover} />
+                <Spacer horizontal="4" />
+                <InternalFooterContainerNavbar>
+                  <Text variant="legenda" color="greyDark" bold>
+                    Nome do Usuário
+                  </Text>
+                  <Link path="/">
+                    <Text variant="legenda2" color="greyDark" hover >
+                      Ver perfil
+                    </Text>
+                  </Link>
+                </InternalFooterContainerNavbar>
+                <Spacer horizontal="5" />
+                <MdLogout size="1rem" color={theme.colors.grey} style={{cursor: 'pointer'}} onClick={() => navigate("/")}/>
+              </FooterContainerNavbar>
             </InternalContainerNavbar>
           </CenterContainer>
         </Box>

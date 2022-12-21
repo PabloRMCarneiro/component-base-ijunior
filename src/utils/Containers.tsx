@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { theme } from '../styles/theme';
+import { theme } from "../styles/theme";
 
 interface MainContainerModalProps {
   type?: string;
@@ -8,8 +8,8 @@ interface MainContainerModalProps {
 }
 
 export const InternalContainerNavbar = styled.div`
-  width: calc(100% - 1rem);
-  height: calc(100% - 2rem);
+  width: calc(100% - 4rem);
+  height: calc(100% - 4rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,6 +22,20 @@ export const LinkContainerNavbar = styled.div`
   align-items: center;
 `;
 
+export const FooterContainerNavbar = styled.div`
+  width: 11.625rem;
+  height: 2.875rem;
+  border: 1px solid ${theme.colors.primary};
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const InternalFooterContainerNavbar = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 export const MainContainer = styled.div`
   display: flex;
@@ -61,12 +75,12 @@ export const TopContainerInModal = styled.div`
   align-items: center;
   padding: 20px 20px;
   justify-content: space-between;
-  @media(max-width: ${theme.breakpoints.t}){
+  @media (max-width: ${theme.breakpoints.t}) {
     height: calc(4rem * 0.75);
-  };
-  @media(max-width: ${theme.breakpoints.ml}){
+  }
+  @media (max-width: ${theme.breakpoints.ml}) {
     height: calc(4rem * 0.5);
-  };
+  } ;
 `;
 
 export const MainContainerInModal = styled.div<MainContainerModalProps>`
@@ -76,47 +90,44 @@ export const MainContainerInModal = styled.div<MainContainerModalProps>`
   height: 63%;
   align-items: center;
   padding: 20px 20px;
-  @media(max-width: ${theme.breakpoints.t}){
-    ${(props) =>{
-      if(props.type === "3"){
-        return css `
-        height: 63%;
+  @media (max-width: ${theme.breakpoints.t}) {
+    ${(props) => {
+      if (props.type === "3") {
+        return css`
+          height: 63%;
         `;
-      }else{
-        return css `
-        height: calc(63%*0.8);
+      } else {
+        return css`
+          height: calc(63% * 0.8);
         `;
       }
     }}
-  };
-  @media(max-width: ${theme.breakpoints.ml}){
-    ${(props) =>{
-      if(props.type === "3"){
-        return css `
-          height: calc(63%*0.96);
+  }
+  @media (max-width: ${theme.breakpoints.ml}) {
+    ${(props) => {
+      if (props.type === "3") {
+        return css`
+          height: calc(63% * 0.96);
         `;
-      }
-      else if(props.type === "validation"){
-        return css `
-          height: calc(63%*0.5);
+      } else if (props.type === "validation") {
+        return css`
+          height: calc(63% * 0.5);
         `;
-      }
-      else{
-        return css `
-          height: calc(63%*0.8);
+      } else {
+        return css`
+          height: calc(63% * 0.8);
         `;
       }
     }};
     padding: 10px 15px;
   }
-  `;
+`;
 
 export const BottomContainerInModal = styled.div`
   display: flex;
   width: 100%;
   padding: 20px 20px;
   justify-content: center;
-  
 `;
 
 export const CenterContainer = styled.div`
