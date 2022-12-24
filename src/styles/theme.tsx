@@ -170,7 +170,7 @@ export const theme = {
 
       topbarFull: ['100vw', '5rem'],
 
-      generalContainer: ['90%', '80%']
+      generalContainer: ['90%', '85%']
     },
   },
   input: {
