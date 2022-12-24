@@ -38,7 +38,7 @@ const BoxComponent = styled.div<BoxProps>`
   
   @media (max-width: ${(props) => props.theme.theme.breakpoints.t}) {
     ${(props) => {
-      if(props.size != "navbarFull" && props.size != "navbarShort"){
+      if(props.size != "navbarFull" && props.size != "navbarShort" && props.size != "topbarFull" && props.size != "generalContainer"){
         return css`
           width: calc(${(props) => props.theme.theme.box.sizes[props.size][0]}*0.8);
           height: calc(${(props) => props.theme.theme.box.sizes[props.size][1]}*0.8);
@@ -50,7 +50,7 @@ const BoxComponent = styled.div<BoxProps>`
   
   @media (max-width: ${(props) => props.theme.theme.breakpoints.ml}) {
     ${(props) => {
-      if(props.size != "navbarFull" && props.size != "navbarShort"){
+      if(props.size != "navbarFull" && props.size != "navbarShort" && props.size != "topbarFull" && props.size != "generalContainer"){
         return css`
           width: calc(${(props) => props.theme.theme.box.sizes[props.size][0]}*0.);
           height: calc(${(props) => props.theme.theme.box.sizes[props.size][1]}*0.65);

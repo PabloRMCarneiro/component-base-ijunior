@@ -7,6 +7,10 @@ interface MainContainerModalProps {
   ref?: React.RefObject<HTMLHeadingElement>;
 }
 
+interface BottomBarTopbarProps {
+  color: string;
+}
+
 export const InternalContainerNavbar = styled.div`
   width: calc(100% - 4rem);
   height: calc(100% - 4rem);
@@ -35,6 +39,35 @@ export const FooterContainerNavbar = styled.div`
 export const InternalFooterContainerNavbar = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const InternalContainerTopbar = styled.div`
+  display: flex;
+  align-items: center;
+  width: calc(100% - 4rem);
+  height: 100%;
+  margin-left: 2rem;
+  justify-content: space-between;
+`;
+
+export const LinkCotainerTopbar = styled.div`
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+export const BottomBarTopbar = styled.span<BottomBarTopbarProps> `
+  border-bottom: 4px solid ${(props) => props.theme.theme.colors[props.color]};
+  border-radius: 25%;
+  position: relative;
+  top: 1.75rem;
+`;
+
+export const CenterContainerFlex = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const MainContainer = styled.div`
@@ -186,4 +219,15 @@ export const LeftAccessContainer = styled.div`
   width: calc(50% - 0.8px);
   height: 100%;
   padding: 0px 2rem;
+`;
+
+
+export const TitleGeneralContainer = styled.div`
+  width: 90%;
+`;
+
+export const ContentGeneralContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
 `;

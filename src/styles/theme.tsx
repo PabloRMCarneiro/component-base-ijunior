@@ -174,6 +174,10 @@ export const theme = {
 
       navbarFull: ['14.125rem', '100vh'],
       navbarShort: ['7.75rem', '100vh'],
+
+      topbarFull: ['100vw', '5rem'],
+
+      generalContainer: ['90%', '80%']
     },
   },
   input: {

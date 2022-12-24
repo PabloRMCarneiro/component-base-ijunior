@@ -83,6 +83,30 @@ function Home() {
           Navbar
         </Text>
       </Button>
+
+      <Spacer vertical="18" />
+      <Button
+        size="2xs"
+        color="primary"
+        hover
+        onClick={() => navigate("/topbar")}
+      >
+        <Text variant="h4">
+          Topbar
+        </Text>
+      </Button>
+
+      <Spacer vertical="18" />
+      <Button
+        size="2xs"
+        color="primary"
+        hover
+        onClick={() => navigate("/general-container")}
+      >
+        <Text variant="h4">
+          General Container
+        </Text>
+      </Button>
     </MainContainer>
   );
 }
