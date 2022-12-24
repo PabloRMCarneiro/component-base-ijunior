@@ -12,23 +12,23 @@ function LoaderPage() {
     <MainContainer>
       <GlobalStyle />
       <Spacer vertical="32" />
-      <Box size="smd" backgroundColor="bgLogin" rounded shadow="button">
+      <Box size="modalSizeType1" backgroundColor="bgLogin" rounded shadow="button">
         <Loader color="primary" size="sm" />
       </Box>
       <Spacer vertical="15" />
-      <Box size="smd" backgroundColor="bgLogin" rounded shadow="button">
+      <Box size="modalSizeType1" backgroundColor="bgLogin" rounded shadow="button">
         <Loader color="secondary" size="xs" transition="linear" />
       </Box>
       <Spacer vertical="15" />
-      <Box size="smd" backgroundColor="bgLogin" rounded shadow="button">
+      <Box size="modalSizeType1" backgroundColor="bgLogin" rounded shadow="button">
         <Loader color="sucess" size="md" transition="ease-in-out" />
       </Box>
       <Spacer vertical="15" />
-      <Box size="smd" backgroundColor="bgLogin" rounded shadow="button">
+      <Box size="modalSizeType1" backgroundColor="bgLogin" rounded shadow="button">
         <Loader color="warning" size="lg" transition="ease-in" />
       </Box>
       <Spacer vertical="15" />
-      <Box size="smd" backgroundColor="bgLogin" rounded shadow="button">
+      <Box size="modalSizeType1" backgroundColor="bgLogin" rounded shadow="button">
         <Loader color="danger" size="xl" transition="ease-out" />
       </Box>
       <Spacer vertical="32" />

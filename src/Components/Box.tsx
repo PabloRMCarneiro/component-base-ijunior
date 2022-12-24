@@ -10,7 +10,10 @@ interface BoxProps {
   extraRounded?: boolean;
   shadow?: string;
   absolute?: boolean;
+  fixed?: boolean;
 }
+
+const BoxExceptionsResponsive = ["navbarFull", "navbarShort", "topbarFull", "generalContainer"]
 
 const BoxComponent = styled.div<BoxProps>`
   
@@ -34,11 +37,16 @@ const BoxComponent = styled.div<BoxProps>`
         position: absolute;
         `;
     }
+    if( props.fixed ) {
+      return css`
+        position: fixed;
+      `;
+    }
   }};
   
   @media (max-width: ${(props) => props.theme.theme.breakpoints.t}) {
     ${(props) => {
-      if(props.size != "navbarFull" && props.size != "navbarShort" && props.size != "topbarFull" && props.size != "generalContainer"){
+      if(BoxExceptionsResponsive.indexOf(props.size) === -1){
         return css`
           width: calc(${(props) => props.theme.theme.box.sizes[props.size][0]}*0.8);
           height: calc(${(props) => props.theme.theme.box.sizes[props.size][1]}*0.8);
@@ -50,9 +58,9 @@ const BoxComponent = styled.div<BoxProps>`
   
   @media (max-width: ${(props) => props.theme.theme.breakpoints.ml}) {
     ${(props) => {
-      if(props.size != "navbarFull" && props.size != "navbarShort" && props.size != "topbarFull" && props.size != "generalContainer"){
+      if(BoxExceptionsResponsive.indexOf(props.size) === -1){
         return css`
-          width: calc(${(props) => props.theme.theme.box.sizes[props.size][0]}*0.);
+          width: calc(${(props) => props.theme.theme.box.sizes[props.size][0]}*0.6);
           height: calc(${(props) => props.theme.theme.box.sizes[props.size][1]}*0.65);
         `;
 
@@ -72,6 +80,7 @@ function Box(props: BoxProps) {
         extraRounded={props.extraRounded}
         shadow={props.shadow}
         absolute={props.absolute}
+        fixed={props.fixed}
       >
         {props.children}
       </BoxComponent>

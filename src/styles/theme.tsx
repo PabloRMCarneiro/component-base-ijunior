@@ -42,7 +42,7 @@ export const theme = {
     greyDarkLightHover: "#747474",
 
 
-    offWhite: "#ececec",
+    offWhite: "#d8d8d8",
   },
   borderRadius: {
     r: "0.625rem",
@@ -111,12 +111,12 @@ export const theme = {
   },
   button: {
     sizes: {
-      sm: ["140px", "43px"],
-      xs: ["184px", "43px"],
-      "2xs": ["344px", "43px"],
-      md: ["548px", "43px"],
-      lg: ["752px", "43px"],
-      xlg: ["955px", "43px"],
+      sm: ["8.75rem", "2.6875rem"],
+      xs: ["11.5rem", "2.6875rem"],
+      "2xs": ["21.5rem", "2.6875rem"],
+      md: ["34.25rem", "2.6875rem"],
+      lg: ["47rem", "2.6875rem"],
+      xlg: ["59.6875rem", "2.6875rem"],
     },
   },
   text: {
@@ -156,22 +156,15 @@ export const theme = {
   },
   box: {
     sizes: {
-      ssm: ["150px", "150px"],
-      rsm: ["150px", "110px"],
-      sxs: ["200px", "200px"],
-      rxs: ["200px", "140px"],
-      smd: ["250px", "250px"],
-      rmd: ["250px", "170px"],
-      slg: ["300px", "300px"],
-      rlg: ["300px", "200px"],
-      
       modalSizeType1: ["440px", "262px"],
       modalSizeType2: ["440px", "315px"],
       modalSizeType3: ["440px", "426px"],
       modalSizeType4: ["440px", "450px"],
       modalSizeType5: ["440px", "730px"],
-      accessContainer: ["848px", "524px"],
 
+      accessContainer: ["53rem", "32.75rem"],
+      accessContainerMobile: ["28.4375rem", "38.375rem"],
+      
       navbarFull: ['14.125rem', '100vh'],
       navbarShort: ['7.75rem', '100vh'],
 
@@ -182,11 +175,8 @@ export const theme = {
   },
   input: {
     sizes: {
-      sm: ["396px", "122px"],
-      "2sm": ["348px", "50px"],
-      xs: ["372px", "80px"],
-      "2xs": ["372px", "120px"],
-      md: ["228px", "150px"],
+      sm: ["396px", "122px"], //modal  input
+      "2sm": ["348px", "50px"], // modal container access
     },
     placeholderSizes: {
       sm: "1rem",

@@ -61,6 +61,51 @@ function Login() {
     if (validateEmail(email) && validatePassword(password)) navigate("/");
   };
 
+  const [isMobile, setIsMobile] = useState(false);
+  const [screenWidth, getScreenWidth] = useState(window.innerWidth);
+  const setScreenWidth = () => getScreenWidth(window.innerWidth);
+  const logoSizeOptions = ["7.1875rem", "5rem", "4rem"];
+  const [logoSize, setLogoSize] = useState(logoSizeOptions[0]);
+
+  useEffect(() => {
+    window.addEventListener("resize", setScreenWidth);
+    return () => window.removeEventListener("resize", setScreenWidth);
+  }, []);
+
+  useEffect(() => {
+    if (
+      screenWidth <
+      Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
+        16
+    ) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+    if (
+      screenWidth >
+      Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
+        16
+    )
+      setLogoSize(logoSizeOptions[0]);
+
+    if (
+      screenWidth <
+      Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
+        16
+    )
+      setLogoSize(logoSizeOptions[1]);
+
+    if (
+      screenWidth <
+      Number(
+        theme.breakpoints.ml.slice(0, theme.breakpoints.ml.indexOf("rem"))
+      ) *
+        16
+    )
+      setLogoSize(logoSizeOptions[2]);
+  }, [screenWidth]);
+
   return (
     <>
       {(modalEmail && (
@@ -79,82 +124,177 @@ function Login() {
             description="A senha informada é inválida, tente novamente."
           />
         ))}
-
-      <MainContainer style={{ flexDirection: "row" }}>
-        <GlobalStyle />
-        <Box
-          size="accessContainer"
-          rounded
-          backgroundColor="bgLogin"
-          shadow="accessContainer"
-        >
-          <MainAceessContainer>
-            <RightAccessContainer style={{ flexDirection: "column" }}>
-              <Spacer vertical="12" />
-              <BiArrowBack
-                style={{ width: "3rem", height: "3rem", cursor: "pointer" }}
-                color={theme.colors.grey}
-                onClick={() => navigate("/")}
-              />
-              <CenterHorizontalContainer>
+      {isMobile ? (
+        <MainContainer>
+          <GlobalStyle />
+          <Box
+            size="accessContainerMobile"
+            rounded
+            backgroundColor="bgLogin"
+            shadow="accessContainer"
+          >
+            <CenterHorizontalContainer style={{padding: '0 3rem 0 3rem'}}>
+              {logoSize === logoSizeOptions[0] ? (
                 <Spacer vertical="16" />
-                <img
-                  src={Logo}
-                  alt=""
-                  style={{ width: "222px", height: "229px" }}
-                />
-              </CenterHorizontalContainer>
-            </RightAccessContainer>
-            <LineVertical />
-            <LeftAccessContainer>
-              <CenterHorizontalContainer style={{justifyContent: 'center'}}>
-                <Text variant="h3">Login</Text>
+              ) : logoSize === logoSizeOptions[1] ? (
                 <Spacer vertical="14" />
-                <Input
-                  size="2sm"
-                  placeholder="Email profissional"
-                  type="email"
-                  center
-                  onChange={(e) => HandleEmail(e)}
-                />
-                <Spacer vertical="9" />
-                <Input
-                  size="2sm"
-                  placeholder="Senha"
-                  type="password"
-                  center
-                  onChange={(e) => HandlePassowrd(e)}
-                />
+              ) : (
                 <Spacer vertical="12" />
-                <Button
-                  size="2xs"
-                  color="primary"
-                  hover
-                  onClick={() => HandleSubmit()}
-                >
-                  <Text variant="body2" bold>
-                    Entrar
-                  </Text>
-                </Button>
-                <Spacer vertical="11" />
-                <LineHorizontal />
-                <Spacer vertical="7" />
-                <Link path="/esqueceu-sua-senha">
-                  <Text variant="body2" color="primary" hover>
-                    Esqueceu a senha?
-                  </Text>
-                </Link>
+              )}
+              <img
+                src={Logo}
+                alt=""
+                style={{ width: `${logoSize}`, height: `${logoSize}` }}
+              />
+              {logoSize === logoSizeOptions[0] ? (
+                <Spacer vertical="12" />
+              ) : logoSize === logoSizeOptions[1] ? (
+                <Spacer vertical="8" />
+              ) : (
                 <Spacer vertical="4" />
-                <Link path="/">
-                  <Text variant="body2" color="primary" hover>
-                    Ainda não tem uma? Cadastre aqui
-                  </Text>
-                </Link>
-              </CenterHorizontalContainer>
-            </LeftAccessContainer>
-          </MainAceessContainer>
-        </Box>
-      </MainContainer>
+              )}
+              <Text variant="h4">
+                Login
+              </Text>
+              <Spacer vertical="8" />
+              <Input
+                size="2sm"
+                placeholder="Email profissional"
+                type="email"
+                center
+                onChange={(e) => HandleEmail(e)}
+              />
+              <Spacer vertical="8" />
+              <Input
+                size="2sm"
+                placeholder="Senha"
+                type="password"
+                center
+                onChange={(e) => HandlePassowrd(e)}
+              />
+              {logoSize === logoSizeOptions[0] ? (
+                <Spacer vertical="12" />
+              ) : (
+                <Spacer vertical="8" />
+              )}
+              <Button
+                size="2xs"
+                color="primary"
+                hover
+                onClick={() => HandleSubmit()}
+              >
+                <Text variant="body2" bold>
+                  Entrar
+                </Text>
+              </Button>
+
+              {logoSize === logoSizeOptions[0] ? (
+                <Spacer vertical="12" />
+              ) : logoSize === logoSizeOptions[1] ? (
+                <Spacer vertical="8" />
+              ) : (
+                <Spacer vertical="6" />
+              )}
+
+              <Link path="/esqueceu-sua-senha">
+                <Text variant="body2" color="primary" hover>
+                  Esqueceu a senha?
+                </Text>
+              </Link>
+
+              {logoSize === logoSizeOptions[0] ? (
+                <Spacer vertical="4" />
+              ) : logoSize === logoSizeOptions[1] ? (
+                <Spacer vertical="2" />
+              ) : (
+                <Spacer vertical="1" />
+              )}
+
+              <Link path="/">
+                <Text variant="body2" color="primary" hover>
+                  Ainda não tem uma? Cadastre aqui
+                </Text>
+              </Link>
+            </CenterHorizontalContainer>
+          </Box>
+        </MainContainer>
+      ) : (
+        <MainContainer style={{ flexDirection: "row" }}>
+          <GlobalStyle />
+          <Box
+            size="accessContainer"
+            rounded
+            backgroundColor="bgLogin"
+            shadow="accessContainer"
+          >
+            <MainAceessContainer>
+              <RightAccessContainer style={{ flexDirection: "column" }}>
+                <Spacer vertical="12" />
+                <BiArrowBack
+                  style={{ width: "3rem", height: "3rem", cursor: "pointer" }}
+                  color={theme.colors.grey}
+                  onClick={() => navigate("/")}
+                />
+                <CenterHorizontalContainer>
+                  <Spacer vertical="16" />
+                  <img
+                    src={Logo}
+                    alt=""
+                    style={{ width: "222px", height: "229px" }}
+                  />
+                </CenterHorizontalContainer>
+              </RightAccessContainer>
+              <LineVertical />
+              <LeftAccessContainer>
+                <CenterHorizontalContainer style={{ justifyContent: "center" }}>
+                  <Text variant="h3">Login</Text>
+                  <Spacer vertical="14" />
+                  <Input
+                    size="2sm"
+                    placeholder="Email profissional"
+                    type="email"
+                    center
+                    onChange={(e) => HandleEmail(e)}
+                  />
+                  <Spacer vertical="9" />
+                  <Input
+                    size="2sm"
+                    placeholder="Senha"
+                    type="password"
+                    center
+                    onChange={(e) => HandlePassowrd(e)}
+                  />
+                  <Spacer vertical="12" />
+                  <Button
+                    size="2xs"
+                    color="primary"
+                    hover
+                    onClick={() => HandleSubmit()}
+                  >
+                    <Text variant="body2" bold>
+                      Entrar
+                    </Text>
+                  </Button>
+                  <Spacer vertical="11" />
+                  <LineHorizontal />
+                  <Spacer vertical="7" />
+                  <Link path="/esqueceu-sua-senha">
+                    <Text variant="body2" color="primary" hover>
+                      Esqueceu a senha?
+                    </Text>
+                  </Link>
+                  <Spacer vertical="4" />
+                  <Link path="/">
+                    <Text variant="body2" color="primary" hover>
+                      Ainda não tem uma? Cadastre aqui
+                    </Text>
+                  </Link>
+                </CenterHorizontalContainer>
+              </LeftAccessContainer>
+            </MainAceessContainer>
+          </Box>
+        </MainContainer>
+      )}
     </>
   );
 }

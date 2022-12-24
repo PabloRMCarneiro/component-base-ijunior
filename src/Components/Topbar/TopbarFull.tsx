@@ -1,6 +1,7 @@
 import React from "react";
 import GlobalStyle from "../../styles/GlobalStyle";
 import { useNavigate, useLocation } from "react-router-dom";
+import { theme } from "../../styles/theme";
 
 import Logo from "./img/Logo.png";
 
@@ -15,8 +16,9 @@ import {
   CenterContainerFlex,
   LinkCotainerTopbar,
   BottomBarTopbar,
-
+  CenterContainer,
 } from "../../utils/Containers";
+import Login from "../AccessContainer/Login/Login";
 
 function TopbarFull() {
   const navigate = useNavigate();
@@ -25,7 +27,7 @@ function TopbarFull() {
   return (
     <>
       <GlobalStyle />
-      <Box size="topbarFull" backgroundColor="greyLight">
+      <Box size="topbarFull" backgroundColor="greyLight" fixed>
         <InternalContainerTopbar>
           <CenterContainerFlex>
             <img
@@ -36,38 +38,44 @@ function TopbarFull() {
             />
           </CenterContainerFlex>
           <CenterContainerFlex>
-            {
-              location.pathname.indexOf("short") !== -1 ? 
-              ( 
-                <LinkCotainerTopbar>
-                <Text variant="body2" hover bold>Short</Text> 
+            {location.pathname.indexOf("short") !== -1 ? (
+              <LinkCotainerTopbar>
+                <Text variant="body2" hover bold>
+                  Short
+                </Text>
                 <BottomBarTopbar color="primary" />
-                </LinkCotainerTopbar>
-              ) :
-              ( <Text variant="body2" hover>Short</Text> )
-            }
+              </LinkCotainerTopbar>
+            ) : (
+              <Text variant="body2" hover>
+                Short
+              </Text>
+            )}
             <Spacer horizontal="9" />
-            {
-              location.pathname.indexOf("full") !== -1 ? 
-              ( 
-                <LinkCotainerTopbar>
-                <Text variant="body2" hover bold>Full</Text> 
+            {location.pathname.indexOf("full") !== -1 ? (
+              <LinkCotainerTopbar>
+                <Text variant="body2" hover bold>
+                  Full
+                </Text>
                 <BottomBarTopbar color="primary" />
-                </LinkCotainerTopbar>
-              ) :
-              ( <Text variant="body2" hover>Full</Text> )
-            }
+              </LinkCotainerTopbar>
+            ) : (
+              <Text variant="body2" hover>
+                Full
+              </Text>
+            )}
             <Spacer horizontal="9" />
-            {
-              location.pathname.indexOf("example") !== -1 ? 
-              ( 
-                <LinkCotainerTopbar>
-                <Text variant="body2" hover bold>Exemplo</Text> 
+            {location.pathname.indexOf("example") !== -1 ? (
+              <LinkCotainerTopbar>
+                <Text variant="body2" hover bold>
+                  Exemplo
+                </Text>
                 <BottomBarTopbar color="primary" />
-                </LinkCotainerTopbar>
-              ) :
-              ( <Text variant="body2" hover>Exemplo</Text> )
-            }
+              </LinkCotainerTopbar>
+            ) : (
+              <Text variant="body2" hover>
+                Exemplo
+              </Text>
+            )}
             <Spacer horizontal="20" />
             <Button size="sm" color="primary" bordered hover>
               <Text variant="body2" bold>
@@ -83,6 +91,10 @@ function TopbarFull() {
           </CenterContainerFlex>
         </InternalContainerTopbar>
       </Box>
+      {/* just to exemplify after the Center Container component is not to be in the TopBar */}
+      <CenterContainer style={{backgroundColor: `${theme.colors.offWhite}`}}>
+        <Login/>
+      </CenterContainer>
     </>
   );
 }
