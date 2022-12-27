@@ -28,7 +28,7 @@ import TopbarMobile from "../Components/Topbar/TopbarMobile";
 import TopbarExample from "../Components/Topbar/TopbarExample";
 
 import GeneralContainer from "../Components/GeneralContainer/GeneralContainer"; 
-
+import GeneralFilterContainer from "../Components/GeneralContainer/GeneralFilterContainer";
 
 function routes() {
   return (
@@ -61,6 +61,8 @@ function routes() {
         <Route path="/topbar/example" element={<TopbarExample />} />
         <Route path="/general-container" element={<GeneralContainer />} />
 
+
+        <Route path="/general-filter-container" element={<GeneralFilterContainer />} />
       </Routes>
     </Router>
   );

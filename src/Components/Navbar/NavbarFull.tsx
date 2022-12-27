@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import GlobalStyle from "../../styles/GlobalStyle";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { theme } from "../../styles/theme";
 
 import Box from "../Box";
@@ -25,10 +25,12 @@ import {
   LinkContainerNavbar,
   FooterContainerNavbar,
   InternalFooterContainerNavbar,
+  LineVertical,
 } from "../../utils/Containers";
 
 function NavbarFull() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [isMobile, setIsMobile] = useState(false);
   const [screenWidth, getScreenWidth] = useState(window.innerWidth);
@@ -39,16 +41,23 @@ function NavbarFull() {
     return () => window.removeEventListener("resize", setScreenWidth);
   }, []);
 
-  useEffect(() => screenWidth < Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem")))*16 ? setIsMobile(true) : setIsMobile(false), [screenWidth]);
+  useEffect(
+    () =>
+      screenWidth <
+      Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
+        16
+        ? setIsMobile(true)
+        : setIsMobile(false),
+    [screenWidth]
+  );
 
   return (
     <>
-    {/* <div style={{ display: "flex" }}> */}
       <GlobalStyle />
       {isMobile ? (
         <NavbarShort />
-        ) : (
-          <Box size="navbarFull" backgroundColor="white">
+      ) : (
+        <Box size="navbarFull" backgroundColor="white">
           <CenterContainer>
             <InternalContainerNavbar>
               <img src={logo} />
@@ -61,14 +70,17 @@ function NavbarFull() {
                 <img
                   src={homeIcon}
                   style={{ cursor: "pointer" }}
-                  onClick={() => navigate("/")}
-                  />
+                  onClick={() => navigate("/general-container")}
+                />
                 <Spacer horizontal="4" />
-                <Link path="/">
+                <Link path="/general-container">
                   <Text variant="legenda" color="greyDark" hover bold>
-                    Home
+                    General Container
                   </Text>
                 </Link>
+                {location.pathname.indexOf("general-container") !== -1 && (
+                  <LineVertical color="primary" weight="4" />
+                )}
               </LinkContainerNavbar>
 
               <Spacer vertical="12" />
@@ -78,14 +90,18 @@ function NavbarFull() {
                 <img
                   src={dataBaseIcon}
                   style={{ cursor: "pointer" }}
-                  onClick={() => navigate("/modal")}
-                  />
+                  onClick={() => navigate("/general-filter-container")}
+                />
                 <Spacer horizontal="6" />
-                <Link path="/modal">
+                <Link path="/general-filter-container">
                   <Text variant="legenda" color="greyDark" hover bold>
-                    Modais
+                    General Container Filter
                   </Text>
                 </Link>
+
+                {location.pathname.indexOf("general-filter-container") !== -1 && (
+                  <LineVertical color="primary" weight="4" />
+                )}
               </LinkContainerNavbar>
 
               <Spacer vertical="12" />
@@ -96,7 +112,7 @@ function NavbarFull() {
                   src={calendarIcon}
                   style={{ cursor: "pointer" }}
                   onClick={() => navigate("/buttons")}
-                  />
+                />
                 <Spacer horizontal="4" />
                 <Link path="/buttons">
                   <Text variant="legenda" color="greyDark" hover bold>
@@ -104,25 +120,33 @@ function NavbarFull() {
                   </Text>
                 </Link>
               </LinkContainerNavbar>
-              <Spacer vertical="40"/>
-              <Spacer vertical="40"/>
-              <Spacer vertical="40"/>
-              <Spacer vertical="40"/>
+              <Spacer vertical="40" />
+              <Spacer vertical="40" />
+              <Spacer vertical="40" />
+              <Spacer vertical="40" />
               <FooterContainerNavbar>
-                <FaUserCircle size="1.66rem" color={theme.colors.greyDarkLightHover} />
+                <FaUserCircle
+                  size="1.66rem"
+                  color={theme.colors.greyDarkLightHover}
+                />
                 <Spacer horizontal="4" />
                 <InternalFooterContainerNavbar>
                   <Text variant="legenda" color="greyDark" bold>
                     Nome do Usuário
                   </Text>
                   <Link path="/">
-                    <Text variant="legenda2" color="greyDark" hover >
+                    <Text variant="legenda2" color="greyDark" hover>
                       Ver perfil
                     </Text>
                   </Link>
                 </InternalFooterContainerNavbar>
                 <Spacer horizontal="5" />
-                <MdLogout size="1rem" color={theme.colors.grey} style={{cursor: 'pointer'}} onClick={() => navigate("/")}/>
+                <MdLogout
+                  size="1rem"
+                  color={theme.colors.grey}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => navigate("/")}
+                />
               </FooterContainerNavbar>
             </InternalContainerNavbar>
           </CenterContainer>
@@ -140,7 +164,7 @@ function NavbarFull() {
         </Text>
         </Button>
       </MainContainer> */}
-{/*     </div>   */}
+      {/*     </div>   */}
     </>
   );
 }

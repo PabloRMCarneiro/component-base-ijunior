@@ -6,18 +6,21 @@ import { theme } from "../../styles/theme";
 import Box from "../Box";
 import Text from "../Text";
 import Spacer from "../Spacer";
+import Link from "../Link";
 
 import { BiArrowBack } from "react-icons/bi";
 
 import {
   MainContainer,
   TitleGeneralContainer,
-  ContentGeneralContainer,
+  TopContainerGeneralFilterContainer,
+  LinkContainerGeneralFilterContainer,
+  BottomBarGeneralFIlterContainer,
 } from "../../utils/Containers";
 
 import NavbarFull from "../Navbar/NavbarFull";
 
-function GeneralContainer() {
+function GeneralFilterContainer() {
   const navigate = useNavigate();
 
   const [isMobile, setIsMobile] = useState(false);
@@ -50,29 +53,46 @@ function GeneralContainer() {
         }}
       >
         <TitleGeneralContainer>
-          <Text variant="h3" bold>
-            Title General Container
-          </Text>
+
+          <LinkContainerGeneralFilterContainer>
+            <Link path="/">
+              <Text variant="body2" hover bold>
+                Dados Gerais
+              </Text>
+            </Link>
+            <BottomBarGeneralFIlterContainer color="primary" />
+          </LinkContainerGeneralFilterContainer>
+
+          <Spacer horizontal="8" />
+
+          <Text variant="body2">Dados de clientes</Text>
+          
+          <Spacer horizontal="8" />
+          
+          <Text variant="body2">Informações da empresa</Text>
+          
+          <Spacer horizontal="8" />
+          
+          <Text variant="body2">Informações de parceiros</Text>
+        
         </TitleGeneralContainer>
-        <Spacer vertical="4" />
+        <Spacer vertical="8" />
         <Box
-          size="generalContainer"
+          size="generalContainerFilter"
           backgroundColor="bgLogin"
           rounded
           shadow="accessContainer"
-        >
-          <ContentGeneralContainer>
-
-          <BiArrowBack
-            style={{ width: "2rem", height: "2rem", cursor: "pointer" }}
-            color={theme.colors.grey}
-            onClick={() => navigate("/")}
-          />
-          </ContentGeneralContainer>
-        </Box>
+        ></Box>
+        <Spacer vertical="12" />
+        <Box
+          size="generalContainerFilterMain"
+          backgroundColor="bgLogin"
+          rounded
+          shadow="accessContainer"
+        ></Box>
       </MainContainer>
     </div>
   );
 }
 
-export default GeneralContainer;
+export default GeneralFilterContainer;

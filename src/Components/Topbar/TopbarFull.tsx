@@ -15,22 +15,22 @@ import Spacer from "../Spacer";
 import {
   InternalContainerTopbar,
   CenterContainerFlex,
-  LinkCotainerTopbar,
+  LinkContainerTopbar,
   BottomBarTopbar,
-  CenterContainer,
 } from "../../utils/Containers";
+
+interface TopbarFullProps {
+  handleTopBarMobile?: (r: any) => void;
+}
 
 import Login from "../AccessContainer/Login/Login";
 
-export var topBarMobileExport: boolean = false; // export variable to use in other father components for expand MobileTopbar
+function TopbarFull(props: TopbarFullProps) {
 
-function TopbarFull() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleTopBarMobile = () => {
-    topBarMobileExport = true
-  };
+  const handleTopBarMobileFather = () => props.handleTopBarMobile ? props.handleTopBarMobile(true) : null;
   
   const [isMobile, setIsMobile] = useState(false);
   const [screenWidth, getScreenWidth] = useState(window.innerWidth);
@@ -68,14 +68,14 @@ function TopbarFull() {
           {!isMobile ? (
             <CenterContainerFlex>
               {location.pathname.indexOf("short") !== -1 ? (
-                <LinkCotainerTopbar>
+                <LinkContainerTopbar>
                   <Link path="/">
                     <Text variant="body2" hover bold>
                       Short
                     </Text>
                   </Link>
                   <BottomBarTopbar color="primary" />
-                </LinkCotainerTopbar>
+                </LinkContainerTopbar>
               ) : (
                 <Link path="/">
                   <Text variant="body2" hover>
@@ -85,14 +85,14 @@ function TopbarFull() {
               )}
               <Spacer horizontal="9" />
               {location.pathname.indexOf("full") !== -1 ? (
-                <LinkCotainerTopbar>
+                <LinkContainerTopbar>
                   <Link path="/">
                     <Text variant="body2" hover bold>
                       Full
                     </Text>
                   </Link>
                   <BottomBarTopbar color="primary" />
-                </LinkCotainerTopbar>
+                </LinkContainerTopbar>
               ) : (
                 <Link path="/">
                   <Text variant="body2" hover>
@@ -102,14 +102,14 @@ function TopbarFull() {
               )}
               <Spacer horizontal="9" />
               {location.pathname.indexOf("example") !== -1 ? (
-                <LinkCotainerTopbar>
+                <LinkContainerTopbar>
                   <Link path="/">
                     <Text variant="body2" hover bold>
                       Exemplo
                     </Text>
                   </Link>
                   <BottomBarTopbar color="primary" />
-                </LinkCotainerTopbar>
+                </LinkContainerTopbar>
               ) : (
                 <Link path="/">
                   <Text variant="body2" hover>
@@ -135,7 +135,7 @@ function TopbarFull() {
               <GiHamburgerMenu 
                 size="1.5rem" 
                 color={theme.colors.primary}
-                onClick={handleTopBarMobile}
+                onClick={handleTopBarMobileFather}
                 style={{ cursor: "pointer" }}
               />
               <Spacer horizontal="10"/>

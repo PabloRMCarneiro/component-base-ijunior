@@ -15,10 +15,13 @@ import {
   LineHorizontal,
 } from "../../utils/Containers";
 
-function TopbarMobile() {
+interface TopbarMobileProps {
+  handleTopBarMobile?: (r: any) => void;
+}
 
-  const [ closeTopBarMobile, setCloseTopBarMobile] = useState(false);
-  const handleCloseTopBarMobile = () => setCloseTopBarMobile(!closeTopBarMobile);
+function TopbarMobile(props: TopbarMobileProps) {
+
+  const handleCloseTopBarMobile = () => props.handleTopBarMobile ? props.handleTopBarMobile(false) : null;
 
   return (
     <>
@@ -31,7 +34,7 @@ function TopbarMobile() {
             position: "relative",
             left: "50%",
             transform: "translateX(-50%)",
-            marginRight: "70%"
+            marginRight: "65%"
           }}
         />
         <AiOutlineClose

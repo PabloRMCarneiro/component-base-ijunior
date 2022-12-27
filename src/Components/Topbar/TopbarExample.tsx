@@ -8,24 +8,40 @@ import TopbarMobile from "./TopbarMobile";
 
 import { CenterContainer } from "../../utils/Containers";
 
-import { topBarMobileExport } from "./TopbarFull";
-
 function TopbarExample() {
 
-  const [mobile, setMobile] = useState(false);
+  const [componentTopBarMobile, setComponentTopBarMobile] = useState(false);
+
+  const updateTopBarMobile = (r: any) => setComponentTopBarMobile(r);
+
+  const [isMobile, setIsMobile] = useState(false);
+  const [screenWidth, getScreenWidth] = useState(window.innerWidth);
+  const setScreenWidth = () => getScreenWidth(window.innerWidth);
 
   useEffect(() => {
-    topBarMobileExport ? setMobile(true) : setMobile(false);
+    window.addEventListener("resize", setScreenWidth);
+    return () => window.removeEventListener("resize", setScreenWidth);
   }, []);
+
+  useEffect(
+    () =>
+      screenWidth <
+      Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
+        16
+        ? setIsMobile(true)
+        : setIsMobile(false),
+    [screenWidth]
+  );
+
 
   return (
     <>
       <GlobalStyle />
-      {mobile ? (
-        <TopbarMobile />
+      {componentTopBarMobile && isMobile ? (
+        <TopbarMobile handleTopBarMobile={updateTopBarMobile}/>
       ) : (
         <>
-          <TopbarFull />
+          <TopbarFull handleTopBarMobile = {updateTopBarMobile}/>
           <CenterContainer
             style={{ backgroundColor: `${theme.colors.offWhite}` }}
           >

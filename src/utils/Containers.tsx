@@ -11,6 +11,15 @@ interface BottomBarTopbarProps {
   color: string;
 }
 
+interface BottomBarGeneralFIlterContainerProps {
+  color: string;
+}
+
+interface LineProps {
+  color?: string;
+  weight?: string;
+}
+
 export const InternalContainerNavbar = styled.div`
   width: calc(100% - 4rem);
   height: calc(100% - 4rem);
@@ -50,18 +59,23 @@ export const InternalContainerTopbar = styled.div`
   justify-content: space-between;
 `;
 
-export const LinkCotainerTopbar = styled.div`
+export const LinkContainerTopbar = styled.div`
   height: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 `;
 
-export const BottomBarTopbar = styled.span<BottomBarTopbarProps> `
+export const BottomBarTopbar = styled.span<BottomBarTopbarProps>`
   border-bottom: 4px solid ${(props) => props.theme.theme.colors[props.color]};
   border-radius: 25%;
   position: relative;
   top: 1.75rem;
+`;
+
+export const BottomBarGeneralFIlterContainer = styled.span<BottomBarGeneralFIlterContainerProps>`
+  border-bottom: 4px solid ${(props) => props.theme.theme.colors[props.color]};
+  position: relative;
 `;
 
 export const CenterContainerFlex = styled.div`
@@ -194,10 +208,32 @@ export const LineHorizontal = styled.div`
   background-color: #c4c4c4;
 `;
 
-export const LineVertical = styled.div`
+export const LineVertical = styled.div<LineProps>`
   width: 0.8px;
   height: 100%;
   background-color: #c4c4c4;
+  ${(props) => {
+    if (props.color) {
+      return css`
+        background-color: ${props.theme.theme.colors[props.color]};
+      `;
+    } else {
+      return css`
+        background-color: #c4c4c4;
+      `;
+    }
+  }}
+  ${(props) => {
+    if (props.weight) {
+      return css`
+        width: ${props.weight+"px"};
+      `;
+    } else {
+      return css`
+        width: 0.8px;
+      `;
+    }
+  }}
 `;
 
 export const MainAceessContainer = styled.div`
@@ -221,9 +257,9 @@ export const LeftAccessContainer = styled.div`
   padding: 0px 2rem;
 `;
 
-
 export const TitleGeneralContainer = styled.div`
   width: 90%;
+  display: flex;
 `;
 
 export const ContentGeneralContainer = styled.div`
@@ -238,4 +274,17 @@ export const TopContainerTopBarMobile = styled.div`
   height: 5rem;
   align-items: center;
   justify-content: space-between;
+`;
+
+export const TopContainerGeneralFilterContainer = styled.div`
+  display: flex;
+  height: auto;
+  width: 100%;
+  border: 1px solid red;
+`;
+
+export const LinkContainerGeneralFilterContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
