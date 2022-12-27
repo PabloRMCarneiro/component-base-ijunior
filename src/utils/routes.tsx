@@ -24,7 +24,7 @@ import NavbarExample from "../Components/Navbar/NavbarExample";
 import TopbarPage from "../pages/TopbarPage";
 import TopbarFull from "../Components/Topbar/TopbarFull";
 
-import TopbarShort from "../Components/Topbar/TopbarShort";
+import TopbarMobile from "../Components/Topbar/TopbarMobile";
 import TopbarExample from "../Components/Topbar/TopbarExample";
 
 import GeneralContainer from "../Components/GeneralContainer/GeneralContainer"; 
@@ -56,7 +56,7 @@ function routes() {
         <Route path="/topbar" element={<TopbarPage />} />
         
         <Route path="/topbar/full" element={<TopbarFull />} />
-        <Route path="/topbar/short" element={<TopbarShort />} />
+        <Route path="/topbar/mobile" element={<TopbarMobile />} />
         
         <Route path="/topbar/example" element={<TopbarExample />} />
         <Route path="/general-container" element={<GeneralContainer />} />

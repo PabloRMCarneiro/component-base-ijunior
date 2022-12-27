@@ -231,3 +231,11 @@ export const ContentGeneralContainer = styled.div`
   height: 100%;
   padding: 1rem;
 `;
+
+export const TopContainerTopBarMobile = styled.div`
+  display: flex;
+  width: 100%;
+  height: 5rem;
+  align-items: center;
+  justify-content: space-between;
+`;
