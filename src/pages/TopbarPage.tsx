@@ -19,10 +19,10 @@ function TopbarPage() {
           color="primary"
           hover
           bordered
-          onClick={() => navigate("/topbar/short")}
+          onClick={() => navigate("/topbar/mobile")}
         >
           <Text variant="body2" bold>
-            Topbar Short
+            Topbar Mobile
           </Text>
         </Button>
 

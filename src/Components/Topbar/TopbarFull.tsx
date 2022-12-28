@@ -69,24 +69,24 @@ function TopbarFull(props: TopbarFullProps) {
             <CenterContainerFlex>
               {location.pathname.indexOf("short") !== -1 ? (
                 <LinkContainerTopbar>
-                  <Link path="/">
+                  <Link path="/topbar/mobile">
                     <Text variant="body2" hover bold>
-                      Short
+                      Mobile
                     </Text>
                   </Link>
                   <BottomBarTopbar color="primary" />
                 </LinkContainerTopbar>
               ) : (
-                <Link path="/">
+                <Link path="/topbar/mobile">
                   <Text variant="body2" hover>
-                    Short
+                    Mobile
                   </Text>
                 </Link>
               )}
               <Spacer horizontal="9" />
               {location.pathname.indexOf("full") !== -1 ? (
                 <LinkContainerTopbar>
-                  <Link path="/">
+                  <Link path="/topbar/full">
                     <Text variant="body2" hover bold>
                       Full
                     </Text>
@@ -94,7 +94,7 @@ function TopbarFull(props: TopbarFullProps) {
                   <BottomBarTopbar color="primary" />
                 </LinkContainerTopbar>
               ) : (
-                <Link path="/">
+                <Link path="/topbar/full">
                   <Text variant="body2" hover>
                     Full
                   </Text>
@@ -103,7 +103,7 @@ function TopbarFull(props: TopbarFullProps) {
               <Spacer horizontal="9" />
               {location.pathname.indexOf("example") !== -1 ? (
                 <LinkContainerTopbar>
-                  <Link path="/">
+                  <Link path="/topbar/example">
                     <Text variant="body2" hover bold>
                       Exemplo
                     </Text>
@@ -111,7 +111,7 @@ function TopbarFull(props: TopbarFullProps) {
                   <BottomBarTopbar color="primary" />
                 </LinkContainerTopbar>
               ) : (
-                <Link path="/">
+                <Link path="/topbar/example">
                   <Text variant="body2" hover>
                     Exemplo
                   </Text>

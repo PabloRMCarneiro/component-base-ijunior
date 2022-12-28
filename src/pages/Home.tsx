@@ -96,6 +96,18 @@ function Home() {
           General Container
         </Text>
       </Button>
+
+      <Spacer vertical="18" />
+      <Button
+        size="2xs"
+        color="primary"
+        hover
+        onClick={() => navigate("/forms")}
+      >
+        <Text variant="h4">
+          Forms
+        </Text>
+      </Button>
     </MainContainer>
   );
 }

@@ -90,12 +90,12 @@ function NavbarFull() {
                 <img
                   src={dataBaseIcon}
                   style={{ cursor: "pointer" }}
-                  onClick={() => navigate("/general-filter-container")}
+                  onClick={() => navigate("/general-filter-container/dados-gerais")}
                 />
                 <Spacer horizontal="6" />
-                <Link path="/general-filter-container">
+                <Link path="/general-filter-container/dados-gerais">
                   <Text variant="legenda" color="greyDark" hover bold>
-                    General Container Filter
+                    General Filter Container
                   </Text>
                 </Link>
 

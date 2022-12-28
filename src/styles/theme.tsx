@@ -170,16 +170,21 @@ export const theme = {
 
       topbarFull: ['100vw', '5rem'],
 
-      generalContainer: ['90%', '85%'],
+      generalContainer: ['90%', '85vh'],
 
-      generalContainerFilterMain: ['90%', '72%'],
-      generalContainerFilter: ['90%', '12%']
+      generalContainerFilterMain: ['90%', '72vh'],
+      generalContainerFilter: ['90%', '12vh'],
+
+      forms: ['90%', 'auto'],
     },
   },
   input: {
     sizes: {
       sm: ["396px", "122px"], //modal  input
-      "2sm": ["348px", "50px"], // modal container access
+      "2sm": ["348px", "47px"], // modal container access
+      forms: ["100%", "2.9375rem"], // forms small
+
+      
     },
     placeholderSizes: {
       sm: "1rem",

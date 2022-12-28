@@ -11,9 +11,10 @@ interface InputProps {
   mask?: string;
 }
 
-const InputComponent = styled.input.attrs((props)=> 
-  {type: props.type   
-  })<InputProps>`
+const InputExceptionsResponsive = ["forms"];
+const InputComponent = styled.input.attrs((props) => {
+  type: props.type;
+})<InputProps>`
   width: ${(props) => props.theme.theme.input.sizes[props.size][0]};
   height: ${(props) => props.theme.theme.input.sizes[props.size][1]};
   border: none;
@@ -24,41 +25,62 @@ const InputComponent = styled.input.attrs((props)=>
   color: ${(props) => props.theme.theme.colors["grey"]};
   &:focus {
     outline: none;
-  };
+  }
   &::placeholder {
-    position:relative;
+    position: relative;
     color: ${(props) => props.theme.theme.colors["grey"]};
-    font-size: ${(props) => props.theme.theme.input.placeholderSizes[props.size]};
+    font-size: ${(props) =>
+      props.theme.theme.input.placeholderSizes[props.size]};
     white-space: pre-line;
     ${(props) => {
       if (props.center) {
         return css`
           top: 0;
-          `;
-      }
-      else{
+        `;
+      } else {
         return css`
           top: -35%;
-          `;
+        `;
       }
     }};
-
-  };
-  @media (max-width: ${(props) => props.theme.theme.breakpoints.t}) {
-    width: calc(${(props) => props.theme.theme.input.sizes[props.size][0]}*0.8);
-    height: calc(${(props) => props.theme.theme.input.sizes[props.size][1]}*0.8);
-    font-size: calc(${(props) => props.theme.theme.input.placeholderSizes[props.size]}*0.8);
-    &::placeholder {
-      font-size: calc(${(props) => props.theme.theme.input.placeholderSizes[props.size]}*0.8);
-    }
   }
+  
+  @media (max-width: ${(props) => props.theme.theme.breakpoints.t}) {
+    ${(props) => {
+      if (InputExceptionsResponsive.indexOf(props.size) === -1) {
+        return css`
+          width: calc(${props.theme.theme.input.sizes[props.size][0]}*0.8);
+          height: calc(${props.theme.theme.input.sizes[props.size][1]}*0.8);
+          font-size: calc(
+            ${props.theme.theme.input.placeholderSizes[props.size]}*0.8
+          );
+          &::placeholder {
+            font-size: calc(
+              ${props.theme.theme.input.placeholderSizes[props.size]}*0.8
+            );
+          }
+        `;
+      }
+    }}
+  }
+
   @media (max-width: ${(props) => props.theme.theme.breakpoints.ml}) {
-    width: calc(${(props) => props.theme.theme.input.sizes[props.size][0]}*0.6);
-    height: calc(${(props) => props.theme.theme.input.sizes[props.size][1]}*0.6);
-    font-size: calc(${(props) => props.theme.theme.input.placeholderSizes[props.size]}*0.6);
-    &::placeholder {
-      font-size: calc(${(props) => props.theme.theme.input.placeholderSizes[props.size]}*0.6);
-    }
+    ${(props) => {
+      if (InputExceptionsResponsive.indexOf(props.size) === -1) {
+        return css`
+          width: calc(${props.theme.theme.input.sizes[props.size][0]}*0.6);
+          height: calc(${props.theme.theme.input.sizes[props.size][1]}*0.6);
+          font-size: calc(
+            ${props.theme.theme.input.placeholderSizes[props.size]}*0.6
+          );
+          &::placeholder {
+            font-size: calc(
+              ${props.theme.theme.input.placeholderSizes[props.size]}*0.6
+            );
+          }
+        `;
+      }
+    }}
   }
 `;
 
@@ -72,10 +94,9 @@ function Input(props: InputProps) {
         onChange={props.onChange}
         center={props.center}
         mask={props.mask}
-        
       />
     </ThemeProvider>
-    )
+  );
 }
 
 export default Input;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import GlobalStyle from "../../styles/GlobalStyle";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { theme } from "../../styles/theme";
 
 import Box from "../Box";
@@ -22,6 +22,7 @@ import NavbarFull from "../Navbar/NavbarFull";
 
 function GeneralFilterContainer() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [isMobile, setIsMobile] = useState(false);
   const [screenWidth, getScreenWidth] = useState(window.innerWidth);
@@ -53,28 +54,79 @@ function GeneralFilterContainer() {
         }}
       >
         <TitleGeneralContainer>
-
-          <LinkContainerGeneralFilterContainer>
-            <Link path="/">
-              <Text variant="body2" hover bold>
+          {location.pathname.indexOf("dados-gerais") !== -1 ? (
+            <LinkContainerGeneralFilterContainer>
+              <Link path="/general-filter-container/dados-gerais">
+                <Text variant="body2" hover bold>
+                  Dados Gerais
+                </Text>
+              </Link>
+              <BottomBarGeneralFIlterContainer color="primary" />
+            </LinkContainerGeneralFilterContainer>
+          ) : (
+            <Link path="/general-filter-container/dados-gerais">
+              <Text variant="body2" hover>
                 Dados Gerais
               </Text>
             </Link>
-            <BottomBarGeneralFIlterContainer color="primary" />
-          </LinkContainerGeneralFilterContainer>
+          )}
+
+          <Spacer horizontal="8" />
+          
+          {location.pathname.indexOf("dados-clientes") !== -1 ? (
+            <LinkContainerGeneralFilterContainer>
+              <Link path="/general-filter-container/dados-clientes">
+                <Text variant="body2" hover bold>
+                  Dados de clientes
+                </Text>
+              </Link>
+              <BottomBarGeneralFIlterContainer color="primary" />
+            </LinkContainerGeneralFilterContainer>
+          ) : (
+            <Link path="/general-filter-container/dados-clientes">
+              <Text variant="body2" hover>
+                Dados de clientes
+              </Text>
+            </Link>
+          )}
 
           <Spacer horizontal="8" />
 
-          <Text variant="body2">Dados de clientes</Text>
+          {location.pathname.indexOf("informacoes-empresa") !== -1 ? (
+            <LinkContainerGeneralFilterContainer>
+              <Link path="/general-filter-container/informacoes-empresa">
+                <Text variant="body2" hover bold>
+                  Informações da empresa
+                </Text>
+              </Link>
+              <BottomBarGeneralFIlterContainer color="primary" />
+            </LinkContainerGeneralFilterContainer>
+          ) : (
+            <Link path="/general-filter-container/informacoes-empresa">
+              <Text variant="body2" hover>
+                Informações da empresa
+              </Text>
+            </Link>
+          )}
           
           <Spacer horizontal="8" />
           
-          <Text variant="body2">Informações da empresa</Text>
-          
-          <Spacer horizontal="8" />
-          
-          <Text variant="body2">Informações de parceiros</Text>
-        
+          {location.pathname.indexOf("informacoes-parceiros") !== -1 ? (
+            <LinkContainerGeneralFilterContainer>
+              <Link path="/general-filter-container/informacoes-parceiros">
+                <Text variant="body2" hover bold>
+                  Informações da parceiros
+                </Text>
+              </Link>
+              <BottomBarGeneralFIlterContainer color="primary" />
+            </LinkContainerGeneralFilterContainer>
+          ) : (
+            <Link path="/general-filter-container/informacoes-parceiros">
+              <Text variant="body2" hover>
+                Informações da parceiros
+              </Text>
+            </Link>
+          )}
         </TitleGeneralContainer>
         <Spacer vertical="8" />
         <Box

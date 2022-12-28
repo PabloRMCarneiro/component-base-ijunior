@@ -57,19 +57,19 @@ function TopbarMobile(props: TopbarMobileProps) {
           alignItems: "center",
         }}
       >
-        <Link path="/">
+        <Link path="/topbar/mobile">
           <Text variant="body1" hover>
             Mobile
           </Text>
         </Link>
         <Spacer vertical="8" />
-        <Link path="/">
+        <Link path="/topbar/full">
           <Text variant="body1" hover>
             Full
           </Text>
         </Link>
         <Spacer vertical="8" />
-        <Link path="/">
+        <Link path="/topbar/example">
           <Text variant="body1" hover>
             Example
           </Text>

@@ -13,7 +13,7 @@ interface BoxProps {
   fixed?: boolean;
 }
 
-const BoxExceptionsResponsive = ["navbarFull", "navbarShort", "topbarFull", "generalContainer"]
+const BoxExceptionsResponsive = ["navbarFull", "navbarShort", "topbarFull", "generalContainer", "generalContainerFilterMain", "generalContainerFilter", "forms"]
 
 const BoxComponent = styled.div<BoxProps>`
   
@@ -24,12 +24,12 @@ const BoxComponent = styled.div<BoxProps>`
   ${(props) => {
     if (props.rounded) {
       return css`
-        border-radius: ${(props) => props.theme.theme.borderRadius.r};
+        border-radius: ${props.theme.theme.borderRadius.r};
         `;
     }
     if (props.extraRounded) {
       return css`
-        border-radius: ${(props) => props.theme.theme.borderRadius.xr};
+        border-radius: ${props.theme.theme.borderRadius.xr};
         `;
     }
     if (props.absolute) {
@@ -48,8 +48,8 @@ const BoxComponent = styled.div<BoxProps>`
     ${(props) => {
       if(BoxExceptionsResponsive.indexOf(props.size) === -1){
         return css`
-          width: calc(${(props) => props.theme.theme.box.sizes[props.size][0]}*0.8);
-          height: calc(${(props) => props.theme.theme.box.sizes[props.size][1]}*0.8);
+          width: calc(${props.theme.theme.box.sizes[props.size][0]}*0.8);
+          height: calc(${props.theme.theme.box.sizes[props.size][1]}*0.8);
         `;
 
       }
@@ -60,10 +60,9 @@ const BoxComponent = styled.div<BoxProps>`
     ${(props) => {
       if(BoxExceptionsResponsive.indexOf(props.size) === -1){
         return css`
-          width: calc(${(props) => props.theme.theme.box.sizes[props.size][0]}*0.6);
-          height: calc(${(props) => props.theme.theme.box.sizes[props.size][1]}*0.65);
+          width: calc(${props.theme.theme.box.sizes[props.size][0]}*0.6);
+          height: calc(${props.theme.theme.box.sizes[props.size][1]}*0.65);
         `;
-
       }
     }}
   };

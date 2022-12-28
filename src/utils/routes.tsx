@@ -30,6 +30,8 @@ import TopbarExample from "../Components/Topbar/TopbarExample";
 import GeneralContainer from "../Components/GeneralContainer/GeneralContainer"; 
 import GeneralFilterContainer from "../Components/GeneralContainer/GeneralFilterContainer";
 
+import FormsPage from "../pages/FormsPage";
+
 function routes() {
   return (
     <Router>
@@ -50,7 +52,7 @@ function routes() {
         <Route path="/navbar" element={<NavbarPage />} />
         
         <Route path="/navbar/full" element={<NavbarFull />} />
-        <Route path="/navbar/short" element={<NavbarShort />} />
+        <Route path="/navbar/mobile" element={<NavbarShort />} />
         
         <Route path="/navbar/example" element={<NavbarExample />} />
         <Route path="/topbar" element={<TopbarPage />} />
@@ -61,8 +63,13 @@ function routes() {
         <Route path="/topbar/example" element={<TopbarExample />} />
         <Route path="/general-container" element={<GeneralContainer />} />
 
+        <Route path="/general-filter-container/dados-gerais" element={<GeneralFilterContainer />} />
+        <Route path="/general-filter-container/dados-clientes" element={<GeneralFilterContainer />} />
 
-        <Route path="/general-filter-container" element={<GeneralFilterContainer />} />
+        <Route path="/general-filter-container/informacoes-empresa" element={<GeneralFilterContainer />} />
+        <Route path="/general-filter-container/informacoes-parceiros" element={<GeneralFilterContainer />} />
+        
+        <Route path="/forms" element={<FormsPage />} />
       </Routes>
     </Router>
   );
