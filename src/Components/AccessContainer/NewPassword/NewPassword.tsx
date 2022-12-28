@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import GlobalStyle from "../../../styles/GlobalStyle";
 import { useNavigate } from "react-router-dom";
+import useScreen from "../../../hooks/useScreen";
+
+import GlobalStyle from "../../../styles/GlobalStyle";
 import { theme } from "../../../styles/theme";
 
 import Button from "../../Button";
@@ -24,7 +26,9 @@ import {
 } from "../../../utils/Containers";
 
 function NewPassword() {
+
   const navigate = useNavigate();
+  const screen = useScreen();
 
   const [newPassword, setNewPassword] = useState("");
   const HandleNewPassword = (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -52,21 +56,15 @@ function NewPassword() {
   const HandleSubmit = () => {
     if (validateNewPassword()) navigate("/login");
   };
-
-  const [isMobile, setIsMobile] = useState(false);
-  const [screenWidth, getScreenWidth] = useState(window.innerWidth);
-  const setScreenWidth = () => getScreenWidth(window.innerWidth);
+  
   const logoSizeOptions = ["7.1875rem", "5rem", "4rem"];
   const [logoSize, setLogoSize] = useState(logoSizeOptions[0]);
 
-  useEffect(() => {
-    window.addEventListener("resize", setScreenWidth);
-    return () => window.removeEventListener("resize", setScreenWidth);
-  }, []);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     if (
-      screenWidth <
+      screen <
       Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
         16
     ) {
@@ -74,29 +72,30 @@ function NewPassword() {
     } else {
       setIsMobile(false);
     }
+    
     if (
-      screenWidth >
+      screen >
       Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
         16
     )
       setLogoSize(logoSizeOptions[0]);
 
     if (
-      screenWidth <
+      screen <
       Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
         16
     )
       setLogoSize(logoSizeOptions[1]);
 
     if (
-      screenWidth <
+      screen <
       Number(
         theme.breakpoints.ml.slice(0, theme.breakpoints.ml.indexOf("rem"))
       ) *
         16
     )
       setLogoSize(logoSizeOptions[2]);
-  }, [screenWidth]);
+  }, [screen]);
 
   return (
     <>

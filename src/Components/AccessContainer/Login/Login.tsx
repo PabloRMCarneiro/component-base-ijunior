@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import GlobalStyle from "../../../styles/GlobalStyle";
 import { useNavigate } from "react-router-dom";
-import { BiArrowBack } from "react-icons/bi";
+import useScreen from "../../../hooks/useScreen";
+
+import GlobalStyle from "../../../styles/GlobalStyle";
 import { theme } from "../../../styles/theme";
 
 import Button from "../../Button";
@@ -15,6 +16,8 @@ import ModalValidation from "../ModalValidation";
 
 import Logo from "../../../img/logoAccessContainer.png";
 
+import { BiArrowBack } from "react-icons/bi";
+
 import {
   MainContainer,
   RightAccessContainer,
@@ -27,6 +30,7 @@ import {
 
 function Login() {
   const navigate = useNavigate();
+  const screen = useScreen();
 
   const emailTest: string = "teste@gmail.com";
   const passwordTest: string = "123456";
@@ -61,20 +65,14 @@ function Login() {
     if (validateEmail(email) && validatePassword(password)) navigate("/");
   };
 
-  const [isMobile, setIsMobile] = useState(false);
-  const [screenWidth, getScreenWidth] = useState(window.innerWidth);
-  const setScreenWidth = () => getScreenWidth(window.innerWidth);
   const logoSizeOptions = ["7.1875rem", "5rem", "4rem"];
   const [logoSize, setLogoSize] = useState(logoSizeOptions[0]);
 
-  useEffect(() => {
-    window.addEventListener("resize", setScreenWidth);
-    return () => window.removeEventListener("resize", setScreenWidth);
-  }, []);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     if (
-      screenWidth <
+      screen <
       Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
         16
     ) {
@@ -82,29 +80,30 @@ function Login() {
     } else {
       setIsMobile(false);
     }
+
     if (
-      screenWidth >
+      screen >
       Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
         16
     )
       setLogoSize(logoSizeOptions[0]);
 
     if (
-      screenWidth <
+      screen <
       Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
         16
     )
       setLogoSize(logoSizeOptions[1]);
 
     if (
-      screenWidth <
+      screen <
       Number(
         theme.breakpoints.ml.slice(0, theme.breakpoints.ml.indexOf("rem"))
       ) *
         16
     )
       setLogoSize(logoSizeOptions[2]);
-  }, [screenWidth]);
+  }, [screen]);
 
   return (
     <>
@@ -133,7 +132,7 @@ function Login() {
             backgroundColor="bgLogin"
             shadow="accessContainer"
           >
-            <CenterHorizontalContainer style={{padding: '0 3rem 0 3rem'}}>
+            <CenterHorizontalContainer style={{ padding: "0 3rem 0 3rem" }}>
               {logoSize === logoSizeOptions[0] ? (
                 <Spacer vertical="16" />
               ) : logoSize === logoSizeOptions[1] ? (
@@ -153,9 +152,7 @@ function Login() {
               ) : (
                 <Spacer vertical="4" />
               )}
-              <Text variant="h4">
-                Login
-              </Text>
+              <Text variant="h4">Login</Text>
               <Spacer vertical="8" />
               <Input
                 size="2sm"
@@ -187,7 +184,6 @@ function Login() {
                   Entrar
                 </Text>
               </Button>
-
               {logoSize === logoSizeOptions[0] ? (
                 <Spacer vertical="12" />
               ) : logoSize === logoSizeOptions[1] ? (
@@ -195,13 +191,11 @@ function Login() {
               ) : (
                 <Spacer vertical="6" />
               )}
-
               <Link path="/esqueceu-sua-senha">
                 <Text variant="body2" color="primary" hover>
                   Esqueceu a senha?
                 </Text>
               </Link>
-
               {logoSize === logoSizeOptions[0] ? (
                 <Spacer vertical="4" />
               ) : logoSize === logoSizeOptions[1] ? (
@@ -209,7 +203,6 @@ function Login() {
               ) : (
                 <Spacer vertical="1" />
               )}
-
               <Link path="/">
                 <Text variant="body2" color="primary" hover>
                   Ainda não tem uma? Cadastre aqui

@@ -12,6 +12,8 @@ import Input from "../Components/Input";
 import Row from "../Components/Grid/Row";
 import Column from "../Components/Grid/Column";
 
+import useScreen from "../hooks/useScreen";
+
 import { BiArrowBack } from "react-icons/bi";
 
 import {
@@ -19,28 +21,25 @@ import {
   TitleGeneralContainer,
   ContentGeneralContainer,
   CenterContainer,
+  ContainerFormsInput,
+  ContainerForms,
 } from "../utils/Containers";
 
 function FormsPage() {
+  
   const navigate = useNavigate();
+  const screen = useScreen();
 
   const [isMobile, setIsMobile] = useState(false);
-  const [screenWidth, getScreenWidth] = useState(window.innerWidth);
-  const setScreenWidth = () => getScreenWidth(window.innerWidth);
-
-  useEffect(() => {
-    window.addEventListener("resize", setScreenWidth);
-    return () => window.removeEventListener("resize", setScreenWidth);
-  }, []);
-
+  
   useEffect(
     () =>
-      screenWidth <
+      screen <
       Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
         16
         ? setIsMobile(true)
         : setIsMobile(false),
-    [screenWidth]
+    [screen]
   );
 
   return (
@@ -74,20 +73,11 @@ function FormsPage() {
               color={theme.colors.grey}
               onClick={() => navigate("/")}
             />
-            <div
-              style={{
-                width: "calc(100% - 2rem)",
-                height: "calc(100% - 3rem)",
-                display: "flex",
-                flexDirection: "column",
-                marginLeft: `${isMobile ? "1rem" : "2rem"}`,
-                alignItems: "center",
-              }}
-            >
+            <ContainerForms isMobile={isMobile}>
               <Spacer vertical="8" />
               <Row>
                 <Column grid={12}>
-                  <div
+                  <ContainerFormsInput
                     style={{
                       width: "100%",
                       display: "flex",
@@ -102,14 +92,14 @@ function FormsPage() {
                       type="text"
                       center
                     />
-                  </div>
+                  </ContainerFormsInput>
                 </Column>
               </Row>
               <Spacer vertical="8" />
               <Row>
                 <Column grid={6}>
                   <CenterContainer>
-                    <div
+                    <ContainerFormsInput
                       style={{
                         width: "100%",
                         display: "flex",
@@ -124,12 +114,12 @@ function FormsPage() {
                         type="text"
                         center
                       />
-                    </div>
+                    </ContainerFormsInput>
                   </CenterContainer>
                 </Column>
                 <Column grid={6}>
                   <CenterContainer>
-                    <div
+                    <ContainerFormsInput
                       style={{
                         width: "100%",
                         display: "flex",
@@ -144,7 +134,7 @@ function FormsPage() {
                         type="text"
                         center
                       />
-                    </div>
+                    </ContainerFormsInput>
                   </CenterContainer>
                 </Column>
               </Row>
@@ -152,7 +142,7 @@ function FormsPage() {
               <Row>
                 <Column grid={4}>
                   <CenterContainer>
-                  <div
+                    <ContainerFormsInput
                       style={{
                         width: "100%",
                         display: "flex",
@@ -162,17 +152,17 @@ function FormsPage() {
                       <Text variant="body2">País</Text>
                       <Spacer vertical="4" />
                       <Input
-                        size="forms"                       
+                        size="forms"
                         placeholder="Selecione seu Pais"
                         type="text"
                         center
                       />
-                    </div>
+                    </ContainerFormsInput>
                   </CenterContainer>
                 </Column>
                 <Column grid={4}>
                   <CenterContainer>
-                  <div
+                    <ContainerFormsInput
                       style={{
                         width: "100%",
                         display: "flex",
@@ -182,17 +172,17 @@ function FormsPage() {
                       <Text variant="body2">Estado</Text>
                       <Spacer vertical="4" />
                       <Input
-                        size="forms"                       
+                        size="forms"
                         placeholder="Selecione seu Estado"
                         type="text"
                         center
                       />
-                    </div>
+                    </ContainerFormsInput>
                   </CenterContainer>
                 </Column>
                 <Column grid={4}>
                   <CenterContainer>
-                  <div
+                    <ContainerFormsInput
                       style={{
                         width: "100%",
                         display: "flex",
@@ -202,12 +192,12 @@ function FormsPage() {
                       <Text variant="body2">CEP</Text>
                       <Spacer vertical="4" />
                       <Input
-                        size="forms"                       
+                        size="forms"
                         placeholder="Digite seu CEP"
                         type="text"
                         center
                       />
-                    </div>
+                    </ContainerFormsInput>
                   </CenterContainer>
                 </Column>
               </Row>
@@ -215,7 +205,7 @@ function FormsPage() {
               <Row>
                 <Column grid={3}>
                   <CenterContainer>
-                  <div
+                    <ContainerFormsInput
                       style={{
                         width: "100%",
                         display: "flex",
@@ -225,17 +215,17 @@ function FormsPage() {
                       <Text variant="body2">Rua</Text>
                       <Spacer vertical="4" />
                       <Input
-                        size="forms"                        
+                        size="forms"
                         placeholder="Digite sua Rua"
                         type="text"
                         center
                       />
-                    </div>
+                    </ContainerFormsInput>
                   </CenterContainer>
                 </Column>
                 <Column grid={3}>
                   <CenterContainer>
-                  <div
+                    <ContainerFormsInput
                       style={{
                         width: "100%",
                         display: "flex",
@@ -245,17 +235,17 @@ function FormsPage() {
                       <Text variant="body2">Bairro</Text>
                       <Spacer vertical="4" />
                       <Input
-                        size="forms"                        
+                        size="forms"
                         placeholder="Digite seu Bairro"
                         type="text"
                         center
                       />
-                    </div>
+                    </ContainerFormsInput>
                   </CenterContainer>
                 </Column>
                 <Column grid={3}>
                   <CenterContainer>
-                  <div
+                    <ContainerFormsInput
                       style={{
                         width: "100%",
                         display: "flex",
@@ -265,17 +255,17 @@ function FormsPage() {
                       <Text variant="body2">Número</Text>
                       <Spacer vertical="4" />
                       <Input
-                        size="forms"                        
+                        size="forms"
                         placeholder="Numero da sua casa ou apto"
                         type="text"
                         center
                       />
-                    </div>
+                    </ContainerFormsInput>
                   </CenterContainer>
                 </Column>
                 <Column grid={3}>
                   <CenterContainer>
-                  <div
+                    <ContainerFormsInput
                       style={{
                         width: "100%",
                         display: "flex",
@@ -285,12 +275,12 @@ function FormsPage() {
                       <Text variant="body2">Complemento</Text>
                       <Spacer vertical="4" />
                       <Input
-                        size="forms"                        
+                        size="forms"
                         placeholder="Ex: casa ou prédio"
                         type="text"
                         center
                       />
-                    </div>
+                    </ContainerFormsInput>
                   </CenterContainer>
                 </Column>
               </Row>
@@ -298,7 +288,7 @@ function FormsPage() {
               <Row>
                 <Column grid={6}>
                   <CenterContainer>
-                  <div
+                    <ContainerFormsInput
                       style={{
                         width: "100%",
                         display: "flex",
@@ -313,12 +303,12 @@ function FormsPage() {
                         type="text"
                         center
                       />
-                    </div>
+                    </ContainerFormsInput>
                   </CenterContainer>
                 </Column>
                 <Column grid={6}>
                   <CenterContainer>
-                  <div
+                    <ContainerFormsInput
                       style={{
                         width: "100%",
                         display: "flex",
@@ -333,18 +323,28 @@ function FormsPage() {
                         type="text"
                         center
                       />
-                    </div>
+                    </ContainerFormsInput>
                   </CenterContainer>
                 </Column>
               </Row>
               <Spacer vertical="14" />
-              <Button size={ screenWidth < 1138 && !isMobile ? "md" : (isMobile ? "2xs" : "xlg")}color="primary" hover>
+              <Button
+                size={
+                  screen < 1138 && !isMobile
+                    ? "md"
+                    : isMobile
+                    ? "2xs"
+                    : "xlg"
+                }
+                color="primary"
+                hover
+              >
                 <Text variant="body2" bold>
                   Cadastrar
                 </Text>
               </Button>
               <Spacer vertical="14" />
-            </div>
+            </ContainerForms>
           </ContentGeneralContainer>
         </Box>
         <Spacer vertical="12" />

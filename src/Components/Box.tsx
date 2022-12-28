@@ -66,7 +66,6 @@ const BoxComponent = styled.div<BoxProps>`
       }
     }}
   };
-  
 `;
 
 function Box(props: BoxProps) {
@@ -87,4 +86,4 @@ function Box(props: BoxProps) {
   )
 }
 
-export default Box
+export default Box;

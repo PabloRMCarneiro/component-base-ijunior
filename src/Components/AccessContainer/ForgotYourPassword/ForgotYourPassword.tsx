@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import GlobalStyle from "../../../styles/GlobalStyle";
 import { useNavigate } from "react-router-dom";
-import { BiArrowBack } from "react-icons/bi";
+import useScreen from "../../../hooks/useScreen";
+
+import GlobalStyle from "../../../styles/GlobalStyle";
 import { theme } from "../../../styles/theme";
 
 import Button from "../../Button";
@@ -13,6 +14,8 @@ import Link from "../../Link";
 
 import ModalValidation from "../ModalValidation";
 
+import { BiArrowBack } from "react-icons/bi";
+
 import Logo from "../../../img/logoAccessContainer.png";
 
 import {
@@ -23,11 +26,12 @@ import {
   LeftAccessContainer,
   CenterHorizontalContainer,
   LineHorizontal,
-  CenterContainer,
 } from "../../../utils/Containers";
 
 function ForgotYourPassword() {
+
   const navigate = useNavigate();
+  const screen = useScreen();
 
   const emailTest: string = "teste@gmail.com";
 
@@ -48,20 +52,14 @@ function ForgotYourPassword() {
     if (validateEmail(email)) navigate("/");
   };
 
-  const [isMobile, setIsMobile] = useState(false);
-  const [screenWidth, getScreenWidth] = useState(window.innerWidth);
-  const setScreenWidth = () => getScreenWidth(window.innerWidth);
   const logoSizeOptions = ["7.1875rem", "5rem", "4rem"];
   const [logoSize, setLogoSize] = useState(logoSizeOptions[0]);
 
-  useEffect(() => {
-    window.addEventListener("resize", setScreenWidth);
-    return () => window.removeEventListener("resize", setScreenWidth);
-  }, []);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     if (
-      screenWidth <
+      screen <
       Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
         16
     ) {
@@ -69,29 +67,30 @@ function ForgotYourPassword() {
     } else {
       setIsMobile(false);
     }
+
     if (
-      screenWidth >
+      screen >
       Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
         16
     )
       setLogoSize(logoSizeOptions[0]);
 
     if (
-      screenWidth <
+      screen <
       Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
         16
     )
       setLogoSize(logoSizeOptions[1]);
 
     if (
-      screenWidth <
+      screen <
       Number(
         theme.breakpoints.ml.slice(0, theme.breakpoints.ml.indexOf("rem"))
       ) *
         16
     )
       setLogoSize(logoSizeOptions[2]);
-  }, [screenWidth]);
+  }, [screen]);
 
   return (
     <>
@@ -112,7 +111,7 @@ function ForgotYourPassword() {
             backgroundColor="bgLogin"
             shadow="accessContainer"
           >
-            <CenterHorizontalContainer style={{padding: '0 3rem 0 3rem'}}>
+            <CenterHorizontalContainer style={{ padding: "0 3rem 0 3rem" }}>
               {logoSize === logoSizeOptions[0] ? (
                 <Spacer vertical="16" />
               ) : logoSize === logoSizeOptions[1] ? (
@@ -161,7 +160,6 @@ function ForgotYourPassword() {
                   Redefnir senha
                 </Text>
               </Button>
-
               {logoSize === logoSizeOptions[0] ? (
                 <Spacer vertical="12" />
               ) : logoSize === logoSizeOptions[1] ? (
@@ -169,13 +167,11 @@ function ForgotYourPassword() {
               ) : (
                 <Spacer vertical="6" />
               )}
-
               <Link path="/login">
                 <Text variant="body2" color="primary" hover>
                   Já tem uma conta? Faça login
                 </Text>
               </Link>
-
               {logoSize === logoSizeOptions[0] ? (
                 <Spacer vertical="4" />
               ) : logoSize === logoSizeOptions[1] ? (
@@ -183,7 +179,6 @@ function ForgotYourPassword() {
               ) : (
                 <Spacer vertical="1" />
               )}
-
               <Link path="/">
                 <Text variant="body2" color="primary" hover>
                   Ainda não tem uma? Cadastre aqui

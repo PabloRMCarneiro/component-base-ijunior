@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
-import GlobalStyle from "../../styles/GlobalStyle";
 import { useNavigate, useLocation } from "react-router-dom";
-import { theme } from "../../styles/theme";
-import { GiHamburgerMenu } from "react-icons/gi";
+import useScreen from "../../hooks/useScreen";
 
-import Logo from "./img/Logo.png";
+import GlobalStyle from "../../styles/GlobalStyle";
+import { theme } from "../../styles/theme";
 
 import Box from "../Box";
 import Text from "../Text";
 import Button from "../Button";
 import Link from "../Link";
 import Spacer from "../Spacer";
+
+import Logo from "./img/Logo.png";
+
+import { GiHamburgerMenu } from "react-icons/gi";
 
 import {
   InternalContainerTopbar,
@@ -23,33 +26,24 @@ interface TopbarFullProps {
   handleTopBarMobile?: (r: any) => void;
 }
 
-import Login from "../AccessContainer/Login/Login";
-
 function TopbarFull(props: TopbarFullProps) {
-
   const navigate = useNavigate();
   const location = useLocation();
+  const screen = useScreen();
 
-  const handleTopBarMobileFather = () => props.handleTopBarMobile ? props.handleTopBarMobile(true) : null;
-  
+  const handleTopBarMobileFather = () =>
+    props.handleTopBarMobile ? props.handleTopBarMobile(true) : null;
+
   const [isMobile, setIsMobile] = useState(false);
-  const [screenWidth, getScreenWidth] = useState(window.innerWidth);
-  const setScreenWidth = () => getScreenWidth(window.innerWidth);
-  
-  useEffect(() => {
-    window.addEventListener("resize", setScreenWidth);
-    return () => window.removeEventListener("resize", setScreenWidth);
-  }, []);
-  
+
   useEffect(
     () =>
-      {
-        if( screenWidth < Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *16) setIsMobile(true)
-        else setIsMobile(false)
-        
-      },
-
-    [screenWidth]
+      screen <
+      Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
+        16
+        ? setIsMobile(true)
+        : setIsMobile(false),
+    [screen]
   );
 
   return (
@@ -132,21 +126,17 @@ function TopbarFull(props: TopbarFullProps) {
             </CenterContainerFlex>
           ) : (
             <CenterContainerFlex>
-              <GiHamburgerMenu 
-                size="1.5rem" 
+              <GiHamburgerMenu
+                size="1.5rem"
                 color={theme.colors.primary}
                 onClick={handleTopBarMobileFather}
                 style={{ cursor: "pointer" }}
               />
-              <Spacer horizontal="10"/>
+              <Spacer horizontal="10" />
             </CenterContainerFlex>
           )}
         </InternalContainerTopbar>
       </Box>
-      {/* just to exemplify after the Center Container component is not to be in the TopBar */}
-      {/* <CenterContainer style={{ backgroundColor: `${theme.colors.offWhite}` }}>
-        <Login />
-      </CenterContainer> */}
     </>
   );
 }

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import GlobalStyle from "../../styles/GlobalStyle";
 import { useNavigate } from "react-router-dom";
+import useScreen from "../../hooks/useScreen";
+
+import GlobalStyle from "../../styles/GlobalStyle";
 import { theme } from "../../styles/theme";
 
 import Box from "../Box";
@@ -18,25 +20,20 @@ import {
 import NavbarFull from "../Navbar/NavbarFull";
 
 function GeneralContainer() {
+  
   const navigate = useNavigate();
+  const screen = useScreen();
 
   const [isMobile, setIsMobile] = useState(false);
-  const [screenWidth, getScreenWidth] = useState(window.innerWidth);
-  const setScreenWidth = () => getScreenWidth(window.innerWidth);
-
-  useEffect(() => {
-    window.addEventListener("resize", setScreenWidth);
-    return () => window.removeEventListener("resize", setScreenWidth);
-  }, []);
-
+  
   useEffect(
     () =>
-      screenWidth <
+      screen <
       Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
         16
         ? setIsMobile(true)
         : setIsMobile(false),
-    [screenWidth]
+    [screen]
   );
 
   return (

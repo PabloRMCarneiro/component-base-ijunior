@@ -15,6 +15,7 @@ const InputExceptionsResponsive = ["forms"];
 const InputComponent = styled.input.attrs((props) => {
   type: props.type;
 })<InputProps>`
+  
   width: ${(props) => props.theme.theme.input.sizes[props.size][0]};
   height: ${(props) => props.theme.theme.input.sizes[props.size][1]};
   border: none;
@@ -23,9 +24,11 @@ const InputComponent = styled.input.attrs((props) => {
   padding: 20px;
   font-size: ${(props) => props.theme.theme.input.placeholderSizes[props.size]};
   color: ${(props) => props.theme.theme.colors["grey"]};
+  
   &:focus {
     outline: none;
   }
+  
   &::placeholder {
     position: relative;
     color: ${(props) => props.theme.theme.colors["grey"]};

@@ -5,20 +5,24 @@ interface MainContainerModalProps {
   type?: string;
   onClick?: () => void;
   ref?: React.RefObject<HTMLHeadingElement>;
-}
+};
 
 interface BottomBarTopbarProps {
   color: string;
-}
+};
 
 interface BottomBarGeneralFIlterContainerProps {
   color: string;
-}
+};
 
 interface LineProps {
   color?: string;
   weight?: string;
-}
+};
+
+interface ContainerFormsProps {
+  isMobile?: boolean;
+};
 
 export const InternalContainerNavbar = styled.div`
   width: calc(100% - 4rem);
@@ -287,4 +291,23 @@ export const LinkContainerGeneralFilterContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+`;
+
+export const ContainerFormsInput = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+`;
+
+export const ContainerForms = styled.div<ContainerFormsProps>`
+  width: calc(100% - 2rem);
+  height: calc(100% - 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  ${(props) => {
+    return css `
+      margin-left: ${props.isMobile ? "1rem" : "2rem"}
+    `;
+  }}
 `;

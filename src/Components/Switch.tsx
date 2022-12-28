@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+/* import React, { useEffect, useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../styles/theme";
 
@@ -91,3 +91,14 @@ function Switch(props: SwitchProps) {
 }
 
 export default Switch;
+ */
+
+import React from 'react'
+
+function Switch() {
+  return (
+    <div>Switch</div>
+  )
+}
+
+export default Switch

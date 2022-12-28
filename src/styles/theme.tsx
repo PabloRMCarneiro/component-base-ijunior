@@ -41,7 +41,6 @@ export const theme = {
     greyDark: "#3A3A3A",
     greyDarkLightHover: "#747474",
 
-
     offWhite: "#d8d8d8",
   },
   borderRadius: {
@@ -53,8 +52,6 @@ export const theme = {
     accessContainer: "0px 0px 84px rgba(0, 0, 0, 0.15)",
   },
   spacing: {
-    "-9": "-2.25rem",
-    "-1": "-0.125rem",
     0: "0rem",
     xs: "0.5rem",
     sm: "0.75rem",
@@ -180,11 +177,9 @@ export const theme = {
   },
   input: {
     sizes: {
-      sm: ["396px", "122px"], //modal  input
-      "2sm": ["348px", "47px"], // modal container access
+      sm: ["24.75rem", "7.625rem"], //modal  input
+      "2sm": ["21.75rem", "2.9375rem"], //  container access
       forms: ["100%", "2.9375rem"], // forms small
-
-      
     },
     placeholderSizes: {
       sm: "1rem",
@@ -226,7 +221,7 @@ export const theme = {
       xl: "0.35rem",
     },
   },
-  switch: {
+  /* switch: {
     sizes: {
       md: ['2.625rem', '1.625rem'],
       lg: ['3.25rem', '2rem'],
@@ -247,5 +242,5 @@ export const theme = {
       md: '0.25rem',
       lg: '0.28rem',
     }
-  }
+  } */
 };

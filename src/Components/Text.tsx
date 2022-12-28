@@ -14,6 +14,7 @@ interface TextProps {
 }
 
 export const TextComponent = styled.p<TextProps>`
+  
   font-size: ${(props) =>
     props.theme.theme.text[props.variant || "h3"].fontSize};
   line-height: ${(props) =>
@@ -21,6 +22,7 @@ export const TextComponent = styled.p<TextProps>`
   font-family: ${(props) => props.theme.theme.text.fontFamily};
   color: ${(props) => props.theme.theme.colors[props.color || "none"]};
   transition: 0.4s ease-in-out;
+  
   &:hover {
     ${(props) => {
       if (props.hover) {
@@ -31,6 +33,7 @@ export const TextComponent = styled.p<TextProps>`
       }
     }}
   }
+  
   ${(props) => {
     if (props.bold) {
       return css`
@@ -48,10 +51,12 @@ export const TextComponent = styled.p<TextProps>`
       `;
     }
   }};
+  
   @media (max-width: ${(props) => props.theme.theme.breakpoints.t}) {
     font-size: calc(${(props) =>
     props.theme.theme.text[props.variant || "h3"].fontSize}*0.8);
   };
+  
   @media (max-width: ${(props) => props.theme.theme.breakpoints.ml}) {
     font-size: calc(${(props) =>
     props.theme.theme.text[props.variant || "h3"].fontSize}*0.6);

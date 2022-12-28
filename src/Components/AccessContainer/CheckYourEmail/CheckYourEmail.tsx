@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import GlobalStyle from "../../../styles/GlobalStyle";
+import useScreen from "../../../hooks/useScreen";
 import { useNavigate } from "react-router-dom";
+
+import GlobalStyle from "../../../styles/GlobalStyle";
 import { theme } from "../../../styles/theme";
 
 import Button from "../../Button";
@@ -26,7 +28,9 @@ import {
 } from "../../../utils/Containers";
 
 function CheckYourEmail() {
+
   const navigate = useNavigate();
+  const screen = useScreen();
 
   const codeTest: string = "12#21";
 
@@ -46,21 +50,15 @@ function CheckYourEmail() {
   const HandleSubmit = () => {
     if (validateCode(code)) navigate("/login");
   };
-
-  const [isMobile, setIsMobile] = useState(false);
-  const [screenWidth, getScreenWidth] = useState(window.innerWidth);
-  const setScreenWidth = () => getScreenWidth(window.innerWidth);
+  
   const logoSizeOptions = ["7.1875rem", "5rem", "4rem"];
   const [logoSize, setLogoSize] = useState(logoSizeOptions[0]);
 
-  useEffect(() => {
-    window.addEventListener("resize", setScreenWidth);
-    return () => window.removeEventListener("resize", setScreenWidth);
-  }, []);
-
+  const [isMobile, setIsMobile] = useState(false);
+  
   useEffect(() => {
     if (
-      screenWidth <
+      screen <
       Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
         16
     ) {
@@ -68,29 +66,30 @@ function CheckYourEmail() {
     } else {
       setIsMobile(false);
     }
+
     if (
-      screenWidth >
+      screen >
       Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
         16
     )
       setLogoSize(logoSizeOptions[0]);
 
     if (
-      screenWidth <
+      screen <
       Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
         16
     )
       setLogoSize(logoSizeOptions[1]);
 
     if (
-      screenWidth <
+      screen <
       Number(
         theme.breakpoints.ml.slice(0, theme.breakpoints.ml.indexOf("rem"))
       ) *
         16
     )
       setLogoSize(logoSizeOptions[2]);
-  }, [screenWidth]);
+  }, [screen]);
 
   return (
     <>
@@ -161,7 +160,6 @@ function CheckYourEmail() {
                   Redefnir senha
                 </Text>
               </Button>
-
               {logoSize === logoSizeOptions[0] ? (
                 <Spacer vertical="12" />
               ) : logoSize === logoSizeOptions[1] ? (
@@ -169,7 +167,6 @@ function CheckYourEmail() {
               ) : (
                 <Spacer vertical="6" />
               )}
-
               <Link path="/">
                 <Text variant="body2" color="primary" hover center>
                   Não recebeu o código ? Reenvie para o email

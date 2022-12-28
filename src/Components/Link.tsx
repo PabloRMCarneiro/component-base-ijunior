@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import styled, { css, ThemeProvider } from "styled-components";
+
+import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../styles/theme";
 
 interface LinkProps {
@@ -9,9 +10,12 @@ interface LinkProps {
 }
 
 const LinkComponent = styled.div`
+  
   cursor: pointer;
 `;
+
 function Link(props: LinkProps) {
+
   const navigate = useNavigate();
 
   return (

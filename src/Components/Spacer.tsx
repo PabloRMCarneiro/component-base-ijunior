@@ -9,18 +9,19 @@ interface SpacerProps{
 }
 
 const SpacerComponent = styled.div<SpacerProps>`
+  
   ${(props) => {
     if(props.horizontal) {
       return css`
         width: ${props.theme.theme.spacing[props.horizontal]};
         height: 0;
-      `
+      `;
     }
     if(props.vertical) {
       return css`
         width: 0;
         height: ${props.theme.theme.spacing[props.vertical]};
-      `
+      `;
     }
   }}
 `;

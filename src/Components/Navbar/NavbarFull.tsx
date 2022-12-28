@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import GlobalStyle from "../../styles/GlobalStyle";
 import { useLocation, useNavigate } from "react-router-dom";
+import useScreen from "../../hooks/useScreen";
+
+import GlobalStyle from "../../styles/GlobalStyle";
 import { theme } from "../../styles/theme";
 
 import Box from "../Box";
@@ -29,26 +31,21 @@ import {
 } from "../../utils/Containers";
 
 function NavbarFull() {
+  
   const navigate = useNavigate();
   const location = useLocation();
+  const screen = useScreen();
 
   const [isMobile, setIsMobile] = useState(false);
-  const [screenWidth, getScreenWidth] = useState(window.innerWidth);
-  const setScreenWidth = () => getScreenWidth(window.innerWidth);
-
-  useEffect(() => {
-    window.addEventListener("resize", setScreenWidth);
-    return () => window.removeEventListener("resize", setScreenWidth);
-  }, []);
 
   useEffect(
     () =>
-      screenWidth <
+      screen <
       Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
         16
         ? setIsMobile(true)
         : setIsMobile(false),
-    [screenWidth]
+    [screen]
   );
 
   return (
@@ -64,7 +61,6 @@ function NavbarFull() {
               <Spacer vertical="8" />
               <LineHorizontal />
               <Spacer vertical="10" />
-
               <LinkContainerNavbar>
                 <Spacer horizontal="4" />
                 <img
@@ -82,9 +78,7 @@ function NavbarFull() {
                   <LineVertical color="primary" weight="4" />
                 )}
               </LinkContainerNavbar>
-
               <Spacer vertical="12" />
-
               <LinkContainerNavbar>
                 <Spacer horizontal="6" />
                 <img
@@ -98,14 +92,11 @@ function NavbarFull() {
                     General Filter Container
                   </Text>
                 </Link>
-
                 {location.pathname.indexOf("general-filter-container") !== -1 && (
                   <LineVertical color="primary" weight="4" />
                 )}
               </LinkContainerNavbar>
-
               <Spacer vertical="12" />
-
               <LinkContainerNavbar>
                 <Spacer horizontal="4" />
                 <img
@@ -152,19 +143,6 @@ function NavbarFull() {
           </CenterContainer>
         </Box>
       )}
-      {/* <MainContainer
-        style={{
-          backgroundColor: `${theme.colors.primary}`,
-          width: `calc(100% - ${!isMobile ? '12.125' : '0'}rem)`,
-        }}
-        >
-        <Button size="xs" color="sucess" hover>
-        <Text variant="body2" bold>
-        Hello World
-        </Text>
-        </Button>
-      </MainContainer> */}
-      {/*     </div>   */}
     </>
   );
 }

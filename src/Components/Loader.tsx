@@ -11,11 +11,13 @@ interface LoaderProps {
 }
 
 const LoaderComponent = styled.div<LoaderProps>`
+  
   width: ${(props) => props.theme.theme.loader.sizes[props.size]};
   height: ${(props) => props.theme.theme.loader.sizes[props.size]};
   border-radius: 50%;
   border: ${(props) => props.theme.theme.loader.border[props.size]} solid ${(props) => props.theme.theme.colors.greyLight};
   border-top: ${(props) => props.theme.theme.loader.border[props.size]} solid ${(props) => props.theme.theme.colors[props.color]};
+  
   ${(props) => {
     if(props.transition){
       return css `
