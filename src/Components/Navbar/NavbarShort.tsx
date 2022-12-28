@@ -39,7 +39,7 @@ function NavbarShort() {
               <img
                 src={homeIcon}
                 style={{ cursor: "pointer" }}
-                onClick={() => navigate("/")}
+                onClick={() => navigate("/general-container")}
               />
             </LinkContainerNavbar>
 
@@ -49,7 +49,7 @@ function NavbarShort() {
               <img
                 src={dataBaseIcon}
                 style={{ cursor: "pointer" }}
-                onClick={() => navigate("/modal")}
+                onClick={() => navigate("/general-filter-container/dados-gerais")}
               />
             </LinkContainerNavbar>
 
