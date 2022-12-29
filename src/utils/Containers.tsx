@@ -124,7 +124,7 @@ export const TopContainerInModal = styled.div`
   width: 100%;
   height: 4rem;
   align-items: center;
-  padding: 20px 20px;
+  padding: 1.25rem 1.25rem;
   justify-content: space-between;
   @media (max-width: ${theme.breakpoints.t}) {
     height: calc(4rem * 0.75);
@@ -140,7 +140,7 @@ export const MainContainerInModal = styled.div<MainContainerModalProps>`
   width: 100%;
   height: 63%;
   align-items: center;
-  padding: 20px 20px;
+  padding: 1.25rem 1.25rem;
   @media (max-width: ${theme.breakpoints.t}) {
     ${(props) => {
       if (props.type === "3") {
@@ -170,14 +170,14 @@ export const MainContainerInModal = styled.div<MainContainerModalProps>`
         `;
       }
     }};
-    padding: 10px 15px;
+    padding: 0.625rem 0.9375rem;
   }
 `;
 
 export const BottomContainerInModal = styled.div`
   display: flex;
   width: 100%;
-  padding: 20px 20px;
+  padding: 1.25rem 1.25rem;
   justify-content: center;
 `;
 
@@ -252,13 +252,13 @@ export const RightAccessContainer = styled.div`
   display: flex;
   width: calc(50% - 0.8px);
   height: 100%;
-  padding: 0px 2rem;
+  padding: 0 2rem;
 `;
 
 export const LeftAccessContainer = styled.div`
   width: calc(50% - 0.8px);
   height: 100%;
-  padding: 0px 2rem;
+  padding: 0 2rem;
 `;
 
 export const TitleGeneralContainer = styled.div`

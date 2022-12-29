@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import useScreen from "../hooks/useScreen";
+
 import GlobalStyle from "../styles/GlobalStyle";
 import { theme } from "../styles/theme";
 
@@ -8,11 +10,10 @@ import Text from "../Components/Text";
 import Spacer from "../Components/Spacer";
 import Button from "../Components/Button";
 import Input from "../Components/Input";
-
 import Row from "../Components/Grid/Row";
 import Column from "../Components/Grid/Column";
 
-import useScreen from "../hooks/useScreen";
+import NavbarFull from "../Components/Navbar/NavbarFull";
 
 import { BiArrowBack } from "react-icons/bi";
 
@@ -30,6 +31,57 @@ function FormsPage() {
   const navigate = useNavigate();
   const screen = useScreen();
 
+  const [fullName, setFullName] = useState("");
+  const HandleFullName = (e: React.ChangeEvent<HTMLInputElement>) => setFullName(e.target.value);
+  const [modalFullName, setModalFullName] = useState(false);
+
+  const [cpf, setCpf] = useState("");
+  const HandleCpf = (e: React.ChangeEvent<HTMLInputElement>) => setCpf(e.target.value);
+  const [modalCpf, setModalCpf] = useState(false);
+
+  const [rg, setRg] = useState("");
+  const HandleRg = (e: React.ChangeEvent<HTMLInputElement>) => setRg(e.target.value);
+  const [modalRg, setModalRg] = useState(false);
+
+  const [country, setCountry] = useState("");
+  const HandleCountry = (e: React.ChangeEvent<HTMLInputElement>) => setCountry(e.target.value);
+  const [modalCountry, setModalCountry] = useState(false);
+
+  const [state, setState] = useState("");
+  const HandleState = (e: React.ChangeEvent<HTMLInputElement>) => setState(e.target.value);
+  const [modalState, setModalState] = useState(false);
+
+  const [cep, setCep] = useState("");
+  const HandleCep = (e: React.ChangeEvent<HTMLInputElement>) => setCep(e.target.value);
+  const [modalCep, setModalCep] = useState(false);
+
+  const [street, setStreet] = useState("");
+  const HandleStreet = (e: React.ChangeEvent<HTMLInputElement>) => setStreet(e.target.value);
+  const [modalStreet, setModalStreet] = useState(false);
+
+  const [district, setDistrict] = useState("");
+  const HandleDistrict = (e: React.ChangeEvent<HTMLInputElement>) => setDistrict(e.target.value);
+  const [modalDistrict, setModalDistrict] = useState(false);
+
+  const [number, setNumber] = useState("");
+  const HandleNumber = (e: React.ChangeEvent<HTMLInputElement>) => setNumber(e.target.value);
+  const [modalNumber, setModalNumber] = useState(false);
+
+  const [complement, setComplement] = useState("");
+  const HandleComplement = (e: React.ChangeEvent<HTMLInputElement>) => setComplement(e.target.value);
+  const [modalComplement, setModalComplement] = useState(false);
+
+  const [password, setPassword] = useState("");
+  const HandlePassword = (e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
+  const [modalPassword, setModalPassword] = useState(false);
+
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const HandleConfirmPassword = (e: React.ChangeEvent<HTMLInputElement>) => setConfirmPassword(e.target.value);
+  const [modalConfirmPassword, setModalConfirmPassword] = useState(false);
+
+  const handleSubmit = () => {
+    console.log(fullName, cpf, rg, country, state, cep, street, district, number, complement, password, confirmPassword);
+  }
   const [isMobile, setIsMobile] = useState(false);
   
   useEffect(
@@ -44,10 +96,15 @@ function FormsPage() {
 
   return (
     <>
+    {/* <div
+      style={{display: 'flex'}}
+    > */}
       <GlobalStyle />
+      {/* <NavbarFull /> */}
       <MainContainer
         style={{
           backgroundColor: `${theme.colors.offWhite}`,
+          /* width: `calc(100% - ${!isMobile ? "14.125" : "0"}rem)`, */
         }}
       >
         {isMobile ? <Spacer vertical="12" /> : null}
@@ -91,6 +148,7 @@ function FormsPage() {
                       placeholder="Nome Completo"
                       type="text"
                       center
+                      onChange={(e) => HandleFullName(e)}
                     />
                   </ContainerFormsInput>
                 </Column>
@@ -113,6 +171,7 @@ function FormsPage() {
                         placeholder="Digite seu CPF"
                         type="text"
                         center
+                        onChange={(e) => HandleCpf(e)}
                       />
                     </ContainerFormsInput>
                   </CenterContainer>
@@ -133,6 +192,7 @@ function FormsPage() {
                         placeholder="Digite seu RG"
                         type="text"
                         center
+                        onChange={(e) => HandleRg(e)}
                       />
                     </ContainerFormsInput>
                   </CenterContainer>
@@ -156,6 +216,7 @@ function FormsPage() {
                         placeholder="Selecione seu Pais"
                         type="text"
                         center
+                        onChange={(e) => HandleCountry(e)}                        
                       />
                     </ContainerFormsInput>
                   </CenterContainer>
@@ -176,6 +237,7 @@ function FormsPage() {
                         placeholder="Selecione seu Estado"
                         type="text"
                         center
+                        onChange={(e) => HandleState(e)}
                       />
                     </ContainerFormsInput>
                   </CenterContainer>
@@ -196,6 +258,7 @@ function FormsPage() {
                         placeholder="Digite seu CEP"
                         type="text"
                         center
+                        onChange={(e) => HandleCep(e)}
                       />
                     </ContainerFormsInput>
                   </CenterContainer>
@@ -219,6 +282,7 @@ function FormsPage() {
                         placeholder="Digite sua Rua"
                         type="text"
                         center
+                        onChange={(e) => HandleStreet(e)}
                       />
                     </ContainerFormsInput>
                   </CenterContainer>
@@ -239,6 +303,7 @@ function FormsPage() {
                         placeholder="Digite seu Bairro"
                         type="text"
                         center
+                        onChange={(e) => HandleDistrict(e)}
                       />
                     </ContainerFormsInput>
                   </CenterContainer>
@@ -259,6 +324,7 @@ function FormsPage() {
                         placeholder="Numero da sua casa ou apto"
                         type="text"
                         center
+                        onChange={(e) => HandleNumber(e)}
                       />
                     </ContainerFormsInput>
                   </CenterContainer>
@@ -279,6 +345,7 @@ function FormsPage() {
                         placeholder="Ex: casa ou prédio"
                         type="text"
                         center
+                        onChange={(e) => HandleComplement(e)}
                       />
                     </ContainerFormsInput>
                   </CenterContainer>
@@ -300,8 +367,9 @@ function FormsPage() {
                       <Input
                         size="forms"
                         placeholder="Digite sua senha"
-                        type="text"
+                        type="password"
                         center
+                        onChange={(e) => HandlePassword(e)}
                       />
                     </ContainerFormsInput>
                   </CenterContainer>
@@ -320,8 +388,9 @@ function FormsPage() {
                       <Input
                         size="forms"
                         placeholder="Digite novamente sua senha"
-                        type="text"
+                        type="password"
                         center
+                        onChange={(e) => HandleConfirmPassword(e)}
                       />
                     </ContainerFormsInput>
                   </CenterContainer>
@@ -338,6 +407,7 @@ function FormsPage() {
                 }
                 color="primary"
                 hover
+                onClick={() => handleSubmit()}
               >
                 <Text variant="body2" bold>
                   Cadastrar
@@ -349,6 +419,7 @@ function FormsPage() {
         </Box>
         <Spacer vertical="12" />
       </MainContainer>
+    {/* </div> */}
     </>
   );
 }
