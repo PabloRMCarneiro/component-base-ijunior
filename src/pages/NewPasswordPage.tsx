@@ -2,8 +2,7 @@ import React from "react";
 
 import NewPassword from "../Components/AccessContainer/NewPassword/NewPassword";
 
-function NewPasswordPage() {
-  return <NewPassword />;
-}
+const NewPasswordPage = () => <NewPassword />;
+
 
 export default NewPasswordPage;

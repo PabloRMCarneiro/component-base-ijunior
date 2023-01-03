@@ -32,12 +32,11 @@ import {
 } from "../../utils/Containers";
 
 function NavbarExample() {
-  
   const navigate = useNavigate();
   const screen = useScreen();
 
   const [isMobile, setIsMobile] = useState(false);
-  
+
   useEffect(
     () =>
       screen <
@@ -75,9 +74,7 @@ function NavbarExample() {
                   </Text>
                 </Link>
               </LinkContainerNavbar>
-
               <Spacer vertical="12" />
-
               <LinkContainerNavbar>
                 <Spacer horizontal="6" />
                 <img
@@ -92,9 +89,7 @@ function NavbarExample() {
                   </Text>
                 </Link>
               </LinkContainerNavbar>
-
               <Spacer vertical="12" />
-
               <LinkContainerNavbar>
                 <Spacer horizontal="4" />
                 <img

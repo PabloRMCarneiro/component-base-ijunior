@@ -20,11 +20,8 @@ function Home() {
         hover
         onClick={() => navigate("/buttons")}
       >
-        <Text variant="h4">
-          Button
-        </Text>
+        <Text variant="h4">Button</Text>
       </Button>
-
       <Spacer vertical="18" />
       <Button
         size="2xs"
@@ -32,11 +29,8 @@ function Home() {
         hover
         onClick={() => navigate("/modal")}
       >
-        <Text variant="h4">
-          Modal
-        </Text>
+        <Text variant="h4">Modal</Text>
       </Button>
-
       <Spacer vertical="18" />
       <Button
         size="2xs"
@@ -44,11 +38,8 @@ function Home() {
         hover
         onClick={() => navigate("/login")}
       >
-        <Text variant="h4">
-          Login
-        </Text>
+        <Text variant="h4">Login</Text>
       </Button>
-
       <Spacer vertical="18" />
       <Button
         size="2xs"
@@ -56,11 +47,8 @@ function Home() {
         hover
         onClick={() => navigate("/loader")}
       >
-        <Text variant="h4">
-          Loader
-        </Text>
+        <Text variant="h4">Loader</Text>
       </Button>
-
       <Spacer vertical="18" />
       <Button
         size="2xs"
@@ -68,11 +56,8 @@ function Home() {
         hover
         onClick={() => navigate("/navbar")}
       >
-        <Text variant="h4">
-          Navbar
-        </Text>
+        <Text variant="h4">Navbar</Text>
       </Button>
-
       <Spacer vertical="18" />
       <Button
         size="2xs"
@@ -80,11 +65,8 @@ function Home() {
         hover
         onClick={() => navigate("/topbar")}
       >
-        <Text variant="h4">
-          Topbar
-        </Text>
+        <Text variant="h4">Topbar</Text>
       </Button>
-
       <Spacer vertical="18" />
       <Button
         size="2xs"
@@ -92,11 +74,8 @@ function Home() {
         hover
         onClick={() => navigate("/general-container")}
       >
-        <Text variant="h4">
-          General Container
-        </Text>
+        <Text variant="h4">General Container</Text>
       </Button>
-
       <Spacer vertical="18" />
       <Button
         size="2xs"
@@ -104,9 +83,7 @@ function Home() {
         hover
         onClick={() => navigate("/forms")}
       >
-        <Text variant="h4">
-          Forms
-        </Text>
+        <Text variant="h4">Forms</Text>
       </Button>
     </MainContainer>
   );

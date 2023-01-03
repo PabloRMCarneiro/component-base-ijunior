@@ -25,22 +25,24 @@ function ModalTwoButtonsType1({
   showModal,
   setShowModal,
 }: ModalTwoButtonsType1Props) {
-
   const ModalRef = useRef<HTMLHeadingElement>(null);
 
-  const CloseModalOnOutsideClick = (e: any) =>  ModalRef.current === e.target ? setShowModal(false) : null;
+  const CloseModalOnOutsideClick = (e: any) =>
+    ModalRef.current === e.target ? setShowModal(false) : null;
 
   return (
     <>
       {showModal ? (
-        <MainContainerModal ref={ModalRef} onClick={(e) => CloseModalOnOutsideClick(e)}>
+        <MainContainerModal
+          ref={ModalRef}
+          onClick={(e) => CloseModalOnOutsideClick(e)}
+        >
           <GlobalStyle />
           <Box size="modalSizeType1" rounded backgroundColor="white">
             <CenterHorizontalContainer>
               <TopContainerInModal>
                 <Text variant="body1" bold color="primary">
-                  {" "}
-                  Item não salvo !{" "}
+                  Item não salvo !
                 </Text>
                 <AiOutlineClose
                   style={{
@@ -68,8 +70,7 @@ function ModalTwoButtonsType1({
                   onClick={() => setShowModal(false)}
                 >
                   <Text variant="body2" bold>
-                    {" "}
-                    Sair{" "}
+                    Sair
                   </Text>
                 </Button>
                 <Spacer horizontal="12" />
@@ -80,8 +81,7 @@ function ModalTwoButtonsType1({
                   onClick={() => setShowModal(false)}
                 >
                   <Text variant="body2" bold>
-                    {" "}
-                    Continuar{" "}
+                    Continuar
                   </Text>
                 </Button>
               </BottomContainerInModal>

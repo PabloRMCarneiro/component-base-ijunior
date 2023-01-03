@@ -177,9 +177,9 @@ export const theme = {
   },
   input: {
     sizes: {
-      sm: ["24.75rem", "7.625rem"], //modal  input
-      "2sm": ["21.75rem", "2.9375rem"], //  container access
-      forms: ["100%", "2.9375rem"], // forms small
+      sm: ["24.75rem", "7.625rem"], 
+      "2sm": ["21.75rem", "2.9375rem"], 
+      forms: ["100%", "2.9375rem"], 
     },
     placeholderSizes: {
       sm: "1rem",
@@ -197,13 +197,13 @@ export const theme = {
     },
   },
   breakpoints: {
-    ms: "20rem", // mobile small
-    mm: "23.75rem", // mobile mid
-    ml: "26.5625rem", // mobile large
-    t: "48rem", // tablet
-    l: "64rem", // laptop
-    ll: "90rem", // laptop large
-    d: "160rem", // desktop
+    ms: "20rem", 
+    mm: "23.75rem", 
+    ml: "26.5625rem", 
+    t: "48rem", 
+    l: "64rem", 
+    ll: "90rem", 
+    d: "160rem", 
   },
   loader: {
     sizes: {
@@ -221,26 +221,4 @@ export const theme = {
       xl: "0.35rem",
     },
   },
-  /* switch: {
-    sizes: {
-      md: ['2.625rem', '1.625rem'],
-      lg: ['3.25rem', '2rem'],
-    },
-    radiusCircle: {
-      md: '1.125rem',
-      lg: '1.5rem',
-    },
-    translateX: { // switch.sizes[props.size][0]/2
-      md: '1.3125rem',
-      lg: '1.625rem',
-    },
-    borderRadius: {
-      md: '0.9375rem',
-      lg: '1rem',
-    },
-    margin: {
-      md: '0.25rem',
-      lg: '0.28rem',
-    }
-  } */
 };

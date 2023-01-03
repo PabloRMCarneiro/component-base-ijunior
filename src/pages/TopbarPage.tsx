@@ -25,7 +25,6 @@ function TopbarPage() {
             Topbar Mobile
           </Text>
         </Button>
-
         <Spacer vertical="18" />
         <Button
           size="2xs"
@@ -38,7 +37,6 @@ function TopbarPage() {
             Topbar Full
           </Text>
         </Button>
-
         <Spacer vertical="18" />
         <Button
           size="2xs"

@@ -39,19 +39,22 @@ function ModalOneButtonType3({
 
   const ModalRef = useRef<HTMLHeadingElement>(null);
 
-  const CloseModalOnOutsideClick = (e: any) =>  ModalRef.current === e.target ? setShowModal(false) : null;
+  const CloseModalOnOutsideClick = (e: any) =>
+    ModalRef.current === e.target ? setShowModal(false) : null;
 
   return (
     <>
       {showModal ? (
-        <MainContainerModal ref={ModalRef} onClick={(e) => CloseModalOnOutsideClick(e)}>
+        <MainContainerModal
+          ref={ModalRef}
+          onClick={(e) => CloseModalOnOutsideClick(e)}
+        >
           <GlobalStyle />
           <Box size="modalSizeType3" rounded backgroundColor="white">
             <CenterHorizontalContainer>
               <TopContainerInModal>
                 <Text variant="body1" bold color="primary">
-                  {" "}
-                  Adicionar coluna{" "}
+                  Adicionar coluna
                 </Text>
                 <AiOutlineClose
                   style={{
@@ -93,8 +96,7 @@ function ModalOneButtonType3({
                   }}
                 >
                   <Text variant="body2" bold>
-                    {" "}
-                    Confirmar{" "}
+                    Confirmar
                   </Text>
                 </Button>
               </BottomContainerInModal>

@@ -34,7 +34,6 @@ function NavbarShort() {
             <Spacer vertical="8" />
             <LineHorizontal />
             <Spacer vertical="10" />
-
             <LinkContainerNavbar style={{ justifyContent: "center" }}>
               <img
                 src={homeIcon}
@@ -42,19 +41,17 @@ function NavbarShort() {
                 onClick={() => navigate("/general-container")}
               />
             </LinkContainerNavbar>
-
             <Spacer vertical="12" />
-
             <LinkContainerNavbar style={{ justifyContent: "center" }}>
               <img
                 src={dataBaseIcon}
                 style={{ cursor: "pointer" }}
-                onClick={() => navigate("/general-filter-container/dados-gerais")}
+                onClick={() =>
+                  navigate("/general-filter-container/dados-gerais")
+                }
               />
             </LinkContainerNavbar>
-
             <Spacer vertical="12" />
-
             <LinkContainerNavbar style={{ justifyContent: "center" }}>
               <img
                 src={calendarIcon}
@@ -62,7 +59,6 @@ function NavbarShort() {
                 onClick={() => navigate("/buttons")}
               />
             </LinkContainerNavbar>
-
             <Spacer vertical="40" />
             <Spacer vertical="40" />
             <Spacer vertical="40" />

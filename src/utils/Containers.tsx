@@ -1,28 +1,6 @@
 import styled, { css } from "styled-components";
 import { theme } from "../styles/theme";
 
-interface MainContainerModalProps {
-  type?: string;
-  onClick?: () => void;
-  ref?: React.RefObject<HTMLHeadingElement>;
-};
-
-interface BottomBarTopbarProps {
-  color: string;
-};
-
-interface BottomBarGeneralFIlterContainerProps {
-  color: string;
-};
-
-interface LineProps {
-  color?: string;
-  weight?: string;
-};
-
-interface ContainerFormsProps {
-  isMobile?: boolean;
-};
 
 export const InternalContainerNavbar = styled.div`
   width: calc(100% - 4rem);
@@ -70,6 +48,10 @@ export const LinkContainerTopbar = styled.div`
   justify-content: center;
 `;
 
+interface BottomBarTopbarProps {
+  color: string;
+};
+
 export const BottomBarTopbar = styled.span<BottomBarTopbarProps>`
   border-bottom: 4px solid ${(props) => props.theme.theme.colors[props.color]};
   border-radius: 25%;
@@ -77,24 +59,14 @@ export const BottomBarTopbar = styled.span<BottomBarTopbarProps>`
   top: 1.75rem;
 `;
 
-export const BottomBarGeneralFIlterContainer = styled.span<BottomBarGeneralFIlterContainerProps>`
-  border-bottom: 4px solid ${(props) => props.theme.theme.colors[props.color]};
-  position: relative;
-`;
-
-export const CenterContainerFlex = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const MainContainer = styled.div`
+export const MainContainerLoader = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   align-items: center;
   justify-content: center;
+  z-index: 50;
 `;
 
 export const MainContainerModal = styled.div`
@@ -106,16 +78,6 @@ export const MainContainerModal = styled.div`
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
-  z-index: 50;
-`;
-
-export const MainContainerLoader = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
   z-index: 50;
 `;
 
@@ -133,6 +95,12 @@ export const TopContainerInModal = styled.div`
     height: calc(4rem * 0.5);
   } ;
 `;
+
+interface MainContainerModalProps {
+  type?: string;
+  onClick?: () => void;
+  ref?: React.RefObject<HTMLHeadingElement>;
+};
 
 export const MainContainerInModal = styled.div<MainContainerModalProps>`
   display: flex;
@@ -181,6 +149,21 @@ export const BottomContainerInModal = styled.div`
   justify-content: center;
 `;
 
+export const CenterContainerFlex = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const CenterContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -211,6 +194,11 @@ export const LineHorizontal = styled.div`
   height: 0.8px;
   background-color: #c4c4c4;
 `;
+
+interface LineProps {
+  color?: string;
+  weight?: string;
+};
 
 export const LineVertical = styled.div<LineProps>`
   width: 0.8px;
@@ -293,11 +281,24 @@ export const LinkContainerGeneralFilterContainer = styled.div`
   justify-content: center;
 `;
 
+interface BottomBarGeneralFIlterContainerProps {
+  color: string;
+};
+
+export const BottomBarGeneralFIlterContainer = styled.span<BottomBarGeneralFIlterContainerProps>`
+  border-bottom: 4px solid ${(props) => props.theme.theme.colors[props.color]};
+  position: relative;
+`;
+
 export const ContainerFormsInput = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
 `;
+
+interface ContainerFormsProps {
+  isMobile?: boolean;
+};
 
 export const ContainerForms = styled.div<ContainerFormsProps>`
   width: calc(100% - 2rem);

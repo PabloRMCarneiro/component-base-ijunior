@@ -25,7 +25,6 @@ function NavbarPage() {
             Navbar Short
           </Text>
         </Button>
-
         <Spacer vertical="18" />
         <Button
           size="2xs"
@@ -38,7 +37,6 @@ function NavbarPage() {
             Navbar Full
           </Text>
         </Button>
-        
         <Spacer vertical="18" />
         <Button
           size="2xs"

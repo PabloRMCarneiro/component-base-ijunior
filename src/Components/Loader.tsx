@@ -41,7 +41,10 @@ function Loader(props: LoaderProps) {
   return (
     <ThemeProvider theme={theme}>
       <MainContainerLoader>
-        <LoaderComponent color={props.color} size={props.size} transition={props.transition} />
+        <LoaderComponent 
+          color={props.color} 
+          size={props.size} 
+          transition={props.transition} />
       </MainContainerLoader>
     </ThemeProvider>
   );

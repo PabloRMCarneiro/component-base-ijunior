@@ -13,24 +13,23 @@ import CheckYourEmailPage from "../pages/CheckYourEmailPage";
 import NewPasswordPage from "../pages/NewPasswordPage";
 
 import LoaderPage from "../pages/LoaderPage";
-import SwitchPage from "../pages/SwitchPage";
-
 import NavbarPage from "../pages/NavbarPage";
+
 import NavbarFull from "../Components/Navbar/NavbarFull";
-
 import NavbarShort from "../Components/Navbar/NavbarShort";
+
 import NavbarExample from "../Components/Navbar/NavbarExample";
-
 import TopbarPage from "../pages/TopbarPage";
+
 import TopbarFull from "../Components/Topbar/TopbarFull";
-
 import TopbarMobile from "../Components/Topbar/TopbarMobile";
+
 import TopbarExample from "../Components/Topbar/TopbarExample";
-
 import GeneralContainer from "../Components/GeneralContainer/GeneralContainer"; 
-import GeneralFilterContainer from "../Components/GeneralContainer/GeneralFilterContainer";
 
+import GeneralFilterContainer from "../Components/GeneralContainer/GeneralFilterContainer";
 import FormsPage from "../pages/FormsPage";
+
 
 function routes() {
   return (
@@ -48,27 +47,25 @@ function routes() {
         <Route path="/redefinir-senha" element={<NewPasswordPage />} />
         <Route path="/loader" element={<LoaderPage />} />
         
-        <Route path="/switch" element={<SwitchPage />} />
         <Route path="/navbar" element={<NavbarPage />} />
-        
         <Route path="/navbar/full" element={<NavbarFull />} />
+        
         <Route path="/navbar/mobile" element={<NavbarShort />} />
-        
         <Route path="/navbar/example" element={<NavbarExample />} />
+        
         <Route path="/topbar" element={<TopbarPage />} />
-        
         <Route path="/topbar/full" element={<TopbarFull />} />
+        
         <Route path="/topbar/mobile" element={<TopbarMobile />} />
-        
         <Route path="/topbar/example" element={<TopbarExample />} />
-        <Route path="/general-container" element={<GeneralContainer />} />
-
-        <Route path="/general-filter-container/dados-gerais" element={<GeneralFilterContainer />} />
-        <Route path="/general-filter-container/dados-clientes" element={<GeneralFilterContainer />} />
-
-        <Route path="/general-filter-container/informacoes-empresa" element={<GeneralFilterContainer />} />
-        <Route path="/general-filter-container/informacoes-parceiros" element={<GeneralFilterContainer />} />
         
+        <Route path="/general-container" element={<GeneralContainer />} />
+        <Route path="/general-filter-container/dados-gerais" element={<GeneralFilterContainer />} />
+
+        <Route path="/general-filter-container/dados-clientes" element={<GeneralFilterContainer />} />
+        <Route path="/general-filter-container/informacoes-empresa" element={<GeneralFilterContainer />} />
+
+        <Route path="/general-filter-container/informacoes-parceiros" element={<GeneralFilterContainer />} />
         <Route path="/forms" element={<FormsPage />} />
       </Routes>
     </Router>

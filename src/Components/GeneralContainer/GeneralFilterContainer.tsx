@@ -121,7 +121,8 @@ function GeneralFilterContainer() {
           backgroundColor="bgLogin"
           rounded
           shadow="accessContainer"
-        ></Box>
+        >
+        </Box>
         <Spacer vertical="12" />
         <Box
           size="generalContainerFilterMain"

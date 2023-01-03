@@ -33,8 +33,7 @@ function ModalType4({ showModal, setShowModal }: ModalType4Props) {
             <CenterHorizontalContainer>
               <TopContainerInModal>
                 <Text variant="body1" bold color="primary">
-                  {" "}
-                  Modal Informativo 1!{" "}
+                  Modal Informativo 1!
                 </Text>
                 <AiOutlineClose
                   style={{

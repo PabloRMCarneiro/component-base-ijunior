@@ -13,7 +13,7 @@ import Input from "../Components/Input";
 import Row from "../Components/Grid/Row";
 import Column from "../Components/Grid/Column";
 
-import NavbarFull from "../Components/Navbar/NavbarFull";
+/* import NavbarFull from "../Components/Navbar/NavbarFull";*/
 
 import { BiArrowBack } from "react-icons/bi";
 
@@ -27,63 +27,87 @@ import {
 } from "../utils/Containers";
 
 function FormsPage() {
-  
   const navigate = useNavigate();
   const screen = useScreen();
 
   const [fullName, setFullName] = useState("");
-  const HandleFullName = (e: React.ChangeEvent<HTMLInputElement>) => setFullName(e.target.value);
+  const HandleFullName = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setFullName(e.target.value);
   const [modalFullName, setModalFullName] = useState(false);
 
   const [cpf, setCpf] = useState("");
-  const HandleCpf = (e: React.ChangeEvent<HTMLInputElement>) => setCpf(e.target.value);
+  const HandleCpf = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setCpf(e.target.value.replace(/\D/g, ""));
   const [modalCpf, setModalCpf] = useState(false);
 
   const [rg, setRg] = useState("");
-  const HandleRg = (e: React.ChangeEvent<HTMLInputElement>) => setRg(e.target.value);
+  const HandleRg = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setRg(e.target.value.replace(/\D/g, ""));
   const [modalRg, setModalRg] = useState(false);
 
   const [country, setCountry] = useState("");
-  const HandleCountry = (e: React.ChangeEvent<HTMLInputElement>) => setCountry(e.target.value);
+  const HandleCountry = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setCountry(e.target.value);
   const [modalCountry, setModalCountry] = useState(false);
 
   const [state, setState] = useState("");
-  const HandleState = (e: React.ChangeEvent<HTMLInputElement>) => setState(e.target.value);
+  const HandleState = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setState(e.target.value);
   const [modalState, setModalState] = useState(false);
 
   const [cep, setCep] = useState("");
-  const HandleCep = (e: React.ChangeEvent<HTMLInputElement>) => setCep(e.target.value);
+  const HandleCep = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setCep(e.target.value);
   const [modalCep, setModalCep] = useState(false);
 
   const [street, setStreet] = useState("");
-  const HandleStreet = (e: React.ChangeEvent<HTMLInputElement>) => setStreet(e.target.value);
+  const HandleStreet = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setStreet(e.target.value);
   const [modalStreet, setModalStreet] = useState(false);
 
   const [district, setDistrict] = useState("");
-  const HandleDistrict = (e: React.ChangeEvent<HTMLInputElement>) => setDistrict(e.target.value);
+  const HandleDistrict = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setDistrict(e.target.value);
   const [modalDistrict, setModalDistrict] = useState(false);
 
   const [number, setNumber] = useState("");
-  const HandleNumber = (e: React.ChangeEvent<HTMLInputElement>) => setNumber(e.target.value);
+  const HandleNumber = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setNumber(e.target.value);
   const [modalNumber, setModalNumber] = useState(false);
 
   const [complement, setComplement] = useState("");
-  const HandleComplement = (e: React.ChangeEvent<HTMLInputElement>) => setComplement(e.target.value);
+  const HandleComplement = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setComplement(e.target.value);
   const [modalComplement, setModalComplement] = useState(false);
 
   const [password, setPassword] = useState("");
-  const HandlePassword = (e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
+  const HandlePassword = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setPassword(e.target.value);
   const [modalPassword, setModalPassword] = useState(false);
 
   const [confirmPassword, setConfirmPassword] = useState("");
-  const HandleConfirmPassword = (e: React.ChangeEvent<HTMLInputElement>) => setConfirmPassword(e.target.value);
+  const HandleConfirmPassword = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setConfirmPassword(e.target.value);
   const [modalConfirmPassword, setModalConfirmPassword] = useState(false);
 
   const handleSubmit = () => {
-    console.log(fullName, cpf, rg, country, state, cep, street, district, number, complement, password, confirmPassword);
-  }
+    console.log(
+      fullName,
+      cpf,
+      rg,
+      country,
+      state,
+      cep,
+      street,
+      district,
+      number,
+      complement,
+      password,
+      confirmPassword
+    );
+  };
   const [isMobile, setIsMobile] = useState(false);
-  
+
   useEffect(
     () =>
       screen <
@@ -96,7 +120,7 @@ function FormsPage() {
 
   return (
     <>
-    {/* <div
+      {/* <div
       style={{display: 'flex'}}
     > */}
       <GlobalStyle />
@@ -216,7 +240,7 @@ function FormsPage() {
                         placeholder="Selecione seu Pais"
                         type="text"
                         center
-                        onChange={(e) => HandleCountry(e)}                        
+                        onChange={(e) => HandleCountry(e)}
                       />
                     </ContainerFormsInput>
                   </CenterContainer>
@@ -399,11 +423,7 @@ function FormsPage() {
               <Spacer vertical="14" />
               <Button
                 size={
-                  screen < 1138 && !isMobile
-                    ? "md"
-                    : isMobile
-                    ? "2xs"
-                    : "xlg"
+                  screen < 1138 && !isMobile ? "md" : isMobile ? "2xs" : "xlg"
                 }
                 color="primary"
                 hover
@@ -419,7 +439,7 @@ function FormsPage() {
         </Box>
         <Spacer vertical="12" />
       </MainContainer>
-    {/* </div> */}
+      {/* </div> */}
     </>
   );
 }

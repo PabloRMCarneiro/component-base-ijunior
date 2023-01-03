@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import GlobalStyle from "../../styles/GlobalStyle";
 import { AiOutlineClose } from "react-icons/ai";
 import { theme } from "../../styles/theme";
@@ -24,22 +24,24 @@ function ModalOneButtonType1({
   showModal,
   setShowModal,
 }: ModalOneButtonType1Props) {
-
   const ModalRef = useRef<HTMLHeadingElement>(null);
 
-  const CloseModalOnOutsideClick = (e: any) =>  ModalRef.current === e.target ? setShowModal(false) : null;
+  const CloseModalOnOutsideClick = (e: any) =>
+    ModalRef.current === e.target ? setShowModal(false) : null;
 
-  return (  
+  return (
     <>
       {showModal ? (
-        <MainContainerModal ref={ModalRef} onClick={(e) => CloseModalOnOutsideClick(e)}>
+        <MainContainerModal
+          ref={ModalRef}
+          onClick={(e) => CloseModalOnOutsideClick(e)}
+        >
           <GlobalStyle />
           <Box size="modalSizeType1" rounded backgroundColor="white">
             <CenterHorizontalContainer>
               <TopContainerInModal>
                 <Text variant="body1" bold color="primary">
-                  {" "}
-                  Email já cadastrado!{" "}
+                  Email já cadastrado!
                 </Text>
                 <AiOutlineClose
                   style={{
@@ -67,8 +69,7 @@ function ModalOneButtonType1({
                   onClick={() => setShowModal(false)}
                 >
                   <Text variant="body2" bold color="white">
-                    {" "}
-                    Confirmar{" "}
+                    Confirmar
                   </Text>
                 </Button>
               </BottomContainerInModal>

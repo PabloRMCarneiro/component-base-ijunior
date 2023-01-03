@@ -59,7 +59,6 @@ function GeneralContainer() {
           shadow="accessContainer"
         >
           <ContentGeneralContainer>
-
           <BiArrowBack
             style={{ width: "2rem", height: "2rem", cursor: "pointer" }}
             color={theme.colors.grey}
