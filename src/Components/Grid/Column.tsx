@@ -9,7 +9,7 @@ interface ColumnProps {
 
 const ColumnComponent = styled.div<ColumnProps>`
   float: left;
-  padding: .5rem;
+  padding: .5rem 1rem .5rem 1rem;
   min-height: 1px;
   box-sizing: border-box;
   width: 100%;

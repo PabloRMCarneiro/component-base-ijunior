@@ -12,7 +12,7 @@ function ButtonPage() {
     <MainContainer>
       <GlobalStyle />
       <Spacer vertical="18" />
-      <Button size="sm" color="primary" bordered hover>
+      <Button size="sm" color="primary" bordered >
         <Text variant="body2" bold>
           Hello World
         </Text>
