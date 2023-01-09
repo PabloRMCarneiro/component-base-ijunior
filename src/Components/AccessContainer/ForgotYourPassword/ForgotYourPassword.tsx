@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import useScreen from "../../../hooks/useScreen";
+import useScreen from "../../../../hooks/useScreen";
 
-import GlobalStyle from "../../../styles/GlobalStyle";
-import { theme } from "../../../styles/theme";
+import GlobalStyle from "../../../../styles/GlobalStyle";
+import { theme } from "../../../../styles/theme";
 
-import Button from "../../Button";
-import Box from "../../Box";
-import Spacer from "../../Spacer";
-import Text from "../../Text";
-import Input from "../../Input";
-import Link from "../../Link";
+import Button from "../../../Button";
+import Box from "../../../Box";
+import Spacer from "../../../Spacer";
+import Text from "../../../Text";
+import Input from "../../../Input";
+import Link from "../../../Link";
 
 import ModalValidation from "../ModalValidation";
 
 import { BiArrowBack } from "react-icons/bi";
-
-import Logo from "../../../img/logoAccessContainer.png";
+import { FaReact } from "react-icons/fa";
 
 import {
   MainContainer,
@@ -26,7 +25,7 @@ import {
   LeftAccessContainer,
   CenterHorizontalContainer,
   LineHorizontal,
-} from "../../../utils/Containers";
+} from "../../../../utils/Containers";
 
 function ForgotYourPassword() {
   const navigate = useNavigate();
@@ -118,10 +117,9 @@ function ForgotYourPassword() {
               ) : (
                 <Spacer vertical="12" />
               )}
-              <img
-                src={Logo}
-                alt=""
+              <FaReact
                 style={{ width: `${logoSize}`, height: `${logoSize}` }}
+                color={theme.colors.primary}
               />
               {logoSize === logoSizeOptions[0] ? (
                 <Spacer vertical="12" />
@@ -205,10 +203,9 @@ function ForgotYourPassword() {
                 />
                 <CenterHorizontalContainer>
                   <Spacer vertical="16" />
-                  <img
-                    src={Logo}
-                    alt=""
-                    style={{ width: "222px", height: "229px" }}
+                  <FaReact
+                    style={{ width: "13.875rem", height: "13.875rem" }}
+                    color={theme.colors.primary}
                   />
                 </CenterHorizontalContainer>
               </RightAccessContainer>

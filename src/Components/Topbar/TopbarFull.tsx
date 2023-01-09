@@ -14,6 +14,7 @@ import Spacer from "../Spacer";
 import Logo from "./img/Logo.png";
 
 import { GiHamburgerMenu } from "react-icons/gi";
+import { FaReact } from "react-icons/fa";
 
 import {
   InternalContainerTopbar,
@@ -52,10 +53,13 @@ function TopbarFull(props: TopbarFullProps) {
       <Box size="topbarFull" backgroundColor="greyLight" fixed>
         <InternalContainerTopbar>
           <CenterContainerFlex>
-            <img
-              src={Logo}
-              alt=""
-              style={{ cursor: "pointer" }}
+            <FaReact
+              style={{
+                cursor: "pointer",
+                width: "3rem",
+                height: "3rem",
+              }}
+              color={theme.colors.primary}
               onClick={() => navigate("/")}
             />
           </CenterContainerFlex>

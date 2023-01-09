@@ -11,13 +11,11 @@ import Text from "../Text";
 import Spacer from "../Spacer";
 import Button from "../Button";
 
-import logo from "./img/logo.png";
-import homeIcon from "./img/homeIcon.png";
-import dataBaseIcon from "./img/dataBaseIcon.png";
-import calendarIcon from "./img/calendarIcon.png";
 
-import { FaUserCircle } from "react-icons/fa";
+import { FaUserCircle, FaReact } from "react-icons/fa";
 import { MdLogout } from "react-icons/md";
+import { BsHouse } from "react-icons/bs";
+import { ImDatabase, ImCalendar } from "react-icons/im";
 
 import NavbarShort from "./NavbarShort";
 
@@ -56,19 +54,31 @@ function NavbarExample() {
         <Box size="navbarFull" backgroundColor="white">
           <CenterContainer>
             <InternalContainerNavbar>
-              <img src={logo} />
+              <FaReact
+                style={{
+                  cursor: "pointer",
+                  width: "5rem",
+                  height: "5rem",
+                }}
+                color={theme.colors.primary}
+                onClick={() => navigate("/")}
+              />
               <Spacer vertical="8" />
               <LineHorizontal />
               <Spacer vertical="10" />
               <LinkContainerNavbar>
                 <Spacer horizontal="4" />
-                <img
-                  src={homeIcon}
-                  style={{ cursor: "pointer" }}
-                  onClick={() => navigate("/")}
+                <BsHouse
+                  style={{
+                    cursor: "pointer",
+                    width: "1.875rem",
+                    height: "1.875rem",
+                  }}
+                  color={theme.colors.primary}
+                  onClick={() => navigate("/general-container")}
                 />
                 <Spacer horizontal="4" />
-                <Link path="/">
+                <Link path="/general-container">
                   <Text variant="legenda" color="greyDark" hover bold>
                     Home
                   </Text>
@@ -77,9 +87,13 @@ function NavbarExample() {
               <Spacer vertical="12" />
               <LinkContainerNavbar>
                 <Spacer horizontal="6" />
-                <img
-                  src={dataBaseIcon}
-                  style={{ cursor: "pointer" }}
+                <ImDatabase
+                  style={{
+                    cursor: "pointer",
+                    width: "1.6rem",
+                    height: "1.6rem",
+                  }}
+                  color={theme.colors.primary}
                   onClick={() => navigate("/modal")}
                 />
                 <Spacer horizontal="6" />
@@ -92,9 +106,13 @@ function NavbarExample() {
               <Spacer vertical="12" />
               <LinkContainerNavbar>
                 <Spacer horizontal="4" />
-                <img
-                  src={calendarIcon}
-                  style={{ cursor: "pointer" }}
+                <ImCalendar
+                  style={{
+                    cursor: "pointer",
+                    width: "1.875rem",
+                    height: "1.875rem",
+                  }}
+                  color={theme.colors.primary}
                   onClick={() => navigate("/buttons")}
                 />
                 <Spacer horizontal="4" />

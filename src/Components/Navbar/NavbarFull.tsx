@@ -10,13 +10,10 @@ import Link from "../Link";
 import Text from "../Text";
 import Spacer from "../Spacer";
 
-import logo from "./img/logo.png";
-import homeIcon from "./img/homeIcon.png";
-import dataBaseIcon from "./img/dataBaseIcon.png";
-import calendarIcon from "./img/calendarIcon.png";
-
-import { FaUserCircle } from "react-icons/fa";
+import { FaUserCircle, FaReact } from "react-icons/fa";
 import { MdLogout } from "react-icons/md";
+import { BsHouse } from "react-icons/bs";
+import { ImDatabase, ImCalendar } from "react-icons/im";
 
 import NavbarShort from "./NavbarShort";
 
@@ -31,7 +28,6 @@ import {
 } from "../../utils/Containers";
 
 function NavbarFull() {
-  
   const navigate = useNavigate();
   const location = useLocation();
   const screen = useScreen();
@@ -57,15 +53,27 @@ function NavbarFull() {
         <Box size="navbarFull" backgroundColor="white">
           <CenterContainer>
             <InternalContainerNavbar>
-              <img src={logo} onClick={() => navigate("/")}/>
+              <FaReact
+                style={{
+                  cursor: "pointer",
+                  width: "5rem",
+                  height: "5rem",
+                }}
+                color={theme.colors.primary}
+                onClick={() => navigate("/")}
+              />
               <Spacer vertical="8" />
               <LineHorizontal />
               <Spacer vertical="10" />
               <LinkContainerNavbar>
                 <Spacer horizontal="4" />
-                <img
-                  src={homeIcon}
-                  style={{ cursor: "pointer" }}
+                <BsHouse
+                  style={{
+                    cursor: "pointer",
+                    width: "1.875rem",
+                    height: "1.875rem",
+                  }}
+                  color={theme.colors.primary}
                   onClick={() => navigate("/general-container")}
                 />
                 <Spacer horizontal="4" />
@@ -81,10 +89,16 @@ function NavbarFull() {
               <Spacer vertical="12" />
               <LinkContainerNavbar>
                 <Spacer horizontal="6" />
-                <img
-                  src={dataBaseIcon}
-                  style={{ cursor: "pointer" }}
-                  onClick={() => navigate("/general-filter-container/dados-gerais")}
+                <ImDatabase
+                  style={{
+                    cursor: "pointer",
+                    width: "1.6rem",
+                    height: "1.6rem",
+                  }}
+                  color={theme.colors.primary}
+                  onClick={() =>
+                    navigate("/general-filter-container/dados-gerais")
+                  }
                 />
                 <Spacer horizontal="6" />
                 <Link path="/general-filter-container/dados-gerais">
@@ -92,16 +106,19 @@ function NavbarFull() {
                     General Filter Container
                   </Text>
                 </Link>
-                {location.pathname.indexOf("general-filter-container") !== -1 && (
-                  <LineVertical color="primary" weight="4" />
-                )}
+                {location.pathname.indexOf("general-filter-container") !==
+                  -1 && <LineVertical color="primary" weight="4" />}
               </LinkContainerNavbar>
               <Spacer vertical="12" />
               <LinkContainerNavbar>
                 <Spacer horizontal="4" />
-                <img
-                  src={calendarIcon}
-                  style={{ cursor: "pointer" }}
+                <ImCalendar
+                  style={{
+                    cursor: "pointer",
+                    width: "1.875rem",
+                    height: "1.875rem",
+                  }}
+                  color={theme.colors.primary}
                   onClick={() => navigate("/buttons")}
                 />
                 <Spacer horizontal="4" />

@@ -1,13 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import GlobalStyle from "../../styles/GlobalStyle";
-import { AiOutlineClose } from "react-icons/ai";
 import { theme } from "../../styles/theme";
-import Logo from "./img/Logo.png";
 
 import Button from "../Button";
 import Spacer from "../Spacer";
 import Text from "../Text";
 import Link from "../Link";
+
+import { AiOutlineClose } from "react-icons/ai";
+import { FaReact } from "react-icons/fa";
 
 import {
   ContentGeneralContainer,
@@ -21,21 +24,25 @@ interface TopbarMobileProps {
 
 function TopbarMobile(props: TopbarMobileProps) {
 
+  const navigate = useNavigate();
   const handleCloseTopBarMobile = () => props.handleTopBarMobile ? props.handleTopBarMobile(false) : null;
 
   return (
     <>
       <GlobalStyle />
       <TopContainerTopBarMobile>
-        <img
-          src={Logo}
-          alt=""
+        <FaReact
           style={{
+            cursor: "pointer",
+            width: "2.5rem",
+            height: "2.5rem",
             position: "relative",
             left: "50%",
             transform: "translateX(-50%)",
             marginRight: "65%"
           }}
+          color={theme.colors.primary}
+          onClick={() => navigate("/")}
         />
         <AiOutlineClose
           style={{

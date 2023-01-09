@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import useScreen from "../../../hooks/useScreen";
+import useScreen from "../../../../hooks/useScreen";
 
-import GlobalStyle from "../../../styles/GlobalStyle";
-import { theme } from "../../../styles/theme";
+import GlobalStyle from "../../../../styles/GlobalStyle";
+import { theme } from "../../../../styles/theme";
 
-import Button from "../../Button";
-import Box from "../../Box";
-import Spacer from "../../Spacer";
-import Text from "../../Text";
-import Input from "../../Input";
+import Button from "../../../Button";
+import Box from "../../../Box";
+import Spacer from "../../../Spacer";
+import Text from "../../../Text";
+import Input from "../../../Input";
 
 import ModalValidation from "../ModalValidation";
 
-import Logo from "../../../img/logoAccessContainer.png";
+import { FaReact } from "react-icons/fa";
 
 import {
   MainContainer,
@@ -23,7 +23,7 @@ import {
   LeftAccessContainer,
   CenterHorizontalContainer,
   CenterContainer,
-} from "../../../utils/Containers";
+} from "../../../../utils/Containers";
 
 function NewPassword() {
   const navigate = useNavigate();
@@ -131,10 +131,9 @@ function NewPassword() {
               ) : (
                 <Spacer vertical="12" />
               )}
-              <img
-                src={Logo}
-                alt=""
+              <FaReact
                 style={{ width: `${logoSize}`, height: `${logoSize}` }}
+                color={theme.colors.primary}
               />
               {logoSize === logoSizeOptions[0] ? (
                 <Spacer vertical="12" />
@@ -195,7 +194,10 @@ function NewPassword() {
             <MainAceessContainer>
               <RightAccessContainer>
                 <CenterContainer>
-                  <img src={Logo} alt="" />
+                  <FaReact
+                    style={{ width: "13.875rem", height: "13.875rem" }}
+                    color={theme.colors.primary}
+                  />
                 </CenterContainer>
               </RightAccessContainer>
               <LineVertical />

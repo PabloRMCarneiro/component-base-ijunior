@@ -5,12 +5,11 @@ import { useNavigate } from "react-router-dom";
 import Box from "../Box";
 import Spacer from "../Spacer";
 
-import logo from "./img/logo.png";
-import homeIcon from "./img/homeIcon.png";
-import dataBaseIcon from "./img/dataBaseIcon.png";
-import calendarIcon from "./img/calendarIcon.png";
 
+import { FaReact } from "react-icons/fa"
 import { MdLogout } from "react-icons/md";
+import { BsHouse } from "react-icons/bs";
+import { ImDatabase, ImCalendar } from "react-icons/im";
 
 import {
   InternalContainerNavbar,
@@ -30,22 +29,34 @@ function NavbarShort() {
       <Box size="navbarShort" backgroundColor="white">
         <CenterContainer>
           <InternalContainerNavbar>
-            <img src={logo} />
+              <FaReact
+                style={{
+                  cursor: "pointer",
+                  width: "3.5rem",
+                  height: "3.5rem",
+                }}
+                color={theme.colors.primary}
+                onClick={() => navigate("/")}
+              />
             <Spacer vertical="8" />
             <LineHorizontal />
             <Spacer vertical="10" />
             <LinkContainerNavbar style={{ justifyContent: "center" }}>
-              <img
-                src={homeIcon}
-                style={{ cursor: "pointer" }}
+              <BsHouse
+                style={{
+                  cursor: "pointer",
+                  width: "1.875rem",
+                  height: "1.875rem",
+                }}
+                color={theme.colors.primary}
                 onClick={() => navigate("/general-container")}
               />
             </LinkContainerNavbar>
             <Spacer vertical="12" />
             <LinkContainerNavbar style={{ justifyContent: "center" }}>
-              <img
-                src={dataBaseIcon}
-                style={{ cursor: "pointer" }}
+              <ImDatabase
+                style={{ cursor: "pointer", width: "1.6rem", height: "1.6rem" }}
+                color={theme.colors.primary}
                 onClick={() =>
                   navigate("/general-filter-container/dados-gerais")
                 }
@@ -53,10 +64,12 @@ function NavbarShort() {
             </LinkContainerNavbar>
             <Spacer vertical="12" />
             <LinkContainerNavbar style={{ justifyContent: "center" }}>
-              <img
-                src={calendarIcon}
-                style={{ cursor: "pointer" }}
-                onClick={() => navigate("/buttons")}
+              <ImCalendar
+                style={{ cursor: "pointer", width: "1.6rem", height: "1.6rem" }}
+                color={theme.colors.primary}
+                onClick={() =>
+                  navigate("/buttons")
+                }
               />
             </LinkContainerNavbar>
             <Spacer vertical="40" />
