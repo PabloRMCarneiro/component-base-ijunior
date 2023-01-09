@@ -11,8 +11,6 @@ import Button from "../Button";
 import Link from "../Link";
 import Spacer from "../Spacer";
 
-import Logo from "./img/Logo.png";
-
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaReact } from "react-icons/fa";
 
