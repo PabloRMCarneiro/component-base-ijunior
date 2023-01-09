@@ -142,7 +142,7 @@ function NavbarExample() {
           width: `calc(100% - ${!isMobile ? "14.125" : "0"}rem)`,
         }}
       >
-        <Button size="xs" color="sucess" hover>
+        <Button size="xs" color="success" hover>
           <Text variant="body2" bold>
             Hello World
           </Text>

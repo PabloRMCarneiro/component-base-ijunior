@@ -28,7 +28,6 @@ import {
 } from "../../../utils/Containers";
 
 function CheckYourEmail() {
-
   const navigate = useNavigate();
   const screen = useScreen();
 
@@ -50,12 +49,12 @@ function CheckYourEmail() {
   const HandleSubmit = () => {
     if (validateCode(code)) navigate("/login");
   };
-  
+
   const logoSizeOptions = ["7.1875rem", "5rem", "4rem"];
   const [logoSize, setLogoSize] = useState(logoSizeOptions[0]);
 
   const [isMobile, setIsMobile] = useState(false);
-  
+
   useEffect(() => {
     if (
       screen <
@@ -107,7 +106,7 @@ function CheckYourEmail() {
           <Box
             size="accessContainerMobile"
             rounded
-            backgroundColor="bgLogin"
+            backgroundColor="backgroundBox"
             shadow="accessContainer"
           >
             <CenterHorizontalContainer style={{ padding: "0 3rem 0 3rem" }}>
@@ -181,7 +180,7 @@ function CheckYourEmail() {
           <Box
             size="accessContainer"
             rounded
-            backgroundColor="bgLogin"
+            backgroundColor="backgroundBox"
             shadow="accessContainer"
           >
             <MainAceessContainer>

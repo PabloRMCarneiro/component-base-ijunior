@@ -57,7 +57,7 @@ function NavbarFull() {
         <Box size="navbarFull" backgroundColor="white">
           <CenterContainer>
             <InternalContainerNavbar>
-              <img src={logo} />
+              <img src={logo} onClick={() => navigate("/")}/>
               <Spacer vertical="8" />
               <LineHorizontal />
               <Spacer vertical="10" />

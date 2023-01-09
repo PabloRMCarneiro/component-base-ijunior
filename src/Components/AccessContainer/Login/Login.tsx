@@ -129,7 +129,7 @@ function Login() {
           <Box
             size="accessContainerMobile"
             rounded
-            backgroundColor="bgLogin"
+            backgroundColor="backgroundBox"
             shadow="accessContainer"
           >
             <CenterHorizontalContainer style={{ padding: "0 3rem 0 3rem" }}>
@@ -217,7 +217,7 @@ function Login() {
           <Box
             size="accessContainer"
             rounded
-            backgroundColor="bgLogin"
+            backgroundColor="backgroundBox"
             shadow="accessContainer"
           >
             <MainAceessContainer>

@@ -1,14 +1,13 @@
 import React from "react";
 import styled, { css, ThemeProvider } from "styled-components";
 import { theme } from "../styles/theme";
-import InputMask from "react-input-mask";
+
 interface InputProps {
   size: string;
   type: string;
   placeholder: string;
   center?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  mask?: string;
 }
 
 const InputExceptionsResponsive = ["forms"];
@@ -90,7 +89,6 @@ const InputComponent = styled.input.attrs((props) => {
 
 function Input(props: InputProps) {
   return (
-    // implementar o input mask com a estilização do Input Component
     <ThemeProvider theme={theme}>
       <InputComponent
         size={props.size}
@@ -100,19 +98,8 @@ function Input(props: InputProps) {
         center={props.center}
       /> 
     </ThemeProvider>
-
   );
 }
 
 export default Input;
 
-/*
-<InputComponent
-        size={props.size}
-        type={props.type}
-        placeholder={props.placeholder}
-        onChange={props.onChange}
-        center={props.center}
-        mask={props.mask}
-      />
-*/

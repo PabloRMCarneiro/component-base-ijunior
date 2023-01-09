@@ -12,11 +12,11 @@ export const theme = {
     secondaryBorder: "#b300ff",
     secondarySolidHover: "#8000cc",
 
-    sucessLightActive: "#e8fdf1",
-    sucessLightHover: "#e0fded",
-    sucess: "#54C242",
-    sucessBorder: "#45a736",
-    sucessSolidHover: "#398d2c",
+    successLightActive: "#e8fdf1",
+    successLightHover: "#e0fded",
+    success: "#54C242",
+    successBorder: "#45a736",
+    successSolidHover: "#398d2c",
 
     warningLightActive: "#fff9e0",
     warningLightHover: "#fff6d3",
@@ -30,7 +30,7 @@ export const theme = {
     dangerBorder: "#a72a00",
     dangerSolidHover: "#912400",
 
-    bgLogin: "#F9F9F9",
+    backgroundBox: "#F9F9F9",
     white: "#ffffff",
     black: "#000000",
     red: "#ff0000",
@@ -153,11 +153,11 @@ export const theme = {
   },
   box: {
     sizes: {
-      modalSizeType1: ["440px", "262px"],
-      modalSizeType2: ["440px", "315px"],
-      modalSizeType3: ["440px", "426px"],
-      modalSizeType4: ["440px", "450px"],
-      modalSizeType5: ["440px", "730px"],
+      modalSizeType1: ["27.5rem", "16.375rem"],
+      modalSizeType2: ["27.5rem", "19.6875rem"],
+      modalSizeType3: ["27.5rem", "26.625rem"],
+      modalSizeType4: ["27.5rem", "28.125rem"],
+      modalSizeType5: ["27.5rem", "46.625rem"],
 
       accessContainer: ["53rem", "32.75rem"],
       accessContainerMobile: ["28.4375rem", "38.375rem"],
@@ -187,13 +187,6 @@ export const theme = {
       xs: "1.2rem",
       "2xs": "1.3rem",
       md: "1.4rem",
-    },
-    masks: {
-      cpf: "d{3}.?d{3}.?d{3}-?d{2}",
-      cnpj: "00.000.000/0000-00",
-      phone: "(00) 00000-0000",
-      cep: "00000-000",
-      date: "00/00/0000",
     },
   },
   breakpoints: {

@@ -20,12 +20,11 @@ import {
 import NavbarFull from "../Navbar/NavbarFull";
 
 function GeneralContainer() {
-  
   const navigate = useNavigate();
   const screen = useScreen();
 
   const [isMobile, setIsMobile] = useState(false);
-  
+
   useEffect(
     () =>
       screen <
@@ -54,16 +53,16 @@ function GeneralContainer() {
         <Spacer vertical="4" />
         <Box
           size="generalContainer"
-          backgroundColor="bgLogin"
+          backgroundColor="backgroundBox"
           rounded
           shadow="accessContainer"
         >
           <ContentGeneralContainer>
-          <BiArrowBack
-            style={{ width: "2rem", height: "2rem", cursor: "pointer" }}
-            color={theme.colors.grey}
-            onClick={() => navigate("/")}
-          />
+            <BiArrowBack
+              style={{ width: "2rem", height: "2rem", cursor: "pointer" }}
+              color={theme.colors.grey}
+              onClick={() => navigate("/")}
+            />
           </ContentGeneralContainer>
         </Box>
       </MainContainer>

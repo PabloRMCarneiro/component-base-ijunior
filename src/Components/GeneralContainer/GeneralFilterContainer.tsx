@@ -118,15 +118,14 @@ function GeneralFilterContainer() {
         <Spacer vertical="8" />
         <Box
           size="generalContainerFilter"
-          backgroundColor="bgLogin"
+          backgroundColor="backgroundBox"
           rounded
           shadow="accessContainer"
-        >
-        </Box>
+        ></Box>
         <Spacer vertical="12" />
         <Box
           size="generalContainerFilterMain"
-          backgroundColor="bgLogin"
+          backgroundColor="backgroundBox"
           rounded
           shadow="accessContainer"
         ></Box>

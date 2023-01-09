@@ -12,7 +12,7 @@ function ButtonPage() {
     <MainContainer>
       <GlobalStyle />
       <Spacer vertical="18" />
-      <Button size="sm" color="primary" bordered >
+      <Button size="sm" color="primary" bordered hover>
         <Text variant="body2" bold>
           Hello World
         </Text>
@@ -48,37 +48,37 @@ function ButtonPage() {
         </Text>
       </Button>
       <Spacer vertical="18" />
-      <Button size="sm" color="sucess" bordered hover>
+      <Button size="sm" color="success" bordered hover>
         <Text variant="body2" bold>
           Hello World
         </Text>
       </Button>
       <Spacer vertical="18" />
-      <Button size="xs" color="sucess" hover>
+      <Button size="xs" color="success" hover>
         <Text variant="body2" bold>
           Hello World
         </Text>
       </Button>
       <Spacer vertical="18" />
-      <Button size="2xs" color="sucess" hover bordered>
+      <Button size="2xs" color="success" hover bordered>
         <Text variant="body2" bold>
           Hello World
         </Text>
       </Button>
       <Spacer vertical="18" />
-      <Button size="md" color="sucess" hover>
+      <Button size="md" color="success" hover>
         <Text variant="body2" bold>
           Hello World
         </Text>
       </Button>
       <Spacer vertical="18" />
-      <Button size="lg" color="sucess" bordered hover>
+      <Button size="lg" color="success" bordered hover>
         <Text variant="body2" bold>
           Hello World
         </Text>
       </Button>
       <Spacer vertical="18" />
-      <Button size="xlg" color="sucess" hover>
+      <Button size="xlg" color="success" hover>
         <Text variant="body2" bold>
           Hello World
         </Text>

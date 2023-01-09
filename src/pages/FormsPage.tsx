@@ -140,7 +140,7 @@ function FormsPage() {
         <Spacer vertical="4" />
         <Box
           size="forms"
-          backgroundColor="bgLogin"
+          backgroundColor="backgroundBox"
           rounded
           shadow="accessContainer"
         >

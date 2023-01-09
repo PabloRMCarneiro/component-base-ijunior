@@ -30,7 +30,6 @@ import GeneralContainer from "../Components/GeneralContainer/GeneralContainer";
 import GeneralFilterContainer from "../Components/GeneralContainer/GeneralFilterContainer";
 import FormsPage from "../pages/FormsPage";
 
-
 function routes() {
   return (
     <Router>
@@ -67,6 +66,7 @@ function routes() {
 
         <Route path="/general-filter-container/informacoes-parceiros" element={<GeneralFilterContainer />} />
         <Route path="/forms" element={<FormsPage />} />
+
       </Routes>
     </Router>
   );

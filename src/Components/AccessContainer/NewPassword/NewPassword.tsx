@@ -26,7 +26,6 @@ import {
 } from "../../../utils/Containers";
 
 function NewPassword() {
-
   const navigate = useNavigate();
   const screen = useScreen();
 
@@ -56,7 +55,7 @@ function NewPassword() {
   const HandleSubmit = () => {
     if (validateNewPassword()) navigate("/login");
   };
-  
+
   const logoSizeOptions = ["7.1875rem", "5rem", "4rem"];
   const [logoSize, setLogoSize] = useState(logoSizeOptions[0]);
 
@@ -72,7 +71,7 @@ function NewPassword() {
     } else {
       setIsMobile(false);
     }
-    
+
     if (
       screen >
       Number(theme.breakpoints.t.slice(0, theme.breakpoints.t.indexOf("rem"))) *
@@ -121,7 +120,7 @@ function NewPassword() {
           <Box
             size="accessContainerMobile"
             rounded
-            backgroundColor="bgLogin"
+            backgroundColor="backgroundBox"
             shadow="accessContainer"
           >
             <CenterHorizontalContainer style={{ padding: "0 3rem 0 3rem" }}>
@@ -190,7 +189,7 @@ function NewPassword() {
           <Box
             size="accessContainer"
             rounded
-            backgroundColor="bgLogin"
+            backgroundColor="backgroundBox"
             shadow="accessContainer"
           >
             <MainAceessContainer>
