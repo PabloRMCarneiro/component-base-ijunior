@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
-import GlobalStyle from "../../../styles/GlobalStyle";
-import { AiOutlineClose } from "react-icons/ai";
-import { theme } from "../../../styles/theme";
+import GlobalStyle from "../../styles/GlobalStyle";
+import { theme } from "../../styles/theme";
+
 interface ModalValidationProps {
   showModal: boolean;
   setShowModal: (showModal: boolean) => void;
@@ -9,9 +9,11 @@ interface ModalValidationProps {
   description: string;
 }
 
-import Button from "../../Button";
-import Box from "../../Box";
-import Text from "../../Text";
+import Button from "../Button";
+import Box from "../Box";
+import Text from "../Text";
+
+import { AiOutlineClose } from "react-icons/ai";
 
 import {
   MainContainerModal,
@@ -20,7 +22,7 @@ import {
   CenterHorizontalContainer,
   MainContainerInModal,
   BottomContainerInModal,
-} from "../../../utils/Containers";
+} from "../../utils/Containers";
 
 function ModalValidation({
   showModal,

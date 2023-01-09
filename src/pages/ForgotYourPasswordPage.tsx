@@ -1,6 +1,6 @@
 import React from "react";
 
-import ForgotYourPassword from "../Components/AbstractComponents/AccessContainer/ForgotYourPassword/ForgotYourPassword";
+import ForgotYourPassword from "../Components/AccessContainer/ForgotYourPassword/ForgotYourPassword";
 
 const ForgotYourPasswordPage = () => <ForgotYourPassword />;
 

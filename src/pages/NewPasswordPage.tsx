@@ -1,6 +1,6 @@
 import React from "react";
 
-import NewPassword from "../Components/AbstractComponents/AccessContainer/NewPassword/NewPassword";
+import NewPassword from "../Components/AccessContainer/NewPassword/NewPassword";
 
 const NewPasswordPage = () => <NewPassword />;
 

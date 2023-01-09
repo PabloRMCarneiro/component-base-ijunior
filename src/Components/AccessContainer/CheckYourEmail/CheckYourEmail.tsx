@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import useScreen from "../../../../hooks/useScreen";
+import useScreen from "../../../hooks/useScreen";
 import { useNavigate } from "react-router-dom";
 
-import GlobalStyle from "../../../../styles/GlobalStyle";
-import { theme } from "../../../../styles/theme";
+import GlobalStyle from "../../../styles/GlobalStyle";
+import { theme } from "../../../styles/theme";
 
-import Button from "../../../Button";
-import Box from "../../../Box";
-import Spacer from "../../../Spacer";
-import Text from "../../../Text";
-import Input from "../../../Input";
-import Link from "../../../Link";
+import Button from "../../Button";
+import Box from "../../Box";
+import Spacer from "../../Spacer";
+import Text from "../../Text";
+import Input from "../../Input";
+import Link from "../../Link";
 
 import ModalValidation from "../ModalValidation";
 
@@ -25,7 +25,7 @@ import {
   CenterHorizontalContainer,
   LineHorizontal,
   CenterContainer,
-} from "../../../../utils/Containers";
+} from "../../../utils/Containers";
 
 function CheckYourEmail() {
   const navigate = useNavigate();
