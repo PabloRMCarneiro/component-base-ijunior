@@ -67,7 +67,6 @@ function ModalOneButtonType2({
                   type="text"
                   placeholder="Insira a para adicionar uma resposta à pergunta referente ao item do checkbox."
                   onChange={(e) => HandleInputValue(e)}
-                  mask="000.000.000-00"
                 />
               </MainContainerInModal>
               <LineHorizontal />

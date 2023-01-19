@@ -13,7 +13,6 @@ import Input from "../Components/Input";
 import Row from "../Components/Grid/Row";
 import Column from "../Components/Grid/Column";
 
-/* import NavbarFull from "../Components/Navbar/NavbarFull";*/
 
 import { BiArrowBack } from "react-icons/bi";
 
@@ -90,22 +89,6 @@ function FormsPage() {
     setConfirmPassword(e.target.value);
   const [modalConfirmPassword, setModalConfirmPassword] = useState(false);
 
-  const handleSubmit = () => {
-    console.log(
-      fullName,
-      cpf,
-      rg,
-      country,
-      state,
-      cep,
-      street,
-      district,
-      number,
-      complement,
-      password,
-      confirmPassword
-    );
-  };
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(
@@ -119,16 +102,11 @@ function FormsPage() {
   );
 
   return (
-    <>
-      {/* <div
-      style={{display: 'flex'}}
-    > */}
+    <>      
       <GlobalStyle />
-      {/* <NavbarFull /> */}
       <MainContainer
         style={{
           backgroundColor: `${theme.colors.offWhite}`,
-          /* width: `calc(100% - ${!isMobile ? "14.125" : "0"}rem)`, */
         }}
       >
         {isMobile ? <Spacer vertical="12" /> : null}
@@ -427,7 +405,6 @@ function FormsPage() {
                 }
                 color="primary"
                 hover
-                onClick={() => handleSubmit()}
               >
                 <Text variant="body2" bold>
                   Cadastrar
@@ -439,7 +416,6 @@ function FormsPage() {
         </Box>
         <Spacer vertical="12" />
       </MainContainer>
-      {/* </div> */}
     </>
   );
 }

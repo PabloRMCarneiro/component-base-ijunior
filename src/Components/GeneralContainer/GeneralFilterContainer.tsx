@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import useScreen from "../../hooks/useScreen";
 
 import GlobalStyle from "../../styles/GlobalStyle";
@@ -20,7 +20,7 @@ import {
 import NavbarFull from "../Navbar/NavbarFull";
 
 function GeneralFilterContainer() {
-  const navigate = useNavigate();
+
   const location = useLocation();
   const screen = useScreen();
 
